@@ -1,1 +1,194 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://purl.org/eudpp"
+     xml:base="https://purl.org/eudpp"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:eudpp="https://purl.org/eudpp#"
+     xmlns:vann1="http://purl.org/vocab/vann#"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://purl.org/eudpp/CONNECTOR">
+        <dcterms:contributor xml:lang="en">Hele-Mai Haav</dcterms:contributor>
+        <dcterms:created xml:lang="en">2025-02-27</dcterms:created>
+        <dcterms:creator xml:lang="en">Tarmo Robal</dcterms:creator>
+        <dcterms:description xml:lang="en">MODULE: 
+
+Connector/ Bridge module that only defines object properties between modules.
+
+THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
+All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
+        <dcterms:issued xml:lang="en">2026-02-28</dcterms:issued>
+        <dcterms:licence xml:lang="en">Except otherwise noted, original content on this document is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence, once published.</dcterms:licence>
+        <dcterms:title xml:lang="en">Connector module of the EU DPP core ontology proposed by the CIRPASS-2 project.</dcterms:title>
+        <rdfs:comment xml:lang="en">EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
+        <rdfs:label xml:lang="en">Connector module of the EU DPP core ontology proposal of the CIRPASS-2 project.</rdfs:label>
+        <owl:versionInfo>1.9.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/licence -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/licence"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/references -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/references"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann#preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann#preferredNamespacePrefix"/>
+    
+
+
+    <!-- https://purl.org/eudpp#isMandatory -->
+
+    <owl:AnnotationProperty rdf:about="https://purl.org/eudpp#isMandatory"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.org/eudpp#containsSubstanceOfConcern -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsSubstanceOfConcern">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#SubstanceOfConcern"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasManufacturer -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasManufacturer">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#EconomicOperatorRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.org/eudpp#EconomicOperatorRole -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EconomicOperatorRole"/>
+    
+
+
+    <!-- https://purl.org/eudpp#Product -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#Product"/>
+    
+
+
+    <!-- https://purl.org/eudpp#SubstanceOfConcern -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#SubstanceOfConcern"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
