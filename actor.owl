@@ -358,6 +358,17 @@ Product is defined in the Product and DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#facilityID -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#facilityID">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Unique facility identifier means a unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain. (ESPR Art 2 (33))</rdfs:comment>
+        <rdfs:label xml:lang="en">Unique facility ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://purl.org/eudpp#postalAddress -->
 
     <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#postalAddress">
@@ -394,17 +405,6 @@ Product is defined in the Product and DPP module.</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A trademark officially registered and owned by an actor.</rdfs:comment>
         <rdfs:label xml:lang="en">Registered trademark</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#uniqueFacilityID -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#uniqueFacilityID">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Unique facility identifier means a unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain. (ESPR Art 2 (33))</rdfs:comment>
-        <rdfs:label xml:lang="en">Unique facility ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
