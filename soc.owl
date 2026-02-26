@@ -399,7 +399,8 @@ CAS Number: 15829-53-5</rdfs:comment>
         <dcterms:references>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:references>
         <dcterms:source xml:lang="en">ESPR Art 2(10)</dcterms:source>
         <rdfs:comment xml:lang="en">means a substance that:(a) meets the criteria laid down in Article 57 of Regulation (EC) No 1907/2006 and is identified in accordance with Article 59(1) of that Regulation; (b) is classified in Part 3 of Annex VI to Regulation (EC) No 1272/2008 in one of the following hazard classes or hazard categories: (i) carcinogenicity categories 1 and 2; (ii) germ cell mutagenicity categories 1 and 2; (iii) reproductive toxicity categories 1 and 2; (iv) endocrine disruption for human health categories 1 and 2; (v) endocrine disruption for the environment categories 1 and 2; (vi) persistent, mobile and toxic or very persistent, very mobile properties; (vii) persistent, bioaccumulative and toxic or very persistent, very bioaccumulative properties; (viii) respiratory sensitisation category 1; (ix) skin sensitisation category 1; (x) hazardous to the aquatic environment — categories chronic 1 to 4; (xi) hazardous to the ozone layer; (xii) specific target organ toxicity — repeated exposure categories 1 and 2; (xiii) specific target organ toxicity — single exposure categories 1 and 2; (c) is regulated under Regulation (EU) 2019/1021; or (d) negatively affects the reuse and recycling of materials in the product in which it is present [ESPR Art 2(10)]</rdfs:comment>
-        <rdfs:label xml:lang="en">Substance of concern</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/SOC"/>
+		<rdfs:label xml:lang="en">Substance of concern</rdfs:label>
     </owl:Class>
     
 
