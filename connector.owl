@@ -179,7 +179,9 @@ All liability for any damages arising from use or misuse of this vocabulary is w
 
     <!-- https://purl.org/eudpp#Product -->
 
-    <owl:Class rdf:about="https://purl.org/eudpp#Product"/>
+    <owl:Class rdf:about="https://purl.org/eudpp#Product">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/P_DPP"/>
+    </owl:Class>
     
 
 
