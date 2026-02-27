@@ -271,7 +271,7 @@ hasManufacturer object property range is defined in the EUDPP Core ontology and 
     <!-- https://purl.org/eudpp#ActorRoleAssignment -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#ActorRoleAssignment">
-        <rdfs:comment rdf:resource="https://purl.org/eudpp/ACTOR"/>
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
     </owl:Class>
     
 
@@ -279,7 +279,7 @@ hasManufacturer object property range is defined in the EUDPP Core ontology and 
     <!-- https://purl.org/eudpp#AuthorisedRepresentationAssignment -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#AuthorisedRepresentationAssignment">
-        <rdfs:comment rdf:resource="https://purl.org/eudpp/ACTOR"/>
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
     </owl:Class>
     
 
