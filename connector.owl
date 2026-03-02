@@ -12,31 +12,9 @@
      xmlns:vann1="http://purl.org/vocab/vann#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://purl.org/eudpp/CONNECTOR">
-        <dcterms:contributor xml:lang="en">Hele-Mai Haav</dcterms:contributor>
         <dcterms:created xml:lang="en">2025-02-27</dcterms:created>
-        <dcterms:creator xml:lang="en">Tarmo Robal</dcterms:creator>
-        <dcterms:description xml:lang="en">MODULE: 
-
-Connector/ Bridge module that only defines object properties between modules.
-
-THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
-All liability for any damages arising from use or misuse of this vocabulary is with<?xml version="1.0"?>
-<rdf:RDF xmlns="https://purl.org/eudpp"
-     xml:base="https://purl.org/eudpp"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:eudpp="https://purl.org/eudpp#"
-     xmlns:vann1="http://purl.org/vocab/vann#"
-     xmlns:dcterms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="https://purl.org/eudpp/CONNECTOR">
-        <dcterms:created xml:lang="en">2025-02-27</dcterms:created>
-        <dcterms:creator xml:lang="en">Tarmo Robal</dcterms:creator>
         <dcterms:creator>Riina Maigre</dcterms:creator>
+        <dcterms:creator xml:lang="en">Tarmo Robal</dcterms:creator>
         <dcterms:description xml:lang="en">Connector (Bridge) module that only defines object properties between modules. The connector contains only object properties that have domain and range specified in different modules. 
 
 --
@@ -171,6 +149,11 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsSubstanceOfConcern">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#SubstanceOfConcern"/>
+        <rdfs:comment xml:lang="en">Linking the product to a substance of concern the product contains.
+
+Product is modelled in the EU DPP CO P_DPP module.
+Substance of concern is modelled in the EU DPP CO SOC module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Contains substance of concern</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -197,7 +180,7 @@ hasBackUpCopyHost object property range is defined in the EUDPP Core ontology  a
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
         <rdfs:comment xml:lang="en">Linking the product to the economic operator.
 
-hasEconomicOperator object property range is defined in the EUDPP Core ontology and suitable role classes (i.e. the Economic operator class) is defined in the ACTOR module.</rdfs:comment>
+hasEconomicOperator object property range is defined in the P_DPP ontology module and suitable role classes (i.e. the Economic operator class) is defined in the ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has economic operator</rdfs:label>
     </owl:ObjectProperty>
     
@@ -210,7 +193,7 @@ hasEconomicOperator object property range is defined in the EUDPP Core ontology 
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
         <rdfs:comment xml:lang="en">Linking DPP with its issuer. 
 
-hasIssuer object property range is defined in the EUDPP Core ontology and suitable role classes are defined in the ACTOR module.</rdfs:comment>
+hasIssuer object property range is defined in the P_DPP ontology module and suitable role classes are defined in the ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has issuer</rdfs:label>
     </owl:ObjectProperty>
     
@@ -223,7 +206,7 @@ hasIssuer object property range is defined in the EUDPP Core ontology and suitab
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
         <rdfs:comment xml:lang="en">A product has a manufacturer.
 
-hasManufacturer object property range is defined in the EUDPP Core ontology and suitable role classes are defined in the ACTOR module.</rdfs:comment>
+hasManufacturer object property range is defined in the P_DPP ontology module and suitable role classes are defined in the ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has manufacturer</rdfs:label>
     </owl:ObjectProperty>
     
@@ -245,306 +228,7 @@ hasManufacturer object property range is defined in the EUDPP Core ontology and 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#inContextOfDPP">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#DPP"/>
-        <rdfs:comment xml:lang="en">Relates the actor role assignment to a specific Digital Product Passport instance (from Product and DPP module).</rdfs:comment>
-        <rdfs:label xml:lang="en">In context of DPP</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#inContextOfProduct -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#inContextOfProduct">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:comment xml:lang="en">Relates the actor role assignment to a specific product (from Product and DPP module).</rdfs:comment>
-        <rdfs:label xml:lang="en">In context of product</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#representsManufacturerForProduct -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#representsManufacturerForProduct">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#AuthorisedRepresentationAssignment"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:comment xml:lang="en">Indicates which product(s) the authorised representative&apos;s mandate covers.</rdfs:comment>
-        <rdfs:label xml:lang="en">Represents manufacturer for product</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://purl.org/eudpp#Actor -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#Actor">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#ActorRoleAssignment -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#ActorRoleAssignment">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#AuthorisedRepresentationAssignment -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#AuthorisedRepresentationAssignment">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#DPP -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#DPP">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/P_DPP"/>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#Event -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#Event">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/EVENT"/>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#Product -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#Product">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/P_DPP"/>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#SubstanceOfConcern -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#SubstanceOfConcern">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/SOC"/>
-    </owl:Class>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
-
- the user.</dcterms:description>
-        <dcterms:issued xml:lang="en">2026-02-28</dcterms:issued>
-        <dcterms:licence xml:lang="en">Except otherwise noted, original content on this document is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence, once published.</dcterms:licence>
-        <dcterms:title xml:lang="en">Connector module of the EU DPP core ontology proposed by the CIRPASS-2 project.</dcterms:title>
-        <rdfs:comment xml:lang="en">EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
-        <rdfs:label xml:lang="en">Connector module of the EU DPP core ontology proposal of the CIRPASS-2 project.</rdfs:label>
-        <owl:versionInfo>1.9.0</owl:versionInfo>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/dc/terms/contributor -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/created -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/description -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/identifier -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/identifier"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/issued -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/licence -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/licence"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/references -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/references"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/source -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann#preferredNamespacePrefix -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann#preferredNamespacePrefix"/>
-    
-
-
-    <!-- https://purl.org/eudpp#isMandatory -->
-
-    <owl:AnnotationProperty rdf:about="https://purl.org/eudpp#isMandatory"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://purl.org/eudpp#containsSubstanceOfConcern -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsSubstanceOfConcern">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#SubstanceOfConcern"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#hasBackUpCopyHost -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasBackUpCopyHost">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <dcterms:references>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:references>
-        <dcterms:source>ESPR Annex III</dcterms:source>
-        <rdfs:comment xml:lang="en">The reference of the digital product passport service provider hosting the back-up copy of the digital product passport (ESPR Annex III)
-
-hasBackUpCopyHost object property range is defined in the EUDPP Core ontology  and suitable role classes are defined in the ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has back-up-copy host</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#hasEconomicOperator -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEconomicOperator">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">Linking the product to the economic operator.
-
-hasEconomicOperator object property range is defined in the EUDPP Core ontology and suitable role classes (i.e. the Economic operator class) is defined in the ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has economic operator</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#hasIssuer -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasIssuer">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">Linking DPP with its issuer. 
-
-hasIssuer object property range is defined in the EUDPP Core ontology and suitable role classes are defined in the ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has issuer</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#hasManufacturer -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasManufacturer">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">A product has a manufacturer.
-
-hasManufacturer object property range is defined in the EUDPP Core ontology and suitable role classes are defined in the ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has manufacturer</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#inContextOfActivity -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#inContextOfActivity">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Event"/>
-        <rdfs:comment xml:lang="en">Relates the actor role assignment to a specific lifecycle activity, such as a repair or recycling event (from the Event module).</rdfs:comment>
-        <rdfs:label xml:lang="en">In context of activity</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#inContextOfDPP -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#inContextOfDPP">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#DPP"/>
-        <rdfs:comment xml:lang="en">Relates the actor role assignment to a specific Digital Product Passport instance (from Product and DPP module).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Relates the actor role assignment to a specific Digital Product Passport instance (from Product and DPP module P_DPP).</rdfs:comment>
         <rdfs:label xml:lang="en">In context of DPP</rdfs:label>
     </owl:ObjectProperty>
     
