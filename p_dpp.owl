@@ -33,7 +33,7 @@ CHANGES FEB 2026
 1. Alignment with design principles
 2. skos:exactMatch for Product changed to more appropriate skos:closeMatch
 3. Renamed uniqueProductID to uniqueProductIdentifier
-4. Added uniqueProductIndentifierScheme
+4. Added uniqueProductIdentifierScheme
 5. Removed #facilityID. Now described through ACTOR module.
 6. #Document renamed to #DocumentFormattedProperty
 7. The following object properties were removed and added to connector:
@@ -611,12 +611,12 @@ Value is xsd:string that is formatted as a URL,  where to fetch the file.</rdfs:
     
 
 
-    <!-- https://w3id.org/eudpp#uniqueProductIndentifierScheme -->
+    <!-- https://w3id.org/eudpp#uniqueProductIdentifierScheme -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/eudpp#uniqueProductIndentifierScheme">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eudpp#uniqueProductIdentifierScheme">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The coding scheme used for the uniqueProductIndentifier. 
+        <rdfs:comment>The coding scheme used for the uniqueProductIdentifier. 
 Specific scheme specified by ESPR delegated acts, or similar, for sectorial usage</rdfs:comment>
         <rdfs:label xml:lang="en">Unique product identifier scheme</rdfs:label>
     </owl:DatatypeProperty>
