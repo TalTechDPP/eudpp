@@ -18,18 +18,27 @@
         <dcterms:creator xml:lang="en">Riina Maigre</dcterms:creator>
         <dcterms:description xml:lang="en">Actor module of an EU DPP core ontology proposal of the CIRPASS-2 European project.
 
-        DEPENDENCIES:  This module has dependencies to the following EU DPP Core Ontology modules: P_DPP, EVENT.  
+DEPENDENCIES:  This module has dependencies to the following EU DPP Core Ontology modules: CON, P_DPP, EVENT.  
 
 For more information, see 
-Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). Ontology Requirements Specification for an EU DPP Core Ontology Proposal (1.1). CIRPASS-2 Consortium. https://doi.org/10.5281/zenodo.15270342</dcterms:description>
+Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). Ontology Requirements Specification for an EU DPP Core Ontology Proposal (1.1). CIRPASS-2 Consortium. https://doi.org/10.5281/zenodo.15270342
+
+=======================
+CHANGES FEB 2026
+1. Applied CEON-inspired design principles.
+2. Modelled several Actor properties using schema.org properties, such as address, email, telephone, url, geo.
+3. Changed Role class hierarchy.
+
+        </dcterms:description>
         <dcterms:issued>2025-03-14</dcterms:issued>
-        <dcterms:license xml:lang="en">Except otherwise noted, original content on this document is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence.</dcterms:license>
+        <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
+        <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
+In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
         <dcterms:modified>2026-02-27</dcterms:modified>
         <dcterms:title xml:lang="en">Actors and roles module for an EU DPP core ontology proposed by CIRPASS-2 European project.</dcterms:title>
         <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
-        <rdfs:comment xml:lang="en">The second iteration of the Actor module of an EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
-        <rdfs:comment xml:lang="en">This document is ongoing work and provided as-is with no warranties whatsoever.</rdfs:comment>
-        <rdfs:label xml:lang="en">Actors and roles module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:label>
+        <rdfs:comment xml:lang="en">The Actor module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
+        <rdfs:label xml:lang="en">EU DPP CO ACTOR</rdfs:label>
         <owl:versionInfo>1.9.1</owl:versionInfo>
     </owl:Ontology>
     
@@ -247,6 +256,7 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
 
     <owl:ObjectProperty rdf:about="https://schema.org/address">
         <rdfs:comment xml:lang="en">Links an Actor or Facility to its postal address, represented as a schema:PostalAddress</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/address"/>
         <rdfs:label xml:lang="en">Has address</rdfs:label>
     </owl:ObjectProperty>
     
@@ -255,7 +265,8 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
     <!-- https://schema.org/geo -->
 
     <owl:ObjectProperty rdf:about="https://schema.org/geo">
-        <rdfs:comment xml:lang="en">Linkes facility to its coordinates, represented as schema:geo.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Links facility to its coordinates, represented as schema:geo.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/geo"/>
         <rdfs:label xml:lang="en">Has coordinates</rdfs:label>
     </owl:ObjectProperty>
     
@@ -337,6 +348,16 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
         <rdfs:comment xml:lang="en">Unique facility identifier means a unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain; [ESPR Art 2 (33)] </rdfs:comment>
         <rdfs:label xml:lang="en">Unique facility identifier</rdfs:label>
     </owl:DatatypeProperty>
+
+        <!-- https://w3id.org/eudpp#uniqueFacilityIdentifierScheme -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eudpp#uniqueFacilityIdentifierScheme">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The coding scheme used for the uniqueFacilityIdentifier. 
+Specific scheme specified by ESPR delegated acts, or similar, for sectorial usage</rdfs:comment>
+        <rdfs:label xml:lang="en">Unique facility identifier scheme</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -350,6 +371,16 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
         <rdfs:comment xml:lang="en">Unique operator identifier means a unique string of characters for the identification of an actor involved in a product’s value chain; [ESPR Art. 2 (31)]</rdfs:comment>
         <rdfs:label xml:lang="en">Unique operator ID</rdfs:label>
     </owl:DatatypeProperty>
+
+        <!-- https://w3id.org/eudpp#uniqueOperatorIdentifierScheme -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eudpp#uniqueOperatorIdentifierScheme">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The coding scheme used for the uniqueOperatorIdentifier. 
+Specific scheme specified by ESPR delegated acts, or similar, for sectorial usage</rdfs:comment>
+        <rdfs:label xml:lang="en">Unique operator identifier scheme</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -358,6 +389,7 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
     <owl:DatatypeProperty rdf:about="https://schema.org/email">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Links an Actor to its email address.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/email"/>
         <rdfs:label xml:lang="en">Has email</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -368,6 +400,7 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
     <owl:DatatypeProperty rdf:about="https://schema.org/latitude">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">Links facility to its coordinates. Part of schema:geo.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/latitude"/>
         <rdfs:label xml:lang="en">latitude</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -378,6 +411,7 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
     <owl:DatatypeProperty rdf:about="https://schema.org/longitude">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">Links facility to its coordinates. Part of schema:geo.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/longitude"/>
         <rdfs:label xml:lang="en">longitude</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -388,6 +422,7 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
     <owl:DatatypeProperty rdf:about="https://schema.org/telephone">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Links an Actor to its phone.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/telephone"/>
         <rdfs:label xml:lang="en">Has phone</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -398,6 +433,7 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
     <owl:DatatypeProperty rdf:about="https://schema.org/url">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">The official website or webpage of the actor.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/url"/>
         <rdfs:label xml:lang="en">URL</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -416,7 +452,9 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
 
     <!-- http://purl.org/dc/terms#Location -->
 
-    <owl:Class rdf:about="http://purl.org/dc/terms#Location"/>
+    <owl:Class rdf:about="http://purl.org/dc/terms#Location">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/dc/terms#Location"/>
+    </owl:Class>
     
 
 
@@ -596,13 +634,16 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/GeoCoordinates"/>
     </owl:Class>
     
 
 
     <!-- https://schema.org/PostalAddress -->
 
-    <owl:Class rdf:about="https://schema.org/PostalAddress"/>
+    <owl:Class rdf:about="https://schema.org/PostalAddress">
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/PostalAddress"/>
+    </owl:Class>
     
 
 
