@@ -189,7 +189,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isEstablishedIn">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#LegalPerson"/>
-        <rdfs:range rdf:resource="http://purl.org/dc/terms#Location"/>
+        <rdfs:range rdf:resource="https://purl.org/dc/terms#Location"/>
         <rdfs:comment xml:lang="en">Relates a legal person to the location where it is established.</rdfs:comment>
         <rdfs:label xml:lang="en">Is established in</rdfs:label>
     </owl:ObjectProperty>
@@ -453,7 +453,7 @@ Specific scheme specified by ESPR delegated acts, or similar, for sectorial usag
     <!-- http://purl.org/dc/terms#Location -->
 
     <owl:Class rdf:about="http://purl.org/dc/terms#Location">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/dc/terms#Location"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms#Location"/>
     </owl:Class>
     
 
