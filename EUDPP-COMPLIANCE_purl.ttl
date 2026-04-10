@@ -42,7 +42,7 @@ Additional User Stories 4.2 Increase trust: \"As an End User, I want a trust sco
 
 ###  https://purl.org/eudpp/COMPLIANCE#conformityDeclaredTo
 :conformityDeclaredTo rdf:type owl:ObjectProperty ;
-                      rdfs:domain <https://w3id.org/eudpp#Product> ;
+                      rdfs:domain <https://purl.org/eudpp#Product> ;
                       rdfs:range [ rdf:type owl:Restriction ;
                                    owl:onProperty :conformityDeclaredTo ;
                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -88,14 +88,14 @@ Additional User Stories 4.2 Increase trust: \"As an End User, I want a trust sco
                              rdfs:range [ rdf:type owl:Restriction ;
                                           owl:onProperty :hasManufacturer ;
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                          owl:onClass <https://w3id.org/eudpp#AuthorisedRepresentationAssignment>
+                                          owl:onClass <https://purl.org/eudpp#AuthorisedRepresentationAssignment>
                                         ] ;
                              rdfs:comment "candidate for connector module but the Actor and Representative Classes are also required part of EU Declaration of Conformity!" .
 
 
 ###  https://purl.org/eudpp/COMPLIANCE/hasEUDeclartionOfConformity
 :hasEUDeclartionOfConformity rdf:type owl:ObjectProperty ;
-                             rdfs:domain <https://w3id.org/eudpp#Product> ;
+                             rdfs:domain <https://purl.org/eudpp#Product> ;
                              rdfs:range :EUDeclarationOfConformity ;
                              rdfs:comment "candidate for connector module" .
 
@@ -107,7 +107,7 @@ Additional User Stories 4.2 Increase trust: \"As an End User, I want a trust sco
                  rdfs:range [ rdf:type owl:Restriction ;
                               owl:onProperty :hasManufacturer ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass <https://w3id.org/eudpp#Actor>
+                              owl:onClass <https://purl.org/eudpp#Actor>
                             ] ;
                  rdfs:comment "The manufacturer associated to the EU Declaration of Conformity" ,
                               "candidate for connector module but the Actor and Representative Classes are also required part of EU Declaration of Conformity!" .
@@ -135,7 +135,7 @@ Additional User Stories 4.2 Increase trust: \"As an End User, I want a trust sco
 
 ###  https://purl.org/eudpp/COMPLIANCE/isConformWith
 :isConformWith rdf:type owl:ObjectProperty ;
-               rdfs:domain <https://w3id.org/eudpp#Product> ,
+               rdfs:domain <https://purl.org/eudpp#Product> ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasEUDeclartionOfConformity ;
                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
