@@ -1,0 +1,391 @@
+@prefix : <https://purl.org/eudpp/COMPLIANCE/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://purl.org/eudpp/COMPLIANCE/> .
+
+<https://purl.org/eudpp/COMPLIANCE> rdf:type owl:Ontology ;
+                                     owl:versionIRI <https://purl.org/eudpp/COMPLIANCE/1.0.0> ;
+                                     owl:imports <https://purl.org/eudpp/ACTOR> ,
+                                                 <https://purl.org/eudpp/P_DPP> ;
+                                     rdfs:comment """Draft version 1;
+
+Questions;
+1) The Ontology is not indipendent of the Product and Actor Ontology. Moving relevant object properties to the connector module would include hasProduct, hasManufacturer, hasAuthorizedRepresentative, isConfromWith, hasEuDeclarationOfConformity ( and has Notified Body)
+
+2) Notified Body may be an additional role in the actors ontology. Derived from Conformity Assessment Body.
+
+3) EU Declaration of conformity is provided for individual products, not for product model groups. We defined a data property for the individual product ID, but there may be a general conflict of the CIRPASS 2 scope to define DPPs only for product groups. Issuing a EU Declaration of Conformity for a product group with the same model would be illegal according to EU legislation.
+
+4) The current ontology design considering indipendent modules would imply, that all relevant information needed for the EU Declaration of Conformity is distributed across many modules. EU Declarations of conformity can only be extracted from the DPP and used in other applications by importing the whole DPP ontology (or at least, Product, Actor and EU DoC and Connector Module) ontologies. In this sense, the EU DoC Module would not represent a self-contained ontology for Declarations of Conformity."""@en ,
+                                                  """Competency questions based on monitoring compliance and trust (user stories 4.2, 5)
+
+Q1: Is the provided notified body allowed to test conformity according to the applied union law?
+
+Q2: Is product requirement A relevant for union law B?
+
+Q3: Is module X applicable in context of regulation y?
+
+Q4: Does the EU DoC contain all relevant assessments for regulations x,y,z?
+
+At the moment, these questions cannot be answered, as it would require a wider development of individuals for notified bodies, regulations, assessment modules etc. which also need to be interlinked. But allowing to answer these questions, would be a game changer for market surveilance.
+
+User Story 5 Description: \"As a Public Authority, I want to retrieve a collection of DPPs using the EU Registry and Web Portal, so that I can perform my legal duties, such as monitoring compliance.\"
+
+Additional User Stories 4.2 Increase trust: \"As an End User, I want a trust score for the entities that create DPPs, so that I get an indication for how trustworthy a DPP is.\"""" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://purl.org/eudpp/COMPLIANCE#conformityDeclaredTo
+:conformityDeclaredTo rdf:type owl:ObjectProperty ;
+                      rdfs:domain <https://w3id.org/eudpp#Product> ;
+                      rdfs:range [ rdf:type owl:Restriction ;
+                                   owl:onProperty :conformityDeclaredTo ;
+                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :UnionHarmonisationLegislation
+                                 ] ;
+                      rdfs:comment "candidate for connector module" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/accordingTo
+:accordingTo rdf:type owl:ObjectProperty ;
+             rdfs:domain :Certificate ;
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty :accordingTo ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :ConformityAssessmentModule
+                        ] ;
+             rdfs:comment "Property defining for which NLF modules the certificate is issed" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/allowsConformityAssessmentModule
+:allowsConformityAssessmentModule rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :UnionHarmonisationLegislation ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :allowsConformityAssessmentModule ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :UnionHarmonisationLegislation
+                                              ] .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/conformityAssessedBy
+:conformityAssessedBy rdf:type owl:ObjectProperty ;
+                      rdfs:domain :UnionHarmonisationLegislation ;
+                      rdfs:range [ rdf:type owl:Restriction ;
+                                   owl:onProperty :conformityAssessedBy ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :NotifiedBody
+                                 ] .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/hasAuthorisedRepresentative
+:hasAuthorisedRepresentative rdf:type owl:ObjectProperty ;
+                             rdfs:domain :EUDeclarationOfConformity ;
+                             rdfs:range [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasManufacturer ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass <https://w3id.org/eudpp#AuthorisedRepresentationAssignment>
+                                        ] ;
+                             rdfs:comment "candidate for connector module but the Actor and Representative Classes are also required part of EU Declaration of Conformity!" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/hasEUDeclartionOfConformity
+:hasEUDeclartionOfConformity rdf:type owl:ObjectProperty ;
+                             rdfs:domain <https://w3id.org/eudpp#Product> ;
+                             rdfs:range :EUDeclarationOfConformity ;
+                             rdfs:comment "candidate for connector module" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/hasManufacturer
+:hasManufacturer rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :EUDeclarationOfConformity ;
+                 rdfs:range [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasManufacturer ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass <https://w3id.org/eudpp#Actor>
+                            ] ;
+                 rdfs:comment "The manufacturer associated to the EU Declaration of Conformity" ,
+                              "candidate for connector module but the Actor and Representative Classes are also required part of EU Declaration of Conformity!" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/hasNotifiedBody
+:hasNotifiedBody rdf:type owl:ObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasNotifiedBody ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :NotifiedBody
+                             ] .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/hasUnionHarmonizedLegislation
+:hasUnionHarmonizedLegislation rdf:type owl:ObjectProperty ;
+                               rdfs:domain :EUDeclarationOfConformity ;
+                               rdfs:range [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasUnionHarmonizedLegislation ;
+                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :UnionHarmonisationLegislation
+                                          ] ;
+                               rdfs:comment "we think of defining an individual \"union law for CE marking\". All laws listed in the EU Declaration of Conformity are technically relevant for CE marking." .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/isConformWith
+:isConformWith rdf:type owl:ObjectProperty ;
+               rdfs:domain <https://w3id.org/eudpp#Product> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEUDeclartionOfConformity ;
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :UnionHarmonisationLegislation
+                           ] ;
+               rdfs:comment "candidate for connector module but the link to the applied legislation are also required part of EU Declaration of Conformity!" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/isNotifiedFor
+:isNotifiedFor rdf:type owl:ObjectProperty ;
+               rdfs:domain :NotifiedBody ;
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty :isNotifiedFor ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :UnionHarmonisationLegislation
+                          ] .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/issuesCertificate
+:issuesCertificate rdf:type owl:ObjectProperty ;
+                   rdfs:domain :NotifiedBody ;
+                   rdfs:range [ rdf:type owl:Restriction ;
+                                owl:onProperty :issuesCertificate ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Certificate
+                              ] .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/performedAssessmentAccordingTo
+:performedAssessmentAccordingTo rdf:type owl:ObjectProperty ;
+                                rdfs:domain :NotifiedBody ;
+                                rdfs:range [ rdf:type owl:Restriction ;
+                                             owl:onProperty :performedAssessmentAccordingTo ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :ConformityAssessmentModule
+                                           ] .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/usedForPresumptionOfConformity
+:usedForPresumptionOfConformity rdf:type owl:ObjectProperty ;
+                                rdfs:domain :ProductRequirement ;
+                                rdfs:range [ rdf:type owl:Restriction ;
+                                             owl:onProperty :usedForPresumptionOfConformity ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :UnionHarmonisationLegislation
+                                           ] .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://purl.org/eudpp/COMPLIANCE#nameOfBody
+:nameOfBody rdf:type owl:DatatypeProperty ;
+            rdfs:domain :NotifiedBody ;
+            rdfs:range xsd:string .
+
+
+###  https://purl.org/eudpp/COMPLIANCE#uniqueProductInstanceIdentifier
+:uniqueProductInstanceIdentifier rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :EUDeclarationOfConformity ;
+                                 rdfs:range [ rdf:type rdfs:Datatype ;
+                                              owl:unionOf ( xsd:anyURI
+                                                            xsd:string
+                                                          )
+                                            ] ;
+                                 rdfs:comment "I like to define that this property must be provided exactly one time." .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/assignedELI
+:assignedELI rdf:type owl:DatatypeProperty ;
+             rdfs:domain :UnionHarmonisationLegislation ;
+             rdfs:range xsd:anyURI .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/certificateNumber
+:certificateNumber rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Certificate ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Number of the certificate" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/certificateRevisionNumber
+:certificateRevisionNumber rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Certificate ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Number of the revision of a certificate" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/nando
+:nando rdf:type owl:DatatypeProperty ;
+       rdfs:domain :NotifiedBody ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://purl.org/eudpp/COMPLIANCE#HarmonizedStandard
+:HarmonizedStandard rdf:type owl:Class ;
+                    rdfs:subClassOf :ProductRequirement .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/AuthorizedRepresentative
+:AuthorizedRepresentative rdf:type owl:Class .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/Certificate
+:Certificate rdf:type owl:Class .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/CommonSpecification
+:CommonSpecification rdf:type owl:Class ;
+                     rdfs:subClassOf :ProductRequirement .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/ConformityAssessmentModule
+:ConformityAssessmentModule rdf:type owl:Class ;
+                            rdfs:comment "is an intervention" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/EUDeclarationOfConformity
+:EUDeclarationOfConformity rdf:type owl:Class ;
+                           rdfs:subClassOf owl:Thing ;
+                           rdfs:comment "Discussion: added data property for uniwue product instance identifier. Also EU DoC recommends to consider properties such as image and description. Add these as additional data properties to this class?" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/NotifiedBody
+:NotifiedBody rdf:type owl:Class ;
+              rdfs:comment """Candidate for role in Actor Ontology?
+May be subclass of conformity assessment body""" ,
+                           "May also require to create list of all individual Notified Bodies to answer some competnecy questions in context of EU Declaration of Conformity" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/OtherTechnicalSpecification
+:OtherTechnicalSpecification rdf:type owl:Class ;
+                             rdfs:subClassOf :ProductRequirement .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/ProductRequirement
+:ProductRequirement rdf:type owl:Class ;
+                    rdfs:comment "Similar to legislation, standards for product requirements may better be put as individuals in the ontology in some future version to prevent missmatching individuals created by EOs." .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/UnionHarmonisationLegislation
+:UnionHarmonisationLegislation rdf:type owl:Class ;
+                               rdfs:comment """DPP needs to define individuals of this class -> Risk of multiple versions of same object. Thus may be reuired, that this ontology defines individuals for all ELI Objects or imports ELI Ontology http://publications.europa.eu/
+resource/dataset/cdm""" ,
+                                            "can be a directive, regulation, delegate act, etc." .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleA
+:moduleA rdf:type owl:NamedIndividual ,
+                  :ConformityAssessmentModule ;
+         rdfs:comment "Decision No 768/2008/EC module A" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleA1
+:moduleA1 rdf:type owl:NamedIndividual ,
+                   :ConformityAssessmentModule ;
+          rdfs:comment "Decision No 768/2008/EC module A1" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleA2
+:moduleA2 rdf:type owl:NamedIndividual ,
+                   :ConformityAssessmentModule ;
+          rdfs:comment "Decision No 768/2008/EC module A2" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleB
+:moduleB rdf:type owl:NamedIndividual ,
+                  :ConformityAssessmentModule ;
+         rdfs:comment "Decision No 768/2008/EC module B" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleC
+:moduleC rdf:type owl:NamedIndividual ,
+                  :ConformityAssessmentModule ;
+         rdfs:comment "Decision No 768/2008/EC module C" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleC1
+:moduleC1 rdf:type owl:NamedIndividual ,
+                   :ConformityAssessmentModule ;
+          rdfs:comment "Decision No 768/2008/EC module C1" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleC2
+:moduleC2 rdf:type owl:NamedIndividual ,
+                   :ConformityAssessmentModule ;
+          rdfs:comment "Decision No 768/2008/EC module C2" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleD
+:moduleD rdf:type owl:NamedIndividual ,
+                  :ConformityAssessmentModule ;
+         rdfs:comment "Decision No 768/2008/EC module D" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleD1
+:moduleD1 rdf:type owl:NamedIndividual ,
+                   :ConformityAssessmentModule ;
+          rdfs:comment "Decision No 768/2008/EC module D1" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleE
+:moduleE rdf:type owl:NamedIndividual ,
+                  :ConformityAssessmentModule ;
+         rdfs:comment "Decision No 768/2008/EC module E" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleE1
+:moduleE1 rdf:type owl:NamedIndividual ,
+                   :ConformityAssessmentModule ;
+          rdfs:comment "Decision No 768/2008/EC module E1" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleF
+:moduleF rdf:type owl:NamedIndividual ,
+                  :ConformityAssessmentModule ;
+         rdfs:comment "Decision No 768/2008/EC module F" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleF1
+:moduleF1 rdf:type owl:NamedIndividual ,
+                   :ConformityAssessmentModule ;
+          rdfs:comment "Decision No 768/2008/EC module F1" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleG
+:moduleG rdf:type owl:NamedIndividual ,
+                  :ConformityAssessmentModule ;
+         rdfs:comment "Decision No 768/2008/EC module G" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleH
+:moduleH rdf:type owl:NamedIndividual ,
+                  :ConformityAssessmentModule ;
+         rdfs:comment "Decision No 768/2008/EC moduleH" .
+
+
+###  https://purl.org/eudpp/COMPLIANCE/moduleH1
+:moduleH1 rdf:type owl:NamedIndividual ,
+                   :ConformityAssessmentModule ;
+          rdfs:comment "Decision No 768/2008/EC module H1" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
