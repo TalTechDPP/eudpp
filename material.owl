@@ -160,6 +160,15 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
+    <!-- https://purl.org/eudpp/#hasMaterialOrigin -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp/#hasMaterialOrigin">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#MaterialOfComposition"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#MaterialOrigin"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
