@@ -147,7 +147,14 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <!-- https://purl.org/eudpp#containsSubstanceOfConcern -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsSubstanceOfConcern">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#MaterialOfComposition"/>
+                    <rdf:Description rdf:about="https://purl.org/eudpp#Product"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://purl.org/eudpp#SubstanceOfConcern"/>
         <rdfs:comment xml:lang="en">Linking the product to a substance of concern the product contains.
 
@@ -213,18 +220,6 @@ Product is modelled in the EU DPP CO P_DPP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has manufacturer</rdfs:label>
     </owl:ObjectProperty>
-
-    <!-- https://purl.org/eudpp#isConnectedTo -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isConnectedTo">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
-        <rdfs:comment xml:lang="en">A DPP is connected to a facility.
-
-DPP is modelled in the EU DPP CO P_DPP module.
-Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Is connected to</rdfs:label>
-    </owl:ObjectProperty>
     
 
 
@@ -272,6 +267,20 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#isConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isConnectedTo">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
+        <rdfs:comment xml:lang="en">A DPP is connected to a facility.
+
+DPP is modelled in the EU DPP CO P_DPP module.
+Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Is connected to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#representsManufacturerForProduct -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#representsManufacturerForProduct">
@@ -282,6 +291,18 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 AuthorisedRepresentationAssignment is modelled in the EU DPP CO ACTOR module.
 Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
         <rdfs:label xml:lang="en">Represents manufacturer for product</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp/#hasMaterial -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp/#hasMaterial">
+        <rdfs:comment xml:lang="en">Linking the Product to a MaterialOfComposition.
+
+Product is modelled in the EU DPP CO P_DPP module.
+MaterialOfComposition is modelled in the EU DPP CO MAT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has material</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -318,12 +339,6 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     <owl:Class rdf:about="https://purl.org/eudpp#AuthorisedRepresentationAssignment">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
     </owl:Class>
-
-    <!-- https://purl.org/eudpp#Facility -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#Facility">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
-    </owl:Class>
     
 
 
@@ -339,6 +354,22 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#Event">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/EVENT"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#Facility -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#Facility">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#MaterialOfComposition -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#MaterialOfComposition">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/MAT</rdfs:isDefinedBy>
     </owl:Class>
     
 
