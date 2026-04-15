@@ -18,6 +18,7 @@
         <owl:imports rdf:resource="https://purl.org/eudpp/CON"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/P_DPP"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/SOC"/>
+        <owl:imports rdf:resource="https://purl.org/eudpp/MAT"/>
         <dcterms:contributor xml:lang="en">Hele-Mai Haav</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Riina Maigre</dcterms:contributor>
         <dcterms:created xml:lang="en">2025-02-27</dcterms:created>
@@ -27,7 +28,7 @@
 --
 THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
 All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
-        <dcterms:issued xml:lang="en">2026-02-28</dcterms:issued>
+        <dcterms:issued xml:lang="en">2026-04-15</dcterms:issued>
         <dcterms:licence rdf:resource="http://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:licence xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:licence>
@@ -35,7 +36,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann1:preferredNamespacePrefix>eudpp</vann1:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The CORE of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CORE</rdfs:label>
-        <owl:versionInfo>1.9.1</owl:versionInfo>
+        <owl:versionInfo>1.9.2</owl:versionInfo>
     </owl:Ontology>
     
 
