@@ -155,22 +155,22 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
+    <!-- https://purl.org/eudpp#hasGranularity -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasGranularity">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#IdentifierGranularity"/>
+        <rdfs:comment xml:lang="en">Defines the granularity of an identifier, if exists.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasScheme -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasScheme">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <rdfs:comment>The scheme/standard the Identifier follows</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp/#hasGranularity -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp/#hasGranularity">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp/#IdentifierGranularity"/>
-        <rdfs:comment xml:lang="en">Defines the granularity of an identifier, if exists.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -186,12 +186,42 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
+    <!-- https://purl.org/eudpp#identifierValue -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#identifierValue">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The (unique) value of the identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://purl.org/eudpp#schemeAbbreviation -->
 
     <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#schemeAbbreviation">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Abbreviation used for the scheme/standard</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#schemeDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#schemeDescription">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Description and/or examples of ther scheme/standard.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#schemeName -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#schemeName">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The name of the scheme or standard.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -213,36 +243,6 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
-    <!-- https://purl.org/eudpp/#identifierValue -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp/#identifierValue">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The (unique) value of the identifier.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://purl.org/eudpp/#schemeDescription -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp/#schemeDescription">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Description and/or examples of ther scheme/standard.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://purl.org/eudpp/#schemeName -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp/#schemeName">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The name of the scheme or standard.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -257,8 +257,44 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#ProductIdentifierScheme"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
     </rdf:Description>
+    
+
+
+    <!-- https://purl.org/eudpp#ActorIdentifier -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ActorIdentifier">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#DPPIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <rdfs:label xml:lang="en">Actor identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ActorIdentifierScheme -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ActorIdentifierScheme">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifierScheme"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
+        <rdfs:label xml:lang="en">Actor identifier scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#DPPIdentifier -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#DPPIdentifier">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <rdfs:label xml:lang="en">DPP identifier</rdfs:label>
+    </owl:Class>
     
 
 
@@ -267,6 +303,15 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <owl:Class rdf:about="https://purl.org/eudpp#Identifier">
         <rdfs:comment xml:lang="en">Identifier. A general class to hold different kinds of identifiers described and used for EU DPP CO. Each sub-class of this class describes a different kind of identifier. Intentionally modelled as sub-classes. 
 Identifiers have value, and a scheme/standard they are based on.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#IdentifierGranularity -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#IdentifierGranularity">
+        <rdfs:comment xml:lang="en">The granularity of the identifier. For example, for Productys this could be model, batch, item.</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifier granularity</rdfs:label>
     </owl:Class>
     
 
@@ -280,127 +325,82 @@ Identifiers have value, and a scheme/standard they are based on.</rdfs:comment>
     
 
 
-    <!-- https://purl.org/eudpp/#ActorIdentifier -->
+    <!-- https://purl.org/eudpp#MaterialIdentifier -->
 
-    <owl:Class rdf:about="https://purl.org/eudpp/#ActorIdentifier">
+    <owl:Class rdf:about="https://purl.org/eudpp#MaterialIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#DPPIdentifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#MaterialIdentifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#ProductIdentifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#SoCIdentifier"/>
-        <rdfs:label xml:lang="en">Actor identifier</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp/#ActorIdentifierScheme -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp/#ActorIdentifierScheme">
-        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#ProductIdentifierScheme"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/IDENT#MaterialIdentifierScheme"/>
-        <rdfs:label xml:lang="en">Actor identifier scheme</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp/#DPPIdentifier -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp/#DPPIdentifier">
-        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#MaterialIdentifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#ProductIdentifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#SoCIdentifier"/>
-        <rdfs:label xml:lang="en">DPP identifier</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp/#IdentifierGranularity -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp/#IdentifierGranularity">
-        <rdfs:comment xml:lang="en">The granularity of the identifier. For example, for Productys this could be model, batch, item.</rdfs:comment>
-        <rdfs:label xml:lang="en">Identifier granularity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp/#MaterialIdentifier -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp/#MaterialIdentifier">
-        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#ProductIdentifier"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#SoCIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
         <rdfs:label xml:lang="en">Material identifier</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/eudpp/#ProductIdentifier -->
+    <!-- https://purl.org/eudpp#MaterialIdentifierScheme -->
 
-    <owl:Class rdf:about="https://purl.org/eudpp/#ProductIdentifier">
+    <owl:Class rdf:about="https://purl.org/eudpp#MaterialIdentifierScheme">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
+        <rdfs:label xml:lang="en">Material identifier scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ProductIdentifier -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ProductIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://purl.org/eudpp#hasScheme"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/eudpp/#ProductIdentifierScheme"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/eudpp/#hasGranularity"/>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasGranularity"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://purl.org/eudpp/#ProductIdentifierGranularity"/>
+                <owl:onClass rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/#SoCIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
         <rdfs:label xml:lang="en">Product identifier</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/eudpp/#ProductIdentifierGranularity -->
+    <!-- https://purl.org/eudpp#ProductIdentifierGranularity -->
 
-    <owl:Class rdf:about="https://purl.org/eudpp/#ProductIdentifierGranularity">
+    <owl:Class rdf:about="https://purl.org/eudpp#ProductIdentifierGranularity">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://purl.org/eudpp/#batch"/>
-                    <rdf:Description rdf:about="https://purl.org/eudpp/#item"/>
-                    <rdf:Description rdf:about="https://purl.org/eudpp/#model"/>
+                    <rdf:Description rdf:about="https://purl.org/eudpp#batch"/>
+                    <rdf:Description rdf:about="https://purl.org/eudpp#item"/>
+                    <rdf:Description rdf:about="https://purl.org/eudpp#model"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp/#IdentifierGranularity"/>
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierGranularity"/>
         <rdfs:label xml:lang="en">Product identifier granularity</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/eudpp/#ProductIdentifierScheme -->
+    <!-- https://purl.org/eudpp#ProductIdentifierScheme -->
 
-    <owl:Class rdf:about="https://purl.org/eudpp/#ProductIdentifierScheme">
+    <owl:Class rdf:about="https://purl.org/eudpp#ProductIdentifierScheme">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
-        <owl:disjointWith rdf:resource="https://purl.org/eudpp/IDENT#MaterialIdentifierScheme"/>
         <rdfs:label xml:lang="en">Product identifier scheme</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/eudpp/#SoCIdentifier -->
+    <!-- https://purl.org/eudpp#SoCIdentifier -->
 
-    <owl:Class rdf:about="https://purl.org/eudpp/#SoCIdentifier">
+    <owl:Class rdf:about="https://purl.org/eudpp#SoCIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
         <rdfs:label xml:lang="en">Substance of concern identifier</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp/IDENT#MaterialIdentifierScheme -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp/IDENT#MaterialIdentifierScheme">
-        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
-        <rdfs:label xml:lang="en">Material identifier scheme</rdfs:label>
     </owl:Class>
     
 
@@ -416,24 +416,23 @@ Identifiers have value, and a scheme/standard they are based on.</rdfs:comment>
     
 
 
-    <!-- https://purl.org/eudpp/#CAS -->
+    <!-- https://purl.org/eudpp#CAS -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#CAS">
-        <rdf:type rdf:resource="https://purl.org/eudpp/IDENT#MaterialIdentifierScheme"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#CAS">
+        <rdf:type rdf:resource="https://purl.org/eudpp#MaterialIdentifierScheme"/>
         <eudpp:schemeAbbreviation>CAS</eudpp:schemeAbbreviation>
-        <eudpp1:schemeDescription xml:lang="en">CAS Number (Chemical Abstracts Service)</eudpp1:schemeDescription>
-        <eudpp1:schemeName xml:lang="en">Chemical Abstracts Service</eudpp1:schemeName>
+        <eudpp:schemeDescription xml:lang="en">CAS Number (Chemical Abstracts Service)</eudpp:schemeDescription>
+        <eudpp:schemeName xml:lang="en">Chemical Abstracts Service</eudpp:schemeName>
         <rdfs:comment xml:lang="en">CAS Number (Chemical Abstracts Service)</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://purl.org/eudpp/#EORI -->
+    <!-- https://purl.org/eudpp#EORI -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#EORI">
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#EORI">
         <eudpp:schemeAbbreviation>EORI</eudpp:schemeAbbreviation>
-        <eudpp:schemeReference>https://taxation-customs.ec.europa.eu/customs/customs-procedures-import-and-export/customs-operations/economic-operators-registration-and-identification-number-eori_en</eudpp:schemeReference>
-        <eudpp1:schemeDescription xml:lang="en">Economic Operators Registration and Identification (EU).
+        <eudpp:schemeDescription xml:lang="en">Economic Operators Registration and Identification (EU).
 This is the EU’s official identifier for companies involved in import/export.
 Mandatory for any company trading with the EU.
 
@@ -442,77 +441,78 @@ Unique per company
 
 Format: country code + number (e.g., DE123456789)
 
-This is the most widely used identifier for economic operators in EU trade.</eudpp1:schemeDescription>
-        <eudpp1:schemeName xml:lang="en">Economic Operators Registration and Identification</eudpp1:schemeName>
+This is the most widely used identifier for economic operators in EU trade.</eudpp:schemeDescription>
+        <eudpp:schemeName xml:lang="en">Economic Operators Registration and Identification</eudpp:schemeName>
+        <eudpp:schemeReference>https://taxation-customs.ec.europa.eu/customs/customs-procedures-import-and-export/customs-operations/economic-operators-registration-and-identification-number-eori_en</eudpp:schemeReference>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://purl.org/eudpp/#GLN -->
+    <!-- https://purl.org/eudpp#GLN -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#GLN">
-        <rdf:type rdf:resource="https://purl.org/eudpp/#ActorIdentifierScheme"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#GLN">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ActorIdentifierScheme"/>
         <eudpp:schemeAbbreviation>GLN</eudpp:schemeAbbreviation>
+        <eudpp:schemeName>Global Location Number (GS1)</eudpp:schemeName>
         <eudpp:schemeReference>https://www.gs1.org/standards/id-keys/gln</eudpp:schemeReference>
-        <eudpp1:schemeName>Global Location Number (GS1)</eudpp1:schemeName>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://purl.org/eudpp/#GTIN -->
+    <!-- https://purl.org/eudpp#GTIN -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#GTIN">
-        <rdf:type rdf:resource="https://purl.org/eudpp/#ProductIdentifierScheme"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#GTIN">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
         <eudpp:schemeAbbreviation>GTIN</eudpp:schemeAbbreviation>
         <eudpp:schemeReference>https://www.gs1.org/standards/id-keys/gtin</eudpp:schemeReference>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://purl.org/eudpp/#LEI -->
+    <!-- https://purl.org/eudpp#LEI -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#LEI">
-        <rdf:type rdf:resource="https://purl.org/eudpp/#ActorIdentifierScheme"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#LEI">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ActorIdentifierScheme"/>
         <eudpp:schemeAbbreviation>LEI</eudpp:schemeAbbreviation>
-        <eudpp:schemeReference>https://www.iso.org/standard/78829.html</eudpp:schemeReference>
-        <eudpp1:schemeDescription>A 20‑character code used globally for financial and regulatory reporting.
+        <eudpp:schemeDescription>A 20‑character code used globally for financial and regulatory reporting.
 Required for companies involved in financial transactions
-Used by regulators, banks, customs, and some trade systems</eudpp1:schemeDescription>
-        <eudpp1:schemeName>Legal Entity Identifier</eudpp1:schemeName>
+Used by regulators, banks, customs, and some trade systems</eudpp:schemeDescription>
+        <eudpp:schemeName>Legal Entity Identifier</eudpp:schemeName>
+        <eudpp:schemeReference>https://www.iso.org/standard/78829.html</eudpp:schemeReference>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://purl.org/eudpp/#SKU -->
+    <!-- https://purl.org/eudpp#SKU -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#SKU">
-        <rdf:type rdf:resource="https://purl.org/eudpp/#ProductIdentifierScheme"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#SKU">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
         <eudpp:schemeAbbreviation>SKU</eudpp:schemeAbbreviation>
-        <eudpp1:schemeName>Stock Keeping Unit</eudpp1:schemeName>
+        <eudpp:schemeName>Stock Keeping Unit</eudpp:schemeName>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://purl.org/eudpp/#batch -->
+    <!-- https://purl.org/eudpp#batch -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#batch">
-        <rdf:type rdf:resource="https://purl.org/eudpp/#ProductIdentifierGranularity"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#batch">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://purl.org/eudpp/#item -->
+    <!-- https://purl.org/eudpp#item -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#item">
-        <rdf:type rdf:resource="https://purl.org/eudpp/#ProductIdentifierGranularity"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#item">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://purl.org/eudpp/#model -->
+    <!-- https://purl.org/eudpp#model -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp/#model">
-        <rdf:type rdf:resource="https://purl.org/eudpp/#ProductIdentifierGranularity"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#model">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
