@@ -297,7 +297,7 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <!-- https://purl.org/eudpp/#hasMaterial -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp/#hasMaterial">
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasMaterial">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#MaterialOfComposition"/>
         <rdfs:comment xml:lang="en">Linking the Product to a MaterialOfComposition.
