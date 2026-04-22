@@ -267,6 +267,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <owl:Class rdf:about="https://purl.org/eudpp#ActorIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#DPPIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#FacilityIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
@@ -290,10 +291,24 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:Class rdf:about="https://purl.org/eudpp#DPPIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#FacilityIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
         <rdfs:label xml:lang="en">DPP identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#FacilityIdentifier -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#FacilityIdentifier">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <rdfs:comment xml:lang="en">A unique code assigned to a physical site (factory, warehouse, plant, school, hospital, etc.), i.e., identifies a location.</rdfs:comment>
+        <rdfs:label xml:lang="en">Facility identifier</rdfs:label>
     </owl:Class>
     
 
