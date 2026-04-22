@@ -269,6 +269,13 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
                 <owl:someValuesFrom rdf:resource="https://purl.org/eudpp#ActorIdentifierScheme"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#identifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#DPPIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#FacilityIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
@@ -294,6 +301,13 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:Class rdf:about="https://purl.org/eudpp#DPPIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#identifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#FacilityIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
@@ -307,6 +321,13 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:Class rdf:about="https://purl.org/eudpp#FacilityIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#identifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
@@ -320,7 +341,9 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:Class rdf:about="https://purl.org/eudpp#Identifier">
         <rdfs:comment xml:lang="en">Identifier. A general class to hold different kinds of identifiers described and used for EU DPP CO. Each sub-class of this class describes a different kind of identifier. Intentionally modelled as sub-classes. 
-Identifiers have value, and a scheme/standard they are based on.</rdfs:comment>
+Identifiers have value, and a scheme/standard they are based on.
+
+Cardinatlity restrictions added to each subclass to enforce inheritance of the data propertyy identifierValue.</rdfs:comment>
     </owl:Class>
     
 
@@ -351,6 +374,13 @@ Identifiers have value, and a scheme/standard they are based on.</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://purl.org/eudpp#hasScheme"/>
                 <owl:someValuesFrom rdf:resource="https://purl.org/eudpp#MaterialIdentifierScheme"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#identifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
@@ -385,6 +415,13 @@ Identifiers have value, and a scheme/standard they are based on.</rdfs:comment>
                 <owl:onProperty rdf:resource="https://purl.org/eudpp#hasGranularity"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#identifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
@@ -424,6 +461,13 @@ Identifiers have value, and a scheme/standard they are based on.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#SoCIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#identifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Substance of concern identifier</rdfs:label>
     </owl:Class>
     
