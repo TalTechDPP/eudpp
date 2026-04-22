@@ -30,6 +30,18 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp; Danash, F. (2025). Ontolo
 
 =======================
 
+CHANGES APR 2026 (switch to IDENT module) (v.1.9.4)
+1. The following data properties become obsolete:
+ - #uniqueProductIdentifier
+ - #uniqueProductIdentifierScheme
+Instead, use object property hasUniqueProductIdentifier with domain as Product and Range as ProductIdentifier declased in the Connector.
+2. The following data properties become obsolete:
+- #digitalProductPassportId
+- #dppSchemaVersion 
+Instead, use object property hasDigitalProductPassportId with domain as DPP and range as #DPPIdentifier.
+
+TODO: remove data properties labelled as OBSOLETE
+
 CHANGES APR 2026 (JTC24 alignment) (v.1.9.2)
 1. Added additional values for range: Inactive, Invalid for data property DPP status
 2. Rename #status to #dppStatus, change of IRI.
@@ -50,7 +62,7 @@ CHANGES FEB 2026 (v.1.9.1)
  #hasBackUpCopyHost
  #hasIssuer 
  #hasManufacturer</dcterms:description>
-        <dcterms:issued>2026-04-21</dcterms:issued>
+        <dcterms:issued>2026-04-23</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
@@ -58,7 +70,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>dpp</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Product and DPP module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CO P_DPP</rdfs:label>
-        <owl:versionInfo>1.9.2</owl:versionInfo>
+        <owl:versionInfo>1.9.4</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -387,7 +399,7 @@ It is formatted as a URI/URL .</rdfs:comment>
         <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Unique identifier of an instance of the digital product passport</rdfs:comment>
-        <rdfs:label xml:lang="en">Digital Product Passport Id</rdfs:label>
+        <rdfs:label xml:lang="en">OBSOLETE--Digital Product Passport Id</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -398,7 +410,7 @@ It is formatted as a URI/URL .</rdfs:comment>
         <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The reference standard the DPP instance schema refers to.</rdfs:comment>
-        <rdfs:label xml:lang="en">DPP schema version</rdfs:label>
+        <rdfs:label xml:lang="en">OBSOLETE--DPP schema version</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -580,7 +592,7 @@ Tolerances can apply to many different units.</rdfs:comment>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
         <rdfs:comment xml:lang="en">Unique product identifier
 means a unique string of characters for the identification of a product that also enables a web link to the digital product passport. (ESPR Art 2 (30))</rdfs:comment>
-        <rdfs:label xml:lang="en">Unique product identifier</rdfs:label>
+        <rdfs:label xml:lang="en">OBSOLETE--Unique product identifier</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -638,7 +650,7 @@ Value is xsd:string that is formatted as a URL,  where to fetch the file.</rdfs:
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The coding scheme used for the uniqueProductIdentifier. 
 Specific scheme specified by ESPR delegated acts, or similar, for sectorial usage</rdfs:comment>
-        <rdfs:label xml:lang="en">Unique product identifier scheme</rdfs:label>
+        <rdfs:label xml:lang="en">OBSOLETE--Unique product identifier scheme</rdfs:label>
     </owl:DatatypeProperty>
     
 
