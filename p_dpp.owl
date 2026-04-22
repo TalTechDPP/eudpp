@@ -50,7 +50,7 @@ CHANGES FEB 2026 (v.1.9.1)
  #hasBackUpCopyHost
  #hasIssuer 
  #hasManufacturer</dcterms:description>
-        <dcterms:issued>2026-03-01</dcterms:issued>
+        <dcterms:issued>2026-04-21</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
