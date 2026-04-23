@@ -1,0 +1,1513 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://purl.org/eudpp/"
+     xml:base="https://purl.org/eudpp/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns0="http:/purl.org/vocab/vann/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:qudt="http://qudt.org/schema/qudt#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:eudpp="https://purl.org/eudpp#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:dcterms1="http://purl.org/dc/dcterms/">
+    <owl:Ontology rdf:about="https://purl.org/eudpp/LCA">
+        <dcterms:bibliographicCitation rdf:resource="https://zenodo.org/records/15270342"/>
+        <dcterms:created>2026-04-03</dcterms:created>
+        <dcterms:creator>Fatima Danash</dcterms:creator>
+        <dcterms:description>The LCA module provides classes and properties for representing life-cycle-assessment related information of the digital passport data of some product. 
+
+DEPENDENCIES: This module has dependencies to the product EU DPP Core Ontology modules: P_DPP.</dcterms:description>
+        <dcterms:issued>2026-04-30</dcterms:issued>
+        <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
+        <dcterms:license>This ontology is licensed under the Apache License, Version 2.0. 
+In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
+        <dcterms:title>The LCA module of the EU regulatory compliant Digital Product Passport (EU DPP LCA)</dcterms:title>
+        <vann:preferredNamespacePrefix>lca</vann:preferredNamespacePrefix>
+        <rdfs:comment>The LCA module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
+        <rdfs:label>EU DPP LCA</rdfs:label>
+        <owl:versionInfo>1.9.4</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/dcterms/bibliographicCitation -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/dcterms/bibliographicCitation"/>
+    
+
+
+    <!-- http://purl.org/dc/dcterms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/dcterms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/dcterms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/dcterms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/dcterms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/dcterms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/dcterms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/dcterms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/dcterms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/dcterms/title"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/bibliographicCitation -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- https://purl.org/eudpp/has_unit -->
+
+    <owl:AnnotationProperty rdf:about="https://purl.org/eudpp/has_unit"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.org/eudpp#assessIC -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#assessIC">
+        <owl:inverseOf rdf:resource="https://purl.org/eudpp#isAssessedByICI"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#calculatedByCM -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#calculatedByCM">
+        <owl:inverseOf rdf:resource="https://purl.org/eudpp#calculatesCF"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#calculatesCF -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#calculatesCF">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#CharacterizationFactor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#concernsLCStage -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#concernsLCStage">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#LifeCycleStage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasFlowType -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasFlowType">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#FlowResult"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#FlowType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasImpactCategory -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasImpactCategory">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ImpactResult"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasImpactType -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasImpactType">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ImpactType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#imposedByMethod -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#imposedByMethod">
+        <owl:inverseOf rdf:resource="https://purl.org/eudpp#imposesIC"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#imposesIC -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#imposesIC">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Methodology"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#includedInMethodology -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#includedInMethodology">
+        <owl:inverseOf rdf:resource="https://purl.org/eudpp#includesMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#includesMethod -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#includesMethod">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Methodology"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#isAssessedByICI -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isAssessedByICI"/>
+    
+
+
+    <!-- https://purl.org/eudpp#quantifiedByCF -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#quantifiedByCF">
+        <owl:inverseOf rdf:resource="https://purl.org/eudpp#quantifiesICI"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#quantifiesICI -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#quantifiesICI">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#CharacterizationFactor"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#usedInMethod -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#usedInMethod">
+        <owl:inverseOf rdf:resource="https://purl.org/eudpp#usesCM"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#usesCM -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#usesCM">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Method"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qudt.org/schema/qudt#numericValue -->
+
+    <owl:DatatypeProperty rdf:about="http://qudt.org/schema/qudt#numericValue">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#double"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
+        <rdfs:label>numeric value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasDefaultUnit -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#hasDefaultUnit">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasUnit -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#hasUnit">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.org/eudpp#AirPollutionFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#AirPollutionFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#ImpactResult"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#particulateMatter"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#photochemicalOzoneFormationHumanHealth"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Quantifies the release of airborne pollutants (e.g., particulate matter, photochemical ozone formation) over the life cycle of a product. AirPollutionFootprint is an ImpactResult associated with relevant environmental impact categories.</rdfs:comment>
+        <rdfs:label>Air Pollution Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#CarbonFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#CarbonFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#ImpactResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                        <owl:hasValue rdf:resource="https://purl.org/eudpp#climateChangeTotal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>means the sum of greenhouse gas emissions and greenhouse gas removals in a product system, expressed as CO equivalents and based on a life cycle assessment using the single impact category of climate change. (ESPR Art 2 25))</rdfs:comment>
+        <rdfs:label>Carbon Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#CharacterizationFactor -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#CharacterizationFactor">
+        <rdfs:comment>Also called Impact factors, are factors that quantify the relative impact of different substances within the same category. These factors are used to convert the number of emissions into impact scores for each category. (LCAnet Ontology, SmartACV Project, Version 1.0, 2025)</rdfs:comment>
+        <rdfs:label>Characterization Factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#CharacterizationModel -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#CharacterizationModel">
+        <rdfs:comment>A characterization model provides a mathematical framework, as a set of equations, to quantify an impact category based on the chosen method. A characterization model is used by a method. (LCAnet Ontology, SmartACV Project, Version 1.0, 2025) 
+Example: IPCC (2021) AR6.</rdfs:comment>
+        <rdfs:label>Characterization Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#EmissionFlow -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EmissionFlow">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#FlowType"/>
+        <rdfs:comment>A type of flow representing substances released to the environment during a product’s life cycle.</rdfs:comment>
+        <rdfs:label>Emission Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#EnergyFlow -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EnergyFlow">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#ResourceFlow"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#EnergyFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EnergyFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#FlowResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasFlowType"/>
+                        <owl:someValuesFrom rdf:resource="https://purl.org/eudpp#EnergyFlow"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Quantifies the total energy use associated with a product throughout its life cycle, including renewable and non-renewable sources. EnergyFootprint is a FlowResult linked to the Energy FlowType.</rdfs:comment>
+        <rdfs:label>Energy Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#EnvironmentalFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EnvironmentalFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#ImpactResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactType"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A comprehensive quantification of all environmental impacts resulting from a product throughout its life cycle. EnvironmentalFootprint may cover a single impact category or an aggregated set of categories according to the Product Environmental Footprint method (ESPR Art. 2(24)).</rdfs:comment>
+        <rdfs:label>Environmental Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#EutrophicationFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EutrophicationFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#ImpactResult"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#eutrophicationFreshwater"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#eutrophicationMarine"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#eutrophicationTerrestial"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Quantifies nutrient enrichment impacts (eutrophication) on freshwater, marine, or terrestrial ecosystems caused by a product during its life cycle. It aggregates relevant ImpactCategories.</rdfs:comment>
+        <rdfs:label>Eutrophication Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#FlowResult -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#FlowResult">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#LcaResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasFlowType"/>
+                        <owl:someValuesFrom rdf:resource="https://purl.org/eudpp#FlowType"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <rdfs:comment>A type of LCAResult that quantifies the flows of materials, energy, or emissions associated with a product</rdfs:comment>
+        <rdfs:label>Flow result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#FlowType -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#FlowType">
+        <rdfs:comment>A category representing the type of flow quantified in a life cycle assessment. It is used to classify FlowResults according to the kind of resource or emission being measured.</rdfs:comment>
+        <rdfs:label>Flow Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#FossilEnergyFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#FossilEnergyFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#FlowResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasFlowType"/>
+                        <owl:hasValue rdf:resource="https://purl.org/eudpp#fossil"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Quantifies the consumption of fossil energy (coal, oil, natural gas) by a product during its life cycle. It is a specialized EnergyFootprint and a FlowResult with FlowType FossilEnergy.</rdfs:comment>
+        <rdfs:label>Fossil Energy Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ImpactCategory -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ImpactCategory">
+        <rdfs:comment>An impact category represents a specific environmental issue that the LCA aims to assess, such as global warming or ozone depletion. Each category aggregates the effects of different emissions that contribute to the same environmental problem. (LCAnet Ontology, SmartACV Project, Version 1.0, 2025) An impact category is classified as whether is corresponds to environmental impact, social impact, etc.</rdfs:comment>
+        <rdfs:label>Impact Category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ImpactCategoryIndicator -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ImpactCategoryIndicator">
+        <rdfs:comment>An impact category refers to a specific metric/measurable quantity that is used to quantify an impact category. (LCAnet Ontology, SmartACV Project, Version 1.0, 2025)
+Examples include: Global Warming Potential (GWP) and Ozone Depletion Potential (ODP).</rdfs:comment>
+        <rdfs:label>Impact Category Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ImpactResult -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ImpactResult">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#LcaResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                        <owl:someValuesFrom rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <dc:description>A type of LCAResult that quantifies the effect of a product on a specific impact category, such as climate change, human toxicity, or eutrophication</dc:description>
+        <rdfs:label>Impact result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ImpactType -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ImpactType">
+        <rdfs:comment>A category representing the type of an impact category measured in a life cycle assessment. Each ImpactType classifies ImpactCategories according to the area of concern, such as environmental, social, economic, or human health.</rdfs:comment>
+        <rdfs:label>Impact Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#LandFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#LandFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#ImpactResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                        <owl:hasValue rdf:resource="https://purl.org/eudpp#landUseOccupationAndTransformation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Quantifies the occupation and transformation of land caused by a product throughout its life cycle. LandFootprint is an ImpactResult linked to the LandUse impact category.</rdfs:comment>
+        <rdfs:label>Land Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#LcaResult -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#LcaResult">
+        <rdfs:comment>A measurable outcome of a life cycle assessment, representing the quantified effect of a product.</rdfs:comment>
+        <rdfs:label>LCA result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#LifeCycleStage -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#LifeCycleStage">
+        <rdfs:comment>A phase in the life cycle of a product, from raw material acquisition through production, use, and end-of-life, in accordance with life cycle concepts defined in ISO 14040 and ISO 14044</rdfs:comment>
+        <rdfs:label>Life Cycle Stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#MaterialFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#MaterialFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#FlowResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasFlowType"/>
+                        <owl:hasValue rdf:resource="https://purl.org/eudpp#material"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>refers to the total amount of raw materials extracted to meet final consumption demands. (ESPR Art 2 (26)).</rdfs:comment>
+        <rdfs:label>Material Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#Method -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#Method">
+        <rdfs:comment>LCIA methods allow to transform and aggregate emissions to the environment and resource use data into a limited set of interpretable and reportable impact potential scores. (Adapted from LCAnet Ontology, SmartACV Project, Version 1.0, 2025)</rdfs:comment>
+        <rdfs:label>Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#Methodology -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#Methodology">
+        <rdfs:comment>Related LCIA methods can be grouped under LCIA methodologies. (ILCD Handbook, General guidance). 
+Examples of methodologies include EN15804+A2, EF v3.1, Impact World.</rdfs:comment>
+        <rdfs:label>Methodology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#OzoneDepletionFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#OzoneDepletionFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#ImpactResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                        <owl:hasValue rdf:resource="https://purl.org/eudpp#ozoneDepletion"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Quantifies the potential stratospheric ozone layer depletion caused by substances emitted by a product throughout its life cycle. It is an ImpactResult linked to the Ozone Depletion impact category.</rdfs:comment>
+        <rdfs:label>Ozone Depletion Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ResourceFlow -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ResourceFlow">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#FlowType"/>
+        <rdfs:comment>A type of flow representing the consumption or use of natural resources throughout a product’s life cycle.</rdfs:comment>
+        <rdfs:label>Resource Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ToxicityFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ToxicityFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#ImpactResult"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#ecotoxicityFreshwater"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#humanToxicityCancer"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                <owl:hasValue rdf:resource="https://purl.org/eudpp#humanToxicityNonCancer"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Quantifies the potential human health and ecological toxicity impacts of a product over its life cycle. ToxicityFootprint aggregates relevant ImpactCategories such as Human Toxicity (cancer and non-cancer) and Ecotoxicity.</rdfs:comment>
+        <rdfs:label>Toxicity Footprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#WaterFootprint -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#WaterFootprint">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/eudpp#FlowResult"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/eudpp#hasFlowType"/>
+                        <owl:hasValue rdf:resource="https://purl.org/eudpp#water"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Quantifies the freshwater consumption associated with a product throughout its life cycle. WaterFootprint is a FlowResult linked to the Water FlowType.</rdfs:comment>
+        <rdfs:label>Water Footrpint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.org/eudpp#LotosEurosModel -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#LotosEurosModel">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>(Van Zelm et al, 2008) as applied in ReCiPe 2008</dcterms:bibliographicCitation>
+        <rdfs:label>LOTOS-EUROS model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#abioticResourceDepletionAdpUltimateReserves -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#abioticResourceDepletionAdpUltimateReserves">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#resourceUseMineralsAndMetals"/>
+        <eudpp:hasDefaultUnit>kg Sb -eq</eudpp:hasDefaultUnit>
+        <rdfs:label>Abiotic resource depletion (ADP ultimate reserves)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#accumulatedExceedance -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#accumulatedExceedance">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>(Seppälä et al. 2006, Posch et al, 2008)</dcterms:bibliographicCitation>
+        <dcterms:bibliographicCitation>(Seppälä et al., 2006, Posch et al, 2008)</dcterms:bibliographicCitation>
+        <rdfs:label>Accumulated Exceedance</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#accumulatedExceedanceAE -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#accumulatedExceedanceAE">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#acidification"/>
+        <eudpp:hasDefaultUnit>mol H+ -eq</eudpp:hasDefaultUnit>
+        <eudpp:hasDefaultUnit>mol N -eq</eudpp:hasDefaultUnit>
+        <rdfs:label>Accumulated Exceedance (AE)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#acidification -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#acidification">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:comment>Measures the potential of a product system&apos;s emissions to cause acidification in ecosystems (soil, water, vegetation), mainly from SO₂, NOx, and NH₃ emissions.</rdfs:comment>
+        <rdfs:label>Acidification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#availableWaterRemainingModel -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#availableWaterRemainingModel">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>(Boulay et al., 2018; UNEP 2016)</dcterms:bibliographicCitation>
+        <rdfs:label>Available WAter REmaining (AWARE) model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#basedOnUSEtox2.1Model -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#basedOnUSEtox2.1Model">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>(Fantke et al. 2017), adapted as in Saouter et al., 2018</dcterms:bibliographicCitation>
+        <rdfs:label>Based on USEtox2.1 model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#bernModelBasedOnIPCC2021 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#bernModelBasedOnIPCC2021">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>(Forster et al., 2021)</dcterms:bibliographicCitation>
+        <rdfs:label>Bern model based on IPCC 2021</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#bioticResourceDepletionFossilFuelsAdpFossil -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#bioticResourceDepletionFossilFuelsAdpFossil">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#resourceUseFossils"/>
+        <eudpp:hasDefaultUnit>MJ</eudpp:hasDefaultUnit>
+        <rdfs:label>Biotic resource depletion fossil fuels (ADP-fossil)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#carbonEmission -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#carbonEmission">
+        <rdf:type rdf:resource="https://purl.org/eudpp#EmissionFlow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#cf001 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#cf001">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CarbonFootprint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#climateChangeTotal -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#climateChangeTotal">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:label>Climate change, total</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#cml2002MethodV.4.8 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#cml2002MethodV.4.8">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>van Oers et al., 2002</dcterms:bibliographicCitation>
+        <rdfs:label>CML 2002 method, v.4.8</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#comparativeToxicUnitForEcosystemsCTUe -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#comparativeToxicUnitForEcosystemsCTUe">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#ecotoxicityFreshwater"/>
+        <eudpp:hasDefaultUnit>CTUe</eudpp:hasDefaultUnit>
+        <rdfs:label>Comparative Toxic Unit for ecosystems (CTUe)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#comparativeToxicUnitForHumansCTUh -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#comparativeToxicUnitForHumansCTUh">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#humanToxicityCancer"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#humanToxicityNonCancer"/>
+        <eudpp:hasDefaultUnit>CTUh</eudpp:hasDefaultUnit>
+        <rdfs:label>Comparative Toxic Unit for humans (CTUh)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#distribution -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#distribution">
+        <rdf:type rdf:resource="https://purl.org/eudpp#LifeCycleStage"/>
+        <rdfs:comment>Stage involving transport and distribution of the product to the market.</rdfs:comment>
+        <rdfs:label>Distribution</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#economicalImpact -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#economicalImpact">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactType"/>
+        <rdfs:label>Economical Impact</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#ecotoxicityFreshwater -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#ecotoxicityFreshwater">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:label>Ecotoxicity, freshwater</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#edipModel -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#edipModel">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>based on the ODPs of the World Meteorological Organisation (WMO) over an infinite time horizon (WMO 2014 + integrations)</dcterms:bibliographicCitation>
+        <rdfs:label>EDIP model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#endOfLife -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#endOfLife">
+        <rdf:type rdf:resource="https://purl.org/eudpp#LifeCycleStage"/>
+        <rdfs:comment>Stage involving disposal, recycling, or recovery of the product.</rdfs:comment>
+        <rdfs:label>End Of Life</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#environmentalImpact -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#environmentalImpact">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactType"/>
+        <rdfs:label>Environmental Impact</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#eutrendModel -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#eutrendModel">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>(Struijs et al, 2009) as applied in ReCiPe 2008</dcterms:bibliographicCitation>
+        <rdfs:label>EUTREND model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#eutrophicationFreshwater -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#eutrophicationFreshwater">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:comment>Measures potential nutrient enrichment of freshwater ecosystems due to emissions of N and P compounds, causing effects such as algal blooms.</rdfs:comment>
+        <rdfs:label>Eutrophication, freshwater</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#eutrophicationMarine -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#eutrophicationMarine">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:comment>Measures potential nutrient enrichment of marine ecosystems due to emissions of N and P compounds.</rdfs:comment>
+        <rdfs:label>Eutrophication, marine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#eutrophicationTerrestial -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#eutrophicationTerrestial">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <rdfs:comment>Measures potential nutrient enrichment of terrestrial ecosystems due to nitrogen deposition.</rdfs:comment>
+        <rdfs:label>Eutrophication, Terrestial</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#fossil -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#fossil">
+        <rdf:type rdf:resource="https://purl.org/eudpp#EnergyFlow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#fractionOfNutrientsReachingFreshwaterEndCompartmentP -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#fractionOfNutrientsReachingFreshwaterEndCompartmentP">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#eutrophicationFreshwater"/>
+        <eudpp:hasDefaultUnit>kg P -eq</eudpp:hasDefaultUnit>
+        <rdfs:label>Fraction of nutrients reaching freshwater end compartment (P)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#fractionOfNutrientsReachingMarineEndCompartmentN -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#fractionOfNutrientsReachingMarineEndCompartmentN">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#eutrophicationMarine"/>
+        <eudpp:hasDefaultUnit>kg N -eq</eudpp:hasDefaultUnit>
+        <rdfs:label>Fraction of nutrients reaching marine end compartment (N)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#globalWarmingPotentialGWP100 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#globalWarmingPotentialGWP100">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#climateChangeTotal"/>
+        <eudpp:quantifiedByCF rdf:resource="https://purl.org/eudpp#globalWarmingPotentialGwpOverA100YearTimeHorizon"/>
+        <eudpp:hasDefaultUnit>kg CO2-eq</eudpp:hasDefaultUnit>
+        <rdfs:label>Global Warming Potential (GWP100)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#globalWarmingPotentialGwpOverA100YearTimeHorizon -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#globalWarmingPotentialGwpOverA100YearTimeHorizon">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationFactor"/>
+        <eudpp:calculatedByCM rdf:resource="https://purl.org/eudpp#bernModelBasedOnIPCC2021"/>
+        <rdfs:label>Global warming potential (GWP) over a 100-year time horizon</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#healthImpact -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#healthImpact">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactType"/>
+        <rdfs:label>Health Impact</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#humanExposureEfficiencyRelativeToU235 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#humanExposureEfficiencyRelativeToU235">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#ionisingRadiationHumanHealth"/>
+        <eudpp:hasDefaultUnit>kBq U235 -eq</eudpp:hasDefaultUnit>
+        <rdfs:label>Human exposure efficiency relative to U235</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#humanHealthEffectModel -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#humanHealthEffectModel">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>as developed by Dreicer et al., 1995)</dcterms:bibliographicCitation>
+        <rdfs:label>Human health effect model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#humanToxicityCancer -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#humanToxicityCancer">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#healthImpact"/>
+        <rdfs:comment>Measures the potential carcinogenic effects of a product system on humans due to chemical emissions.</rdfs:comment>
+        <rdfs:label>Human toxicity, cancer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#humanToxicityNonCancer -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#humanToxicityNonCancer">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#healthImpact"/>
+        <rdfs:comment>Measures the potential non-carcinogenic effects of a product system on humans due to chemical emissions.</rdfs:comment>
+        <rdfs:label>Human toxicity, non-cancer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#impactOnHumanHealth -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#impactOnHumanHealth">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#particulateMatter"/>
+        <eudpp:hasDefaultUnit>disease incidence</eudpp:hasDefaultUnit>
+        <rdfs:label>Impact on human health</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#ionisingRadiationHumanHealth -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#ionisingRadiationHumanHealth">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#healthImpact"/>
+        <rdfs:comment>Measures the potential human health impact of ionizing radiation due to a product system, including exposure to radioactive substances.</rdfs:comment>
+        <rdfs:label>Ionising radiation, human health</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#lancaModel -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#lancaModel">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>Soil quality index based on LANCA model (De Laurentiis et al. 2019) and on the LANCA CF version 2.5 (Horn and Maier, 2018)</dcterms:bibliographicCitation>
+        <rdfs:label>LANCA model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#landUseOccupationAndTransformation -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#landUseOccupationAndTransformation">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:comment>Measures the potential environmental impact of land occupation and transformation due to a product system, including both the area of land used and its conversion from one type to another.</rdfs:comment>
+        <rdfs:label>Land use (occupation and transformation)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#manufacturing -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#manufacturing">
+        <rdf:type rdf:resource="https://purl.org/eudpp#LifeCycleStage"/>
+        <rdfs:comment>Stage involving material processing and product manufacturing.</rdfs:comment>
+        <rdfs:label>Manufacturing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#material -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#material">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ResourceFlow"/>
+        <rdfs:label>Material</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#methaneEmission -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#methaneEmission">
+        <rdf:type rdf:resource="https://purl.org/eudpp#EmissionFlow"/>
+        <rdfs:label>Methane Emission</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#mineralsAndMetals -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#mineralsAndMetals">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ResourceFlow"/>
+        <rdfs:label>Minerals and Metals</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#ozoneDepletion -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#ozoneDepletion">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:comment>Measures the potential reduction of the stratospheric ozone layer caused by emissions of ozone-depleting substances in a product system.</rdfs:comment>
+        <rdfs:label>Ozone depletion</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#ozoneDepletionPotentialODP -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#ozoneDepletionPotentialODP">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#ozoneDepletion"/>
+        <eudpp:hasDefaultUnit>kg CFC-11-eq</eudpp:hasDefaultUnit>
+        <rdfs:label>Ozone Depletion Potential (ODP)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#particulateMatter -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#particulateMatter">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:comment>Measures the potential human health impacts of fine particulate matter (PM2.5) emitted by a product system, including respiratory and cardiovascular effects.</rdfs:comment>
+        <rdfs:label>Particulate matter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#photochemicalOzoneFormationHumanHealth -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#photochemicalOzoneFormationHumanHealth">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+        <eudpp:hasImpactType rdf:resource="https://purl.org/eudpp#environmentalImpact"/>
+        <rdfs:comment>Measures the potential human health impact of photochemical ozone formation (smog) due to VOCs and NOx emissions from a product system.</rdfs:comment>
+        <rdfs:label>Photochemical ozone formation, human health</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#pmModel -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#pmModel">
+        <rdf:type rdf:resource="https://purl.org/eudpp#CharacterizationModel"/>
+        <dcterms:bibliographicCitation>(Fantke et al., 2016 in UNEP 2016)</dcterms:bibliographicCitation>
+        <rdfs:label>PM model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#rawMaterialAcquisition -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#rawMaterialAcquisition">
+        <rdf:type rdf:resource="https://purl.org/eudpp#LifeCycleStage"/>
+        <rdfs:comment>Stage involving extraction and acquisition of raw materials.</rdfs:comment>
+        <rdfs:label>Raw Material Acquisition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#resourceUseFossils -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#resourceUseFossils">
+        <rdf:type rdf:resource="https://purl.org/eudpp#FossilEnergyFootprint"/>
+        <rdfs:comment>Measures the amount of fossil resources consumed by a product system, including coal, oil, and natural gas. Represented as FlowResult of type FossilResourceFlow.</rdfs:comment>
+        <rdfs:label>Resource use, fossils</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#resourceUseMineralsAndMetals -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#resourceUseMineralsAndMetals">
+        <rdf:type rdf:resource="https://purl.org/eudpp#FlowResult"/>
+        <eudpp:hasFlowType rdf:resource="https://purl.org/eudpp#mineralsAndMetals"/>
+        <rdfs:comment>Measures the amount of mineral and metal resources consumed by a product system. Represented as FlowResult of type MineralsAndMetalsFlow. Can be used to calculate the MaterialFootprint.</rdfs:comment>
+        <rdfs:label>Resource use, minerals and metals</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#socialImpact -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#socialImpact">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactType"/>
+        <rdfs:label>Social Impact</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#soilQualityIndexDimensionless -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#soilQualityIndexDimensionless">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#landUseOccupationAndTransformation"/>
+        <rdfs:label>Soil quality index (dimensionless)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#troposphericOzoneConcentrationIncrease -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#troposphericOzoneConcentrationIncrease">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#photochemicalOzoneFormationHumanHealth"/>
+        <eudpp:hasDefaultUnit>kg NMVOC -eq</eudpp:hasDefaultUnit>
+        <rdfs:label>Tropospheric ozone concentration increase</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#use -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#use">
+        <rdf:type rdf:resource="https://purl.org/eudpp#LifeCycleStage"/>
+        <rdfs:comment>Stage during which the product is used by the end user.</rdfs:comment>
+        <rdfs:label>Use</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#userDeprivationPotentialDeprivationWeightedConsumption -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#userDeprivationPotentialDeprivationWeightedConsumption">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+        <eudpp:assessIC rdf:resource="https://purl.org/eudpp#waterUse"/>
+        <eudpp:hasDefaultUnit>m3 world-eq</eudpp:hasDefaultUnit>
+        <rdfs:label>User deprivation potential (deprivation-weighted consumption)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#water -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#water">
+        <rdf:type rdf:resource="https://purl.org/eudpp#ResourceFlow"/>
+        <rdfs:label>Water</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#waterUse -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#waterUse">
+        <rdf:type rdf:resource="https://purl.org/eudpp#WaterFootprint"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Water use</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#i">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#u">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://purl.org/eudpp#LcaResult"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://purl.org/eudpp#isAssessedByICI"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#i"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://purl.org/eudpp#ImpactCategoryIndicator"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#i"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://purl.org/eudpp#hasDefaultUnit"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#i"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#u"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://purl.org/eudpp#hasImpactCategory"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl:var#c"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="https://purl.org/eudpp#ImpactCategory"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://purl.org/eudpp#hasUnit"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
