@@ -144,6 +144,20 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
+    <!-- https://purl.org/eudpp#containsLcaResult -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsLcaResult">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <rdfs:comment xml:lang="en">A DPP contains a LCA Result -- a measurable outcome of a life cycle assessment, representing the quantified effect of a product.
+
+DPP is modelled in the EU DPP CO P_DPP module.
+LcaResult is modelled in the EU DPP CO LCA module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Contains LCA result</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#containsSubstanceOfConcern -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsSubstanceOfConcern">
@@ -219,6 +233,20 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 DPP is modelled in the EU DPP CO P_DPP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has issuer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasLcaResult -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasLcaResult">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <rdfs:comment xml:lang="en">A product has a LCA Result -- a measurable outcome of a life cycle assessment, representing the quantified effect of a product.
+
+Product is modelled in the EU DPP CO P_DPP module.
+LcaResult is modelled in the EU DPP CO LCA module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has LCA result</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -414,6 +442,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#Facility">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#LcaResult -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#LcaResult">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/LCA</rdfs:isDefinedBy>
     </owl:Class>
     
 
