@@ -1,0 +1,1367 @@
+@prefix : <http://purl.org/eudpp/EVENT#> .
+@prefix act: <http://purl.org/eudpp#> .
+@prefix dpp: <http://purl.org/eudpp#> .
+@prefix evt: <http://purl.org/eudpp#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://purl.org/eudpp/EVENT> .
+
+<http://purl.org/eudpp/EVENT> rdf:type owl:Ontology ;
+                               dcterms:bibliographicCitation "EU DPP Core Ontology Event Module. Draft version 0.1.0. DOI: https://doi.org/10.5281/zenodo.15270342/"@en ;
+                               dcterms:contributor "Riina Maigre"@en ,
+                                                   "Tarmo Robal"@en ,
+                                                   "theodor chirvasuta"@en ;
+                               dcterms:created "2026-03-06"^^xsd:date ;
+                               dcterms:creator "Elio Hbeich"@en ;
+                               dcterms:description "Provides classes and properties for representing event carriers and their event-specific dependencies in the Core Ontology modules."@en ;
+                               dcterms:issued "2026-03-06"^^xsd:date ;
+                               dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                               dcterms:title "EU DPP Core Ontology Event Module"@en ;
+                               vann:preferredNamespacePrefix "evt" ;
+                               vann:preferredNamespaceUri "http://purl.org/eudpp#" ;
+                               rdfs:comment "Draft Event module of the EU DPP Core Ontology. It includes ESPR-level event concepts, EPCIS-inspired event carrier types, identifier-based event structures, transformation, aggregation and transaction dependencies, and links between product events, DPP events, and their technical representations."@en ;
+                               rdfs:label "Event module"@en ;
+                               owl:versionInfo "Version 0.1.0 DRAFT"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/bibliographicCitation
+dcterms:bibliographicCitation rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/eudpp#hasActionType
+evt:hasActionType rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( evt:AggregationEvent
+                                              evt:AssociationEvent
+                                              evt:ObjectEvent
+                                              evt:TransactionEvent
+                                            )
+                              ] ;
+                  rdfs:range evt:ActionType ;
+                  dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                  dcterms:source "GS1 EPCIS Standard" ;
+                  rdfs:comment "Indicates the action performed in a technical event carrier, specifying whether objects are added, observed, or deleted from the relevant event context or relationship."@en ;
+                  rdfs:label "has action type"@en .
+
+
+###  http://purl.org/eudpp#hasAssociationAnchor
+evt:hasAssociationAnchor rdf:type owl:ObjectProperty ;
+                         rdfs:domain evt:AssociationEvent ;
+                         rdfs:range [ rdf:type owl:Class ;
+                                      owl:unionOf ( evt:InstanceIdentifier
+                                                    evt:Location
+                                                  )
+                                    ] ;
+                         dcterms:source "Defined in the EU DPP Core Ontology Event module to support non-containment associations between identified entities."@en ;
+                         rdfs:comment "Links an AssociationEvent to the contextual anchor of the association. This anchor may be either an identified object or a location, depending on the modelling context."@en ;
+                         rdfs:label "has association anchor"@en .
+
+
+###  http://purl.org/eudpp#hasBusinessLocation
+evt:hasBusinessLocation rdf:type owl:ObjectProperty ;
+                        rdfs:domain evt:EPCISCarrier ;
+                        rdfs:range evt:BusinessLocation ;
+                        dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                        dcterms:source "GS1 EPCIS 2.0; business location property adapted for the Event module."@en ;
+                        rdfs:comment "Links an event carrier to the business location associated with the event."@en ;
+                        rdfs:label "has business location"@en .
+
+
+###  http://purl.org/eudpp#hasBusinessStep
+evt:hasBusinessStep rdf:type owl:ObjectProperty ;
+                    rdfs:domain evt:EPCISCarrier ;
+                    rdfs:range evt:BusinessStep ;
+                    dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                    dcterms:source "Adapted from GS1 EPCIS 2.0 and CBV business step semantics for the Event module."@en ;
+                    rdfs:comment "Links an EPCIS carrier to the business step that provides the immediate business context of the event."@en ;
+                    rdfs:label "has business step"@en ;
+                    rdfs:seeAlso <https://ref.gs1.org/standards/cbv/> .
+
+
+###  http://purl.org/eudpp#hasBusinessTransactionContext
+evt:hasBusinessTransactionContext rdf:type owl:ObjectProperty ;
+                                  rdfs:domain evt:TransactionEvent ;
+                                  rdfs:range evt:BusinessTransactionContext ;
+                                  dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                                  dcterms:source "Adapted from GS1 EPCIS bizTransactionList semantics for the Event module."@en ;
+                                  rdfs:comment "Links a TransactionEvent to a business transaction context associated with the event."@en ;
+                                  rdfs:label "has business transaction context"@en .
+
+
+###  http://purl.org/eudpp#hasBusinessTransactionType
+evt:hasBusinessTransactionType rdf:type owl:ObjectProperty ;
+                               rdfs:domain evt:BusinessTransactionContext ;
+                               rdfs:range evt:BusinessTransactionType ;
+                               dcterms:identifier "https://ref.gs1.org/standards/cbv/" ;
+                               dcterms:source "Adapted from GS1 CBV business transaction type semantics for the Event module."@en ;
+                               rdfs:comment "Links a business transaction context to its business transaction type classification."@en ;
+                               rdfs:label "has business transaction type"@en .
+
+
+###  http://purl.org/eudpp#hasChildObjectContext
+evt:hasChildObjectContext rdf:type owl:ObjectProperty ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( evt:AggregationEvent
+                                                      evt:AssociationEvent
+                                                    )
+                                      ] ;
+                          rdfs:range evt:InstanceIdentifier ;
+                          dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                          dcterms:source "Adapted from GS1 EPCIS aggregation semantics for the Event module."@en ;
+                          rdfs:comment "Links an aggregation or association event to an instance-level identifier used to represent a child object."@en ;
+                          rdfs:label "has child object context"@en .
+
+
+###  http://purl.org/eudpp#hasChildQuantityContext
+evt:hasChildQuantityContext rdf:type owl:ObjectProperty ;
+                            rdfs:domain [ rdf:type owl:Class ;
+                                          owl:unionOf ( evt:AggregationEvent
+                                                        evt:AssociationEvent
+                                                      )
+                                        ] ;
+                            rdfs:range evt:QuantityElement ;
+                            dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                            dcterms:source "Defined for the EU DPP Core Ontology Event module to support class-level aggregation contexts."@en ;
+                            rdfs:comment "Links an aggregation or association event to a quantity element used to identify a child object at class level together with quantity information."@en ;
+                            rdfs:label "has child quantity context"@en .
+
+
+###  http://purl.org/eudpp#hasDPPActionType
+evt:hasDPPActionType rdf:type owl:ObjectProperty ;
+                     rdfs:domain evt:DPPUpdateEvent ;
+                     rdfs:range evt:DPPActionType ;
+                     rdfs:comment "Links a DPP update event to the type of information-level action performed on the Digital Product Passport."@en ;
+                     rdfs:label "has DPP action type"@en .
+
+
+###  http://purl.org/eudpp#hasDestinationList
+evt:hasDestinationList rdf:type owl:ObjectProperty ;
+                       rdfs:domain evt:EPCISCarrier ;
+                       rdfs:range evt:SourceOrDestination ;
+                       dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                       dcterms:source "GS1 EPCIS 2.0; destination list property adapted for the Event module."@en ;
+                       rdfs:comment "Links an event carrier to a destination context associated with the event."@en ;
+                       rdfs:label "has destination list"@en .
+
+
+###  http://purl.org/eudpp#hasDisposition
+evt:hasDisposition rdf:type owl:ObjectProperty ;
+                   rdfs:domain evt:EPCISCarrier ;
+                   rdfs:range evt:Disposition ;
+                   dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                   dcterms:source "Adapted from GS1 EPCIS 2.0 and CBV disposition semantics for the Event module."@en ;
+                   rdfs:comment "Links an EPCIS carrier to the disposition that expresses the business state of the object or objects following the event."@en ;
+                   rdfs:label "has disposition"@en ;
+                   rdfs:seeAlso <https://ref.gs1.org/standards/cbv/> .
+
+
+###  http://purl.org/eudpp#hasIdentifiedObjectContext
+evt:hasIdentifiedObjectContext rdf:type owl:ObjectProperty ;
+                               rdfs:domain [ rdf:type owl:Class ;
+                                             owl:unionOf ( evt:ObjectEvent
+                                                           evt:TransactionEvent
+                                                         )
+                                           ] ;
+                               rdfs:range evt:InstanceIdentifier ;
+                               dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                               dcterms:source "Adapted from GS1 EPCIS epcList semantics for the Event module."@en ;
+                               rdfs:comment "Links an ObjectEvent or TransactionEvent to an instance-level identifier used to identify an object involved in the event context."@en ;
+                               rdfs:label "has identified object context"@en .
+
+
+###  http://purl.org/eudpp#hasInputObjectContext
+evt:hasInputObjectContext rdf:type owl:ObjectProperty ;
+                          rdfs:domain evt:TransformationEvent ;
+                          rdfs:range evt:InstanceIdentifier ;
+                          dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                          dcterms:source "Adapted from GS1 EPCIS transformation event input EPC semantics for the Event module."@en ;
+                          rdfs:comment "Links a transformation event to an instance-level identifier used to represent an input object."@en ;
+                          rdfs:label "has input object context"@en .
+
+
+###  http://purl.org/eudpp#hasInputQuantityContext
+evt:hasInputQuantityContext rdf:type owl:ObjectProperty ;
+                            rdfs:domain evt:TransformationEvent ;
+                            rdfs:range evt:QuantityElement ;
+                            dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                            dcterms:source "Adapted from GS1 EPCIS transformation event input quantity semantics for the Event module."@en ;
+                            rdfs:comment "Links a transformation event to a quantity element used to identify an input object at class level together with quantity information."@en ;
+                            rdfs:label "has input quantity context"@en .
+
+
+###  http://purl.org/eudpp#hasOutputObjectContext
+evt:hasOutputObjectContext rdf:type owl:ObjectProperty ;
+                           rdfs:domain evt:TransformationEvent ;
+                           rdfs:range evt:InstanceIdentifier ;
+                           dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                           dcterms:source "Adapted from GS1 EPCIS transformation event output EPC semantics for the Event module."@en ;
+                           rdfs:comment "Links a transformation event to an instance-level identifier used to represent an output object."@en ;
+                           rdfs:label "has output object context"@en .
+
+
+###  http://purl.org/eudpp#hasOutputQuantityContext
+evt:hasOutputQuantityContext rdf:type owl:ObjectProperty ;
+                             rdfs:domain evt:TransformationEvent ;
+                             rdfs:range evt:QuantityElement ;
+                             dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                             dcterms:source "Adapted from GS1 EPCIS transformation event output quantity semantics for the Event module."@en ;
+                             rdfs:comment "Links a transformation event to a quantity element used to identify an output object at class level together with quantity information."@en ;
+                             rdfs:label "has output quantity context"@en .
+
+
+###  http://purl.org/eudpp#hasParentObjectContext
+evt:hasParentObjectContext rdf:type owl:ObjectProperty ;
+                           rdfs:domain evt:AggregationEvent ;
+                           rdfs:range evt:InstanceIdentifier ;
+                           dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                           dcterms:source "Adapted from GS1 EPCIS parentID semantics for the Event module."@en ;
+                           rdfs:comment "Links an AggregationEvent to the instance-level identifier that acts as the parent object in the aggregation context."@en ;
+                           rdfs:label "has parent object context"@en .
+
+
+###  http://purl.org/eudpp#hasProductEvent
+evt:hasProductEvent rdf:type owl:ObjectProperty ;
+                    owl:inverseOf evt:isRepresentedByCarrier ;
+                    rdfs:domain evt:EPCISCarrier ;
+                    rdfs:range evt:ProductEvent ;
+                    rdfs:comment "Links an EPCIS-inspired technical event carrier to the product event semantics it journalises."@en ;
+                    rdfs:label "has product event"@en .
+
+
+###  http://purl.org/eudpp#hasQuantityContext
+evt:hasQuantityContext rdf:type owl:ObjectProperty ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( evt:ObjectEvent
+                                                   evt:TransactionEvent
+                                                 )
+                                   ] ;
+                       rdfs:range evt:QuantityElement ;
+                       dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                       dcterms:source "Adapted from GS1 EPCIS quantityList semantics for the Event module."@en ;
+                       rdfs:comment "Links an ObjectEvent or TransactionEvent to a quantity element used to represent class-level identification together with quantity information in the event context."@en ;
+                       rdfs:label "has quantity context"@en .
+
+
+###  http://purl.org/eudpp#hasReadPoint
+evt:hasReadPoint rdf:type owl:ObjectProperty ;
+                 rdfs:domain evt:EPCISCarrier ;
+                 rdfs:range evt:ReadPoint ;
+                 dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                 dcterms:source "GS1 EPCIS 2.0; read point property adapted for the Event module."@en ;
+                 rdfs:comment "Links an event carrier to the read point at which the event observation or capture occurred."@en ;
+                 rdfs:label "has read point"@en .
+
+
+###  http://purl.org/eudpp#hasSourceList
+evt:hasSourceList rdf:type owl:ObjectProperty ;
+                  rdfs:domain evt:EPCISCarrier ;
+                  rdfs:range evt:SourceOrDestination ;
+                  dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                  dcterms:source "GS1 EPCIS 2.0; source list property adapted for the Event module."@en ;
+                  rdfs:comment "Links an event carrier to a source context associated with the event."@en ;
+                  rdfs:label "has source list"@en .
+
+
+###  http://purl.org/eudpp#hasSourceOrDestinationEntity
+evt:hasSourceOrDestinationEntity rdf:type owl:ObjectProperty ;
+                                 rdfs:domain evt:SourceOrDestination ;
+                                 rdfs:range evt:SourceOrDestinationEntity ;
+                                 dcterms:source "Defined for the EU DPP Core Ontology Event module to structure source and destination references."@en ;
+                                 rdfs:comment "Links a source-or-destination context to the entity that plays the source or destination role."@en ;
+                                 rdfs:label "has source or destination entity"@en .
+
+
+###  http://purl.org/eudpp#hasSourceOrDestinationType
+evt:hasSourceOrDestinationType rdf:type owl:ObjectProperty ;
+                               rdfs:domain evt:SourceOrDestination ;
+                               rdfs:range evt:SourceOrDestinationType ;
+                               dcterms:identifier "https://ref.gs1.org/standards/cbv/" ;
+                               dcterms:source "GS1 EPCIS and CBV source/destination typing semantics adapted for the Event module."@en ;
+                               rdfs:comment "Links a source-or-destination context to its business type classification."@en ;
+                               rdfs:label "has source or destination type"@en .
+
+
+###  http://purl.org/eudpp#hasTransformation
+evt:hasTransformation rdf:type owl:ObjectProperty ;
+                      rdfs:domain evt:TransformationEvent ;
+                      rdfs:range evt:Transformation ;
+                      dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                      dcterms:source "Adapted from GS1 EPCIS and CBV transformation identifier semantics for the Event module."@en ;
+                      rdfs:comment "Links a TransformationEvent to the identified transformation it refers to."@en ;
+                      rdfs:label "has transformation"@en .
+
+
+###  http://purl.org/eudpp#isRecordedAs
+evt:isRecordedAs rdf:type owl:ObjectProperty ;
+                 owl:inverseOf evt:recordsDPPEvent ;
+                 rdfs:domain evt:DPPEvent ;
+                 rdfs:range evt:DPPEventRecord ;
+                 rdfs:comment "Links a DPP event to a technical audit record representing its registration in an information system or audit trail."@en ;
+                 rdfs:label "is recorded as"@en .
+
+
+###  http://purl.org/eudpp#isRepresentedByCarrier
+evt:isRepresentedByCarrier rdf:type owl:ObjectProperty ;
+                           rdfs:domain evt:ProductEvent ;
+                           rdfs:range evt:EPCISCarrier ;
+                           rdfs:comment "Links a product event concept to an EPCIS-inspired technical event carrier used to journalise and structure the corresponding event data."@en ;
+                           rdfs:label "is represented by carrier"@en .
+
+
+###  http://purl.org/eudpp#isTriggeredByProductEvent
+evt:isTriggeredByProductEvent rdf:type owl:ObjectProperty ;
+                              owl:inverseOf evt:triggersDPPEvent ;
+                              rdfs:domain evt:DPPEvent ;
+                              rdfs:range evt:ProductEvent ;
+                              rdfs:comment "Links a DPP event to the product event that caused or required it. This property is used when the DPP event results from a lifecycle change affecting the product."@en ;
+                              rdfs:label "is triggered by product event"@en .
+
+
+###  http://purl.org/eudpp#recordsDPPEvent
+evt:recordsDPPEvent rdf:type owl:ObjectProperty ;
+                    rdfs:domain evt:DPPEventRecord ;
+                    rdfs:range evt:DPPEvent ;
+                    rdfs:comment "Links a DPP event record to the DPP event whose technical registration it captures."@en ;
+                    rdfs:label "records DPP event"@en .
+
+
+###  http://purl.org/eudpp#triggersDPPEvent
+evt:triggersDPPEvent rdf:type owl:ObjectProperty ;
+                     rdfs:domain evt:ProductEvent ;
+                     rdfs:range evt:DPPEvent ;
+                     rdfs:comment "Links a product event to a DPP event that is triggered as a consequence of it, reflecting the obligation to update the DPP following lifecycle changes of the product."@en ;
+                     rdfs:label "triggers DPP event"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/eudpp#businessTransactionIdentifier
+evt:businessTransactionIdentifier rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain evt:BusinessTransactionContext ;
+                                  rdfs:range xsd:anyURI ;
+                                  dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                                  dcterms:source "Adapted from GS1 EPCIS business transaction identifier semantics for the Event module."@en ;
+                                  rdfs:comment "Specifies the identifier of a business transaction associated with an event."@en ;
+                                  rdfs:label "has business transaction identifier"@en .
+
+
+###  http://purl.org/eudpp#classIdentifier
+evt:classIdentifier rdf:type owl:DatatypeProperty ;
+                    rdfs:domain evt:QuantityElement ;
+                    rdfs:range xsd:anyURI ;
+                    dcterms:source "Adapted from EPCIS class-level identification semantics."@en ;
+                    rdfs:comment "The class-level identifier used in a quantity element, such as a GTIN, LGTIN, or another EPC class identifier."@en ;
+                    rdfs:label "class identifier"@en .
+
+
+###  http://purl.org/eudpp#dppEventRecordIdentifier
+evt:dppEventRecordIdentifier rdf:type owl:DatatypeProperty ;
+                             rdfs:domain evt:DPPEventRecord ;
+                             rdfs:range xsd:anyURI ;
+                             rdfs:comment "A unique identifier assigned to a DPP event record."@en ;
+                             rdfs:label "dpp event record identifier"@en .
+
+
+###  http://purl.org/eudpp#dppEventRecordedAt
+evt:dppEventRecordedAt rdf:type owl:DatatypeProperty ;
+                       rdfs:domain evt:DPPEventRecord ;
+                       rdfs:range xsd:dateTime ;
+                       rdfs:comment "The date and time at which the technical record of a DPP event was created in an information system or audit trail."@en ;
+                       rdfs:label "dpp event recorded at"@en .
+
+
+###  http://purl.org/eudpp#eventIdentifier
+evt:eventIdentifier rdf:type owl:DatatypeProperty ;
+                    rdfs:domain evt:EPCISCarrier ;
+                    rdfs:range xsd:anyURI ;
+                    dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                    dcterms:source "GS1 EPCIS 1.2 and 2.0; optional event identifier adapted for the Event module."@en ;
+                    rdfs:comment "A unique identifier assigned to the event."@en ;
+                    rdfs:label "event identifier"@en .
+
+
+###  http://purl.org/eudpp#eventTime
+evt:eventTime rdf:type owl:DatatypeProperty ;
+              rdfs:domain evt:EPCISCarrier ;
+              rdfs:range xsd:dateTime ;
+              dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+              dcterms:source "GS1 EPCIS 2.0; core event time property used in the Event module."@en ;
+              rdfs:comment "The date and time at which the event occurred."@en ;
+              rdfs:label "event time"@en .
+
+
+###  http://purl.org/eudpp#eventTimeZoneOffset
+evt:eventTimeZoneOffset rdf:type owl:DatatypeProperty ;
+                        rdfs:domain evt:EPCISCarrier ;
+                        rdfs:range xsd:string ;
+                        dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                        dcterms:source "GS1 EPCIS 2.0; core event time zone offset property used in the Event module."@en ;
+                        rdfs:comment "The time zone offset in effect at the time and place where the event occurred."@en ;
+                        rdfs:label "event time zone offset"@en .
+
+
+###  http://purl.org/eudpp#hasQuantityValue
+evt:hasQuantityValue rdf:type owl:DatatypeProperty ;
+                     rdfs:domain evt:QuantityElement ;
+                     rdfs:range xsd:decimal ;
+                     dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                     dcterms:source "Adapted from GS1 EPCIS quantity semantics for the Event module."@en ;
+                     rdfs:comment "Specifies the quantity value associated with a class-level identification context."@en ;
+                     rdfs:label "has quantity value"@en .
+
+
+###  http://purl.org/eudpp#hasUnitOfMeasure
+evt:hasUnitOfMeasure rdf:type owl:DatatypeProperty ;
+                     rdfs:domain evt:QuantityElement ;
+                     rdfs:range xsd:string ;
+                     dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                     dcterms:source "Adapted from GS1 EPCIS quantity semantics for the Event module."@en ;
+                     rdfs:comment "Specifies the unit of measure associated with a quantity value in a quantity element."@en ;
+                     rdfs:label "has unit of measure"@en .
+
+
+###  http://purl.org/eudpp#identifierValue
+evt:identifierValue rdf:type owl:DatatypeProperty ;
+                    rdfs:domain evt:InstanceIdentifier ;
+                    rdfs:range xsd:anyURI ;
+                    dcterms:source "Defined for the EU DPP Core Ontology Event module following EPCIS instance-level identification semantics."@en ;
+                    rdfs:comment "The identifier value used in the event context, such as an EPC, SGTIN, SSCC, GTIN, or similar identifier expressed as a URI."@en ;
+                    rdfs:label "identifier value"@en .
+
+
+###  http://purl.org/eudpp#recordedAt
+evt:recordedAt rdf:type owl:DatatypeProperty ;
+               rdfs:domain evt:EPCISCarrier ;
+               rdfs:range xsd:dateTime ;
+               dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+               dcterms:source "GS1 EPCIS 2.0; record time semantics adapted for the Event module."@en ;
+               rdfs:comment "The date and time at which the event was recorded by the repository or information system."@en ;
+               rdfs:label "recorded at"@en .
+
+
+###  http://purl.org/eudpp#recordedInSystem
+evt:recordedInSystem rdf:type owl:DatatypeProperty ;
+                     rdfs:domain evt:DPPEventRecord ;
+                     rdfs:range xsd:anyURI ;
+                     rdfs:comment "Indicates the URI identifying the system, application, or audit log in which the DPP event record is maintained."@en ;
+                     rdfs:label "recorded in system"@en .
+
+
+###  http://purl.org/eudpp#recordedInSystemName
+evt:recordedInSystemName rdf:type owl:DatatypeProperty ;
+                         rdfs:domain evt:DPPEventRecord ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Indicates the human-readable name of the system, application, or audit log in which the DPP event record is maintained."@en ;
+                         rdfs:label "recorded in system name"@en .
+
+
+###  http://purl.org/eudpp#transformationIdentifier
+evt:transformationIdentifier rdf:type owl:DatatypeProperty ;
+                             rdfs:domain evt:Transformation ;
+                             rdfs:range xsd:anyURI ;
+                             dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                             dcterms:source "Adapted from GS1 EPCIS and CBV transformationID semantics for the Event module."@en ;
+                             rdfs:comment "Specifies the identifier of a transformation used to correlate one or more TransformationEvents that describe the same transformation."@en ;
+                             rdfs:label "transformation identifier"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/eudpp#ActionType
+evt:ActionType rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:oneOf ( evt:ADD
+                                                 evt:DELETE
+                                                 evt:OBSERVE
+                                               )
+                                   ] ;
+               dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+               dcterms:source "GS1 EPCIS Standard" ;
+               rdfs:comment "Specifies the business action associated with an event carrier, indicating how the event relates to the lifecycle of the involved objects."@en ;
+               rdfs:label "Action Type"@en .
+
+
+###  http://purl.org/eudpp#AggregationEvent
+evt:AggregationEvent rdf:type owl:Class ;
+                     rdfs:subClassOf evt:EPCISCarrier ,
+                                     [ rdf:type owl:Class ;
+                                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty evt:hasChildObjectContext ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass evt:InstanceIdentifier
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty evt:hasChildQuantityContext ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass evt:QuantityElement
+                                                     ]
+                                                   )
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty evt:hasActionType ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass evt:ActionType
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty evt:hasParentObjectContext ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass evt:InstanceIdentifier
+                                     ] ;
+                     dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                     dcterms:source "GS1 EPCIS 2.0; adapted from the Event module mapping table."@en ;
+                     rdfs:comment "A technical event carrier representing the aggregation or disaggregation of child objects under a parent object, typically reflecting packaging, containment, or structural hierarchy changes. Each AggregationEvent has exactly one action type, may refer to at most one parent object identifier, and includes at least one child object identifier, at least one child quantity context, or both."@en ;
+                     rdfs:label "Aggregation Event"@en ;
+                     rdfs:seeAlso <https://ref.gs1.org/standards/epcis/2.0.0/artefacts> .
+
+
+###  http://purl.org/eudpp#AssociationEvent
+evt:AssociationEvent rdf:type owl:Class ;
+                     rdfs:subClassOf evt:EPCISCarrier ,
+                                     [ rdf:type owl:Class ;
+                                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty evt:hasChildObjectContext ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass evt:InstanceIdentifier
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty evt:hasChildQuantityContext ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass evt:QuantityElement
+                                                     ]
+                                                   )
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty evt:hasActionType ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass evt:ActionType
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty evt:hasAssociationAnchor ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                     dcterms:source "Defined in the EU DPP Core Ontology Event module as an EPCIS-inspired extension for expressing non-containment associations between identified entities."@en ;
+                     rdfs:comment "A technical event carrier introduced in the EU DPP Core Ontology to represent the association, dissociation, or observation of relationships between identifiable objects without implying physical aggregation or parent-child containment semantics. Each AssociationEvent has exactly one action type, may refer to at most one association anchor, and includes at least one associated child object identifier, at least one child quantity context, or both."@en ;
+                     rdfs:label "Association Event"@en ;
+                     rdfs:seeAlso <https://ref.gs1.org/standards/epcis/2.0.0/artefacts> .
+
+
+###  http://purl.org/eudpp#BusinessLocation
+evt:BusinessLocation rdf:type owl:Class ;
+                     rdfs:subClassOf evt:Location ;
+                     dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                     dcterms:source "GS1 EPCIS 2.0; business location concept adapted for the Event module."@en ;
+                     rdfs:comment "A location playing the role of business context, indicating where the event is considered to take place from a business perspective."@en ;
+                     rdfs:label "Business Location"@en .
+
+
+###  http://purl.org/eudpp#BusinessStep
+evt:BusinessStep rdf:type owl:Class ;
+                 dcterms:identifier "https://ref.gs1.org/standards/cbv/" ;
+                 dcterms:source "Adapted from GS1 CBV business step semantics for the Event module."@en ;
+                 rdfs:comment "A classification indicating the immediate business context of an EPCIS-inspired event."@en ;
+                 rdfs:label "Business Step"@en .
+
+
+###  http://purl.org/eudpp#BusinessTransactionContext
+evt:BusinessTransactionContext rdf:type owl:Class ;
+                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                 owl:onProperty evt:hasBusinessTransactionType ;
+                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass evt:BusinessTransactionType
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty evt:businessTransactionIdentifier ;
+                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                                               ] ;
+                               dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                               dcterms:source "Adapted from GS1 EPCIS business transaction list semantics for the EU DPP Core Ontology Event module."@en ;
+                               rdfs:comment "A contextual structure representing a business transaction associated with a transaction event."@en ;
+                               rdfs:label "Business Transaction Context"@en .
+
+
+###  http://purl.org/eudpp#BusinessTransactionType
+evt:BusinessTransactionType rdf:type owl:Class ;
+                            dcterms:identifier "https://ref.gs1.org/standards/cbv/" ;
+                            dcterms:source "Adapted from GS1 CBV business transaction type semantics for the EU DPP Core Ontology Event module."@en ;
+                            rdfs:comment "A classification indicating the business type of a transaction associated with an event."@en ;
+                            rdfs:label "Business Transaction Type"@en .
+
+
+###  http://purl.org/eudpp#DPPActionType
+evt:DPPActionType rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:oneOf ( evt:AddDPPDataAction
+                                                    evt:CorrectDPPDataAction
+                                                    evt:DeleteDPPDataAction
+                                                    evt:ModifyDPPDataAction
+                                                  )
+                                      ] ;
+                  rdfs:comment "A classification indicating the type of information-level action performed during a DPP update event."@en ;
+                  rdfs:label "DPP Action Type"@en .
+
+
+###  http://purl.org/eudpp#DPPArchivalEvent
+evt:DPPArchivalEvent rdf:type owl:Class ;
+                     rdfs:subClassOf evt:DPPEvent ;
+                     rdfs:comment "An event corresponding to the archival or end-of-active-life management of a Digital Product Passport."@en ;
+                     rdfs:label "DPP Archival Event"@en .
+
+
+###  http://purl.org/eudpp#DPPCreationEvent
+evt:DPPCreationEvent rdf:type owl:Class ;
+                     rdfs:subClassOf evt:DPPEvent ;
+                     rdfs:comment "An event corresponding to the creation or initial issuance of a Digital Product Passport."@en ;
+                     rdfs:label "DPP Creation Event"@en .
+
+
+###  http://purl.org/eudpp#DPPEvent
+evt:DPPEvent rdf:type owl:Class ;
+             rdfs:subClassOf evt:ESPREvent ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty evt:isTriggeredByProductEvent ;
+                               owl:allValuesFrom evt:ProductEvent
+                             ] ;
+             owl:disjointWith evt:DPPEventRecord ,
+                              evt:ProductEvent ;
+             rdfs:comment "An ESPR-level event concept representing an event that affects the existence, content, accessibility, update, correction, or governance of a DPP. A DPPEvent captures the passport-facing semantics of the occurrence and is modelled as distinct from the product event that may trigger it."@en ;
+             rdfs:label "DPP Event"@en .
+
+
+###  http://purl.org/eudpp#DPPEventRecord
+evt:DPPEventRecord rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty evt:recordsDPPEvent ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass evt:DPPEvent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty evt:dppEventRecordIdentifier ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty evt:dppEventRecordedAt ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty evt:recordedInSystem ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty evt:recordedInSystemName ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   owl:disjointWith evt:EPCISCarrier ;
+                   dcterms:source "Defined in the EU DPP Core Ontology Event module to support the technical recording of DPP-related events."@en ;
+                   rdfs:comment "A technical audit record used to represent and log an information-level event affecting a Digital Product Passport. Unlike EPCIS carriers, this class is intended for recording DPP-side information events rather than product-facing operational events."@en ;
+                   rdfs:label "DPP Event Record"@en .
+
+
+###  http://purl.org/eudpp#DPPUpdateEvent
+evt:DPPUpdateEvent rdf:type owl:Class ;
+                   rdfs:subClassOf evt:DPPEvent ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty evt:hasDPPActionType ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass evt:DPPActionType
+                                   ] ;
+                   rdfs:comment "An event corresponding to an update of the content of a Digital Product Passport."@en ;
+                   rdfs:label "DPP Update Event"@en .
+
+
+###  http://purl.org/eudpp#DestructionEvent
+evt:DestructionEvent rdf:type owl:Class ;
+                     rdfs:subClassOf evt:ProductEvent ;
+                     dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                     dcterms:source "Regulation (EU) 2024/1781; Art 2(34); Art 25(1)"@en ;
+                     rdfs:comment "The intentional damaging or discarding of a product and unsold products as waste, with the exception of discarding for the sole purpose of delivering the discarded product for preparing for reuse, including refurbishment or remanufacturing operations. ESPR Art 2(34) and Art 25(1)."@en ;
+                     rdfs:label "Destruction"@en .
+
+
+###  http://purl.org/eudpp#Disposition
+evt:Disposition rdf:type owl:Class ;
+                dcterms:identifier "https://ref.gs1.org/standards/cbv/" ;
+                dcterms:source "Adapted from GS1 CBV disposition semantics for the Event module."@en ;
+                rdfs:comment "A classification indicating the business state of the object or objects following an EPCIS-inspired event."@en ;
+                rdfs:label "Disposition"@en .
+
+
+###  http://purl.org/eudpp#EPCISCarrier
+evt:EPCISCarrier rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty evt:hasBusinessLocation ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass evt:BusinessLocation
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty evt:hasBusinessStep ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty evt:hasDisposition ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty evt:hasReadPoint ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass evt:ReadPoint
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty evt:eventTime ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty evt:eventTimeZoneOffset ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty evt:eventIdentifier ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty evt:recordedAt ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                 dcterms:source "Derived from GS1 EPCIS 2.0 and adapted for the EU DPP Core Ontology Event module."@en ;
+                 rdfs:comment "A technical event class used as the abstract root of the Event carrier module. It represents a journalisation structure carrying the core event dimensions and serving as the superclass of specialised EPCIS-aligned event types. It is not itself a regulatory lifecycle event."@en ;
+                 rdfs:label "EPCIS Carrier"@en .
+
+
+###  http://purl.org/eudpp#ESPREvent
+evt:ESPREvent rdf:type owl:Class ;
+              dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+              dcterms:source "Regulation (EU) 2024/1781; lifecycle-event-oriented abstraction introduced for modelling purposes."@en ;
+              rdfs:comment "Abstract superclass introduced for modelling purposes. Used to represent the regulatory or business semantics of an event relevant in the ESPR context and concerning either a product or its DPP, independently of its technical journalisation."@en ;
+              rdfs:label "ESPR Event"@en .
+
+
+###  http://purl.org/eudpp#InstanceIdentifier
+evt:InstanceIdentifier rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty evt:identifierValue ;
+                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       dcterms:source "Defined for the EU DPP Core Ontology Event module following EPCIS instance-level identification semantics."@en ;
+                       rdfs:comment "An identifier-based structure used to represent an object identified at instance level in an EPCIS-inspired event context."@en ;
+                       rdfs:label "Instance Identifier"@en .
+
+
+###  http://purl.org/eudpp#Location
+evt:Location rdf:type owl:Class ;
+             dcterms:source "Defined for the EU DPP Core Ontology Event module to support generic location references in event contexts."@en ;
+             rdfs:comment "A generic location representing a spatial entity that can serve as a context in an event. A location may play different roles depending on the event context, such as observation point or business location."@en ;
+             rdfs:label "Location"@en .
+
+
+###  http://purl.org/eudpp#MaintenanceEvent
+evt:MaintenanceEvent rdf:type owl:Class ;
+                     rdfs:subClassOf evt:ProductEvent ;
+                     dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                     dcterms:source "Regulation (EU) 2024/1781; Art 2(19)"@en ;
+                     rdfs:comment "Actions (one or more) taken to keep a product in a condition where it can fulfil its intended purpose. ESPR Art 2(19)."@en ;
+                     rdfs:label "Maintenance"@en .
+
+
+###  http://purl.org/eudpp#MakingAvailableOnMarketEvent
+evt:MakingAvailableOnMarketEvent rdf:type owl:Class ;
+                                 rdfs:subClassOf evt:ProductEvent ;
+                                 dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                                 dcterms:source "Regulation (EU) 2024/1781; Art 2(39)"@en ;
+                                 rdfs:comment "Any supply of a product for distribution, consumption or use on the Union market in the course of a commercial activity, whether in return for payment or free of charge. ESPR Art 2(39)."@en ;
+                                 rdfs:label "Making Available on the Market"@en .
+
+
+###  http://purl.org/eudpp#ObjectEvent
+evt:ObjectEvent rdf:type owl:Class ;
+                rdfs:subClassOf evt:EPCISCarrier ,
+                                [ rdf:type owl:Class ;
+                                  owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                  owl:onProperty evt:hasIdentifiedObjectContext ;
+                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass evt:InstanceIdentifier
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty evt:hasQuantityContext ;
+                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass evt:QuantityElement
+                                                ]
+                                              )
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty evt:hasActionType ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass evt:ActionType
+                                ] ;
+                dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                dcterms:source "GS1 EPCIS 2.0; adapted from the Event module mapping table."@en ;
+                rdfs:comment "A technical event carrier representing an action performed on one or more identifiable objects, captured either at instance level or at class-and-quantity level. Each ObjectEvent has exactly one action type and includes at least one instance-level identifier, at least one quantity context, or both."@en ;
+                rdfs:label "Object Event"@en ;
+                rdfs:seeAlso <https://ref.gs1.org/standards/epcis/2.0.0/artefacts> .
+
+
+###  http://purl.org/eudpp#PlacingOnMarketEvent
+evt:PlacingOnMarketEvent rdf:type owl:Class ;
+                         rdfs:subClassOf evt:MakingAvailableOnMarketEvent ;
+                         dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                         dcterms:source "Regulation (EU) 2024/1781; Art 2(40)"@en ;
+                         rdfs:comment "The very first time a product is made available on the Union market. ESPR Art 2(40)."@en ;
+                         rdfs:label "Placing on the Market"@en .
+
+
+###  http://purl.org/eudpp#ProductEvent
+evt:ProductEvent rdf:type owl:Class ;
+                 rdfs:subClassOf evt:ESPREvent ;
+                 rdfs:comment "An ESPR-level event concept representing an event that affects the state, condition, use, circulation, transformation, maintenance, or end-of-life status of a product. A ProductEvent captures the product-facing semantics of the occurrence and is distinct from any DPP-side event that may be triggered to record or reflect it."@en ;
+                 rdfs:label "Product Event"@en .
+
+
+###  http://purl.org/eudpp#PuttingIntoServiceEvent
+evt:PuttingIntoServiceEvent rdf:type owl:Class ;
+                            rdfs:subClassOf evt:ProductEvent ;
+                            dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                            dcterms:source "Regulation (EU) 2024/1781; Art 2(41)"@en ;
+                            rdfs:comment "The first use of a product for its intended purpose in the Union. ESPR Art 2(41)."@en ;
+                            rdfs:label "Putting into Service"@en .
+
+
+###  http://purl.org/eudpp#QuantityElement
+evt:QuantityElement rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty evt:classIdentifier ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty evt:hasQuantityValue ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty evt:hasUnitOfMeasure ;
+                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                    ] ;
+                    dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                    dcterms:source "Adapted from GS1 EPCIS quantity list semantics for the EU DPP Core Ontology Event module."@en ;
+                    rdfs:comment "A structure representing a class-level identification context together with quantity information. It is used when an event refers to objects at class level rather than to individually identified instances."@en ;
+                    rdfs:label "Quantity Element"@en .
+
+
+###  http://purl.org/eudpp#ReadPoint
+evt:ReadPoint rdf:type owl:Class ;
+              rdfs:subClassOf evt:Location ;
+              dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+              dcterms:source "GS1 EPCIS 2.0; read point concept adapted for the Event module."@en ;
+              rdfs:comment "A location playing the role of observation point, indicating where the event was physically captured or observed."@en ;
+              rdfs:label "Read Point"@en .
+
+
+###  http://purl.org/eudpp#RefurbishmentEvent
+evt:RefurbishmentEvent rdf:type owl:Class ;
+                       rdfs:subClassOf evt:ProductEvent ;
+                       dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                       dcterms:source "Regulation (EU) 2024/1781; Art 2(18)"@en ;
+                       rdfs:comment "Actions carried out to prepare, clean, test, service and, where necessary, repair a product or a discarded product in order to restore its performance or functionality within the intended use and range of performance originally conceived at the design stage at the time of the placing of the product on the market. ESPR Art 2(18)."@en ;
+                       rdfs:label "Refurbishment"@en .
+
+
+###  http://purl.org/eudpp#RemanufacturingEvent
+evt:RemanufacturingEvent rdf:type owl:Class ;
+                         rdfs:subClassOf evt:ProductEvent ;
+                         dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                         dcterms:source "Regulation (EU) 2024/1781; Art 2(16)"@en ;
+                         rdfs:comment "Actions through which a new product is produced from objects that are waste, products or components and through which at least one change is made that substantially affects the safety, performance, purpose or type of the product. ESPR Art 2(16)."@en ;
+                         rdfs:label "Remanufacturing"@en .
+
+
+###  http://purl.org/eudpp#RepairEvent
+evt:RepairEvent rdf:type owl:Class ;
+                rdfs:subClassOf evt:ProductEvent ;
+                dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                dcterms:source "Regulation (EU) 2024/1781; Art 2(20)"@en ;
+                rdfs:comment "Actions taken to return a defective product or waste to a condition where it fulfils its intended purpose. ESPR Art 2(20)."@en ;
+                rdfs:label "Repair"@en .
+
+
+###  http://purl.org/eudpp#SourceOrDestination
+evt:SourceOrDestination rdf:type owl:Class ;
+                        dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                        dcterms:source "GS1 EPCIS 2.0; source and destination list structure adapted for the Event module."@en ;
+                        rdfs:comment "A contextual structure representing a source or a destination associated with an event in relation to a business transfer."@en ;
+                        rdfs:label "Source or Destination"@en .
+
+
+###  http://purl.org/eudpp#SourceOrDestinationEntity
+evt:SourceOrDestinationEntity rdf:type owl:Class ;
+                              dcterms:source "Defined for the EU DPP Core Ontology Event module as an intermediate alignment point."@en ;
+                              rdfs:comment "An intermediate alignment class used to represent an entity that can play the role of source or destination in an event context. Its precise alignment to Actor, Organisation, Location, or other external concepts is intended to be specified in the mapping ontology."@en ;
+                              rdfs:label "Source or Destination Entity"@en .
+
+
+###  http://purl.org/eudpp#SourceOrDestinationType
+evt:SourceOrDestinationType rdf:type owl:Class ;
+                            dcterms:identifier "https://ref.gs1.org/standards/cbv/" ;
+                            dcterms:source "GS1 EPCIS and CBV source/destination type semantics adapted for the Event module."@en ;
+                            rdfs:comment "A classification indicating the business meaning of a source or destination associated with an event."@en ;
+                            rdfs:label "Source or Destination Type"@en .
+
+
+###  http://purl.org/eudpp#TransactionEvent
+evt:TransactionEvent rdf:type owl:Class ;
+                     rdfs:subClassOf evt:EPCISCarrier ,
+                                     [ rdf:type owl:Class ;
+                                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty evt:hasIdentifiedObjectContext ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass evt:InstanceIdentifier
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty evt:hasQuantityContext ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass evt:QuantityElement
+                                                     ]
+                                                   )
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty evt:hasBusinessTransactionContext ;
+                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass evt:BusinessTransactionContext
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty evt:hasActionType ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass evt:ActionType
+                                     ] ;
+                     dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                     dcterms:source "GS1 EPCIS 2.0; adapted from the Event module mapping table."@en ;
+                     rdfs:comment "A technical event carrier representing the association or disassociation of one or more identifiable objects with one or more business transactions. Each TransactionEvent has exactly one action type, is linked to at least one business transaction context, and includes at least one instance-level identifier, at least one quantity context, or both. It provides documentary or contextual linkage and shall not by itself be interpreted as a lifecycle transition."@en ;
+                     rdfs:label "Transaction Event"@en ;
+                     rdfs:seeAlso <https://ref.gs1.org/standards/epcis/2.0.0/artefacts> .
+
+
+###  http://purl.org/eudpp#Transformation
+evt:Transformation rdf:type owl:Class ;
+                   dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                   dcterms:source "Adapted from GS1 EPCIS and CBV transformation identifier semantics for the Event module."@en ;
+                   rdfs:comment "An identified transformation resource used to correlate one or more TransformationEvents that describe the same transformation."@en ;
+                   rdfs:label "Transformation"@en .
+
+
+###  http://purl.org/eudpp#TransformationEvent
+evt:TransformationEvent rdf:type owl:Class ;
+                        rdfs:subClassOf evt:EPCISCarrier ,
+                                        [ rdf:type owl:Class ;
+                                          owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty evt:hasInputObjectContext ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass evt:InstanceIdentifier
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty evt:hasInputQuantityContext ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass evt:QuantityElement
+                                                        ]
+                                                      )
+                                        ] ,
+                                        [ rdf:type owl:Class ;
+                                          owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty evt:hasOutputObjectContext ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass evt:InstanceIdentifier
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty evt:hasOutputQuantityContext ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass evt:QuantityElement
+                                                        ]
+                                                      )
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty evt:hasTransformation ;
+                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass evt:Transformation
+                                        ] ;
+                        dcterms:identifier "https://ref.gs1.org/standards/epcis/" ;
+                        dcterms:source "GS1 EPCIS 2.0; adapted from the Event module mapping table."@en ;
+                        rdfs:comment "A technical event carrier representing the transformation of one or more input objects into one or more output objects, capturing material or structural change across event inputs and outputs. Each TransformationEvent includes at least one input context and at least one output context, expressed at instance level, quantity level, or both. It may refer to an identified transformation used to correlate multiple events describing the same transformation."@en ;
+                        rdfs:label "Transformation Event"@en ;
+                        rdfs:seeAlso <https://ref.gs1.org/standards/epcis/2.0.0/artefacts> .
+
+
+###  http://purl.org/eudpp#UpgradingEvent
+evt:UpgradingEvent rdf:type owl:Class ;
+                   rdfs:subClassOf evt:ProductEvent ;
+                   dcterms:identifier "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+                   dcterms:source "Regulation (EU) 2024/1781; Art 2(17)"@en ;
+                   rdfs:comment "Actions carried out to enhance the functionality, performance, capacity, safety or aesthetics of a product. ESPR Art 2(17)."@en ;
+                   rdfs:label "Upgrading"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/eudpp#ADD
+evt:ADD rdf:type owl:NamedIndividual ,
+                 evt:ActionType ;
+        rdfs:comment "Indicates that objects are being added to the context of the event, such as being commissioned or aggregated."@en ;
+        rdfs:label "ADD"@en .
+
+
+###  http://purl.org/eudpp#AddDPPDataAction
+evt:AddDPPDataAction rdf:type owl:NamedIndividual ,
+                              evt:DPPActionType ;
+                     rdfs:comment "Indicates that new information is added to the Digital Product Passport."@en ;
+                     rdfs:label "add data"@en .
+
+
+###  http://purl.org/eudpp#CorrectDPPDataAction
+evt:CorrectDPPDataAction rdf:type owl:NamedIndividual ,
+                                  evt:DPPActionType ;
+                         rdfs:comment "Indicates that erroneous, inconsistent, or incomplete information in the Digital Product Passport is corrected."@en ;
+                         rdfs:label "correct data"@en .
+
+
+###  http://purl.org/eudpp#DELETE
+evt:DELETE rdf:type owl:NamedIndividual ,
+                    evt:ActionType ;
+           rdfs:comment "Indicates that objects are removed from the context of the event, such as being decommissioned or disaggregated."@en ;
+           rdfs:label "DELETE"@en .
+
+
+###  http://purl.org/eudpp#DeleteDPPDataAction
+evt:DeleteDPPDataAction rdf:type owl:NamedIndividual ,
+                                 evt:DPPActionType ;
+                        rdfs:comment "Indicates that information is removed from the Digital Product Passport."@en ;
+                        rdfs:label "delete data"@en .
+
+
+###  http://purl.org/eudpp#ModifyDPPDataAction
+evt:ModifyDPPDataAction rdf:type owl:NamedIndividual ,
+                                 evt:DPPActionType ;
+                        rdfs:comment "Indicates that existing information in the Digital Product Passport is modified."@en ;
+                        rdfs:label "modify data"@en .
+
+
+###  http://purl.org/eudpp#OBSERVE
+evt:OBSERVE rdf:type owl:NamedIndividual ,
+                     evt:ActionType ;
+            rdfs:comment "Indicates that objects are observed in the event context without changing their lifecycle state."@en ;
+            rdfs:label "OBSERVE"@en .
+
+
+###  http://purl.org/eudpp#active
+evt:active rdf:type owl:NamedIndividual ,
+                    evt:Disposition ;
+           rdfs:comment "Indicates that the object is active and in normal use following the event."@en ;
+           rdfs:label "active"@en .
+
+
+###  http://purl.org/eudpp#available
+evt:available rdf:type owl:NamedIndividual ,
+                       evt:Disposition ;
+              rdfs:comment "Indicates that the object is available for use, sale, or processing following the event."@en ;
+              rdfs:label "available"@en .
+
+
+###  http://purl.org/eudpp#commissioning
+evt:commissioning rdf:type owl:NamedIndividual ,
+                           evt:BusinessStep ;
+                  rdfs:comment "Indicates that the event corresponds to the creation or initial introduction of objects into the system."@en ;
+                  rdfs:label "commissioning"@en .
+
+
+###  http://purl.org/eudpp#damaged
+evt:damaged rdf:type owl:NamedIndividual ,
+                     evt:Disposition ;
+            rdfs:comment "Indicates that the object is damaged following the event."@en ;
+            rdfs:label "damaged"@en .
+
+
+###  http://purl.org/eudpp#destroyed
+evt:destroyed rdf:type owl:NamedIndividual ,
+                       evt:Disposition ;
+              rdfs:comment "Indicates that the object has been destroyed and is no longer usable."@en ;
+              rdfs:label "destroyed"@en .
+
+
+###  http://purl.org/eudpp#destroying
+evt:destroying rdf:type owl:NamedIndividual ,
+                        evt:BusinessStep ;
+               rdfs:comment "Indicates that the event corresponds to the destruction of objects."@en ;
+               rdfs:label "destroying"@en .
+
+
+###  http://purl.org/eudpp#disposed
+evt:disposed rdf:type owl:NamedIndividual ,
+                      evt:Disposition ;
+             rdfs:comment "Indicates that the object has been disposed of following the event."@en ;
+             rdfs:label "disposed"@en .
+
+
+###  http://purl.org/eudpp#expired
+evt:expired rdf:type owl:NamedIndividual ,
+                     evt:Disposition ;
+            rdfs:comment "Indicates that the object has reached its expiration date."@en ;
+            rdfs:label "expired"@en .
+
+
+###  http://purl.org/eudpp#in_transit
+evt:in_transit rdf:type owl:NamedIndividual ,
+                        evt:Disposition ;
+               rdfs:comment "Indicates that the object is in transit between locations following the event."@en ;
+               rdfs:label "in transit"@en .
+
+
+###  http://purl.org/eudpp#inspecting
+evt:inspecting rdf:type owl:NamedIndividual ,
+                        evt:BusinessStep ;
+               rdfs:comment "Indicates that the event corresponds to inspecting objects for quality or compliance."@en ;
+               rdfs:label "inspecting"@en .
+
+
+###  http://purl.org/eudpp#loading
+evt:loading rdf:type owl:NamedIndividual ,
+                     evt:BusinessStep ;
+            rdfs:comment "Indicates that the event corresponds to loading objects onto a transport or container."@en ;
+            rdfs:label "loading"@en .
+
+
+###  http://purl.org/eudpp#other
+evt:other rdf:type owl:NamedIndividual ,
+                   evt:BusinessStep ;
+          rdfs:comment "Indicates that the event corresponds to a business step not explicitly covered by the predefined categories."@en ;
+          rdfs:label "other"@en .
+
+
+###  http://purl.org/eudpp#packing
+evt:packing rdf:type owl:NamedIndividual ,
+                     evt:BusinessStep ;
+            rdfs:comment "Indicates that the event corresponds to packing objects into a container or packaging hierarchy."@en ;
+            rdfs:label "packing"@en .
+
+
+###  http://purl.org/eudpp#recalled
+evt:recalled rdf:type owl:NamedIndividual ,
+                      evt:Disposition ;
+             rdfs:comment "Indicates that the object has been recalled from the market or supply chain."@en ;
+             rdfs:label "recalled"@en .
+
+
+###  http://purl.org/eudpp#receiving
+evt:receiving rdf:type owl:NamedIndividual ,
+                       evt:BusinessStep ;
+              rdfs:comment "Indicates that the event corresponds to receiving objects at a location."@en ;
+              rdfs:label "receiving"@en .
+
+
+###  http://purl.org/eudpp#repackaging
+evt:repackaging rdf:type owl:NamedIndividual ,
+                         evt:BusinessStep ;
+                rdfs:comment "Indicates that the event corresponds to repackaging objects into new packaging configurations."@en ;
+                rdfs:label "repackaging"@en .
+
+
+###  http://purl.org/eudpp#repairing
+evt:repairing rdf:type owl:NamedIndividual ,
+                       evt:BusinessStep ;
+              rdfs:comment "Indicates that the event corresponds to repairing objects to restore their functionality."@en ;
+              rdfs:label "repairing"@en .
+
+
+###  http://purl.org/eudpp#reserved
+evt:reserved rdf:type owl:NamedIndividual ,
+                      evt:Disposition ;
+             rdfs:comment "Indicates that the object is reserved and not available for general use or sale."@en ;
+             rdfs:label "reserved"@en .
+
+
+###  http://purl.org/eudpp#retail_selling
+evt:retail_selling rdf:type owl:NamedIndividual ,
+                            evt:BusinessStep ;
+                   rdfs:comment "Indicates that the event corresponds to selling objects to end consumers."@en ;
+                   rdfs:label "retail selling"@en .
+
+
+###  http://purl.org/eudpp#returned
+evt:returned rdf:type owl:NamedIndividual ,
+                      evt:Disposition ;
+             rdfs:comment "Indicates that the object has been returned following the event."@en ;
+             rdfs:label "returned"@en .
+
+
+###  http://purl.org/eudpp#sellable_accessible
+evt:sellable_accessible rdf:type owl:NamedIndividual ,
+                                 evt:Disposition ;
+                        rdfs:comment "Indicates that the object is sellable and physically accessible."@en ;
+                        rdfs:label "sellable accessible"@en .
+
+
+###  http://purl.org/eudpp#sellable_not_accessible
+evt:sellable_not_accessible rdf:type owl:NamedIndividual ,
+                                     evt:Disposition ;
+                            rdfs:comment "Indicates that the object is sellable but not physically accessible."@en ;
+                            rdfs:label "sellable not accessible"@en .
+
+
+###  http://purl.org/eudpp#shipping
+evt:shipping rdf:type owl:NamedIndividual ,
+                      evt:BusinessStep ;
+             rdfs:comment "Indicates that the event corresponds to shipping objects from one location to another."@en ;
+             rdfs:label "shipping"@en .
+
+
+###  http://purl.org/eudpp#stocking
+evt:stocking rdf:type owl:NamedIndividual ,
+                      evt:BusinessStep ;
+             rdfs:comment "Indicates that the event corresponds to placing objects into stock or inventory."@en ;
+             rdfs:label "stocking"@en .
+
+
+###  http://purl.org/eudpp#stolen
+evt:stolen rdf:type owl:NamedIndividual ,
+                    evt:Disposition ;
+           rdfs:comment "Indicates that the object has been stolen."@en ;
+           rdfs:label "stolen"@en .
+
+
+###  http://purl.org/eudpp#storing
+evt:storing rdf:type owl:NamedIndividual ,
+                     evt:BusinessStep ;
+            rdfs:comment "Indicates that the event corresponds to storing objects at a location."@en ;
+            rdfs:label "storing"@en .
+
+
+###  http://purl.org/eudpp#transporting
+evt:transporting rdf:type owl:NamedIndividual ,
+                          evt:BusinessStep ;
+                 rdfs:comment "Indicates that the event corresponds to transporting objects between locations."@en ;
+                 rdfs:label "transporting"@en .
+
+
+###  http://purl.org/eudpp#unknown
+evt:unknown rdf:type owl:NamedIndividual ,
+                     evt:Disposition ;
+            rdfs:comment "Indicates that the state of the object is unknown following the event."@en ;
+            rdfs:label "unknown"@en .
+
+
+###  http://purl.org/eudpp#unloading
+evt:unloading rdf:type owl:NamedIndividual ,
+                       evt:BusinessStep ;
+              rdfs:comment "Indicates that the event corresponds to unloading objects from a transport or container."@en ;
+              rdfs:label "unloading"@en .
+
+
+###  http://purl.org/eudpp#unpacking
+evt:unpacking rdf:type owl:NamedIndividual ,
+                       evt:BusinessStep ;
+              rdfs:comment "Indicates that the event corresponds to removing objects from a container or packaging hierarchy."@en ;
+              rdfs:label "unpacking"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evt:AggregationEvent
+                evt:AssociationEvent
+                evt:ObjectEvent
+                evt:TransactionEvent
+                evt:TransformationEvent
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evt:DPPArchivalEvent
+                evt:DPPCreationEvent
+                evt:DPPUpdateEvent
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evt:InstanceIdentifier
+                evt:Location
+                evt:QuantityElement
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evt:SourceOrDestination
+                evt:SourceOrDestinationEntity
+                evt:SourceOrDestinationType
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

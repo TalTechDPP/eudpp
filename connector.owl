@@ -144,6 +144,34 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
+    <!-- https://purl.org/eudpp#concernsDPP -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#concernsDPP">
+        <rdfs:domain rdf:resource="http://purl.org/eudpp#DPPEvent"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#DPP"/>
+        <rdfs:comment xml:lang="en">Links a DPP event to the Digital Product Passport whose content, state, or accessibility is affected by the event. This property captures information-level changes and is not intended to represent physical or operational events on the product.
+
+DPP is modelled in the EU DPP CO P_DPP module.
+DPPEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Concerns DPP</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#concernsProduct -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#concernsProduct">
+        <rdfs:domain rdf:resource="http://purl.org/eudpp#ProductEvent"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:comment xml:lang="en">Links a product event to the product whose state, condition, or lifecycle is affected by the event.
+
+Product is modelled in the EU DPP CO P_DPP module.
+ProductEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Concerns product</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#containsLcaResult -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsLcaResult">
@@ -184,8 +212,8 @@ Substance of concern is modelled in the EU DPP CO SOC module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasBackUpCopyHost">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
         <dcterms:references>ESPR Annex III</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
         <rdfs:comment xml:lang="en">The reference of the digital product passport service provider hosting the back-up copy of the digital product passport [ESPR Annex III].
 
 DPP is modelled in the EU DPP CO P_DPP module.
@@ -293,6 +321,36 @@ MaterialIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#hasUniqueFacilityIdentifier -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueFacilityIdentifier">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#FacilityIdentifier"/>
+        <dcterms:references xml:lang="en">ESPR Art 2 (33)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
+        <rdfs:comment xml:lang="en">Linking a Facility to its unique facility identifier.
+Facility is modelled in the EU DPP CO ACTOR module.
+FacilityIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has unique facility identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasUniqueOperatorIdentifier -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueOperatorIdentifier">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ActorIdentifier"/>
+        <dcterms:references xml:lang="en">ESPR Art 2 (31)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
+        <rdfs:comment xml:lang="en">Linking an Actor to their unique operator identifier. 
+Actor is modelled in the EU DPP CO ACTOR module.
+ActorIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has unique operator identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasUniqueProductIdentifier -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueProductIdentifier">
@@ -365,6 +423,20 @@ Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#recordedBy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#recordedBy">
+        <rdfs:domain rdf:resource="http://purl.org/eudpp#DPPEventRecord"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">Links a DPP event record to the actor that created the technical record of the logged DPP-side event.
+
+DPPEventRecord is modelled in the EU DPP CO EVENT module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recorded by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#representsManufacturerForProduct -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#representsManufacturerForProduct">
@@ -377,29 +449,7 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
         <rdfs:label xml:lang="en">Represents manufacturer for product</rdfs:label>
     </owl:ObjectProperty>
     
-    <!-- https://purl.org/eudpp#hasUniqueOperatorIdentifier -->
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueOperatorIdentifier">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#ActorIdentifier"/>
-        <dcterms:references xml:lang="en">ESPR Art 2 (31)</dcterms:references>
-        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
-        <rdfs:comment xml:lang="en">Linking an Actor to their unique operator identifier. 
-Actor is modelled in the EU DPP CO ACTOR module.
-ActorIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has unique operator identifier</rdfs:label>
-    </owl:ObjectProperty>
-    
-    <!-- https://purl.org/eudpp#hasUniqueFacilityIdentifier -->
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueFacilityIdentifier">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#FacilityIdentifier"/>
-        <dcterms:references xml:lang="en">ESPR Art 2 (33)</dcterms:references>
-        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
-        <rdfs:comment xml:lang="en">Linking a Facility to its unique facility identifier.
-Facility is modelled in the EU DPP CO ACTOR module.
-FacilityIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has unique facility identifier</rdfs:label>
-    </owl:ObjectProperty>
+
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -412,18 +462,45 @@ FacilityIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     
 
 
+    <!-- http://purl.org/eudpp#DPPEvent -->
+
+    <owl:Class rdf:about="http://purl.org/eudpp#DPPEvent">
+        <rdfs:isDefinedBy>http://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/eudpp#DPPEventRecord -->
+
+    <owl:Class rdf:about="http://purl.org/eudpp#DPPEventRecord">
+        <rdfs:isDefinedBy>http://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/eudpp#ProductEvent -->
+
+    <owl:Class rdf:about="http://purl.org/eudpp#ProductEvent">
+        <rdfs:isDefinedBy>http://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#Actor -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#Actor">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
     </owl:Class>
+    
 
-        <!-- https://purl.org/eudpp#ActorIdentifier -->
+
+    <!-- https://purl.org/eudpp#ActorIdentifier -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#ActorIdentifier">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/IDENT"/>
     </owl:Class>
     
+
 
     <!-- https://purl.org/eudpp#ActorRoleAssignment -->
 
@@ -471,11 +548,15 @@ FacilityIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
     </owl:Class>
     
+
+
     <!-- https://purl.org/eudpp#FacilityIdentifier -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#FacilityIdentifier">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/IDENT"/>
     </owl:Class>
+    
+
 
     <!-- https://purl.org/eudpp#LcaResult -->
 
