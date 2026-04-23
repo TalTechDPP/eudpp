@@ -204,6 +204,27 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Example value of the identifier</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifier example value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#identifierExpiresOn -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#identifierExpiresOn">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label xml:lang="en">Identifier expires on</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#identifierIssuedOn -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#identifierIssuedOn">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label xml:lang="en">Identifier issued on</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -214,6 +235,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment xml:lang="en">Maximum length of the identifier</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifier maximum length</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -224,6 +246,29 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment xml:lang="en">Minimum length of the identifier</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifier minimum length</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#identifierPattern -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#identifierPattern">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A pattern the identifier conforms to, given as a regular expression (regex).</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifier pattern</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#identifierSchemeIssuer -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#identifierSchemeIssuer">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Issuer of the identifier scheme</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifier scheme issuer</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -234,6 +279,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The (unique) value of the identifier.</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifier value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -244,6 +290,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:domain rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Reference standard version the instance schema refers to</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifier scheme version</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -529,6 +576,7 @@ This is the most widely used identifier for economic operators in EU trade.</rdf
         <eudpp:identifierExampleValue>9501101530003</eudpp:identifierExampleValue>
         <eudpp:identifierMaxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</eudpp:identifierMaxLength>
         <eudpp:identifierMinLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</eudpp:identifierMinLength>
+        <eudpp:identifierSchemeIssuer>GS1</eudpp:identifierSchemeIssuer>
         <rdfs:comment xml:lang="en">A globally unique identifier defined by GS1 used to identify legal entities, functional entities, and physical locations within business and supply chain processes.
 
 Typically identifies: legal entities, functional entities (departments), physical locations (warehouses, sites).</rdfs:comment>
@@ -546,6 +594,7 @@ Typically identifies: legal entities, functional entities (departments), physica
         <eudpp:identifierExampleValue>14006381333938</eudpp:identifierExampleValue>
         <eudpp:identifierMaxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</eudpp:identifierMaxLength>
         <eudpp:identifierMinLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</eudpp:identifierMinLength>
+        <eudpp:identifierSchemeIssuer>GS1</eudpp:identifierSchemeIssuer>
         <rdfs:comment xml:lang="en">A globally unique identifier for trade items, defined by GS1, used to identify products at various packaging levels.</rdfs:comment>
         <rdfs:label xml:lang="en">GTIN</rdfs:label>
         <rdfs:seeAlso>https://www.gs1.org/standards/id-keys/gtin</rdfs:seeAlso>
@@ -562,6 +611,7 @@ Typically identifies: legal entities, functional entities (departments), physica
         <eudpp:identifierExampleValue>529900T8BM49AURSDO55</eudpp:identifierExampleValue>
         <eudpp:identifierMaxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</eudpp:identifierMaxLength>
         <eudpp:identifierMinLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</eudpp:identifierMinLength>
+        <eudpp:identifierSchemeIssuer>ISO</eudpp:identifierSchemeIssuer>
         <rdfs:comment xml:lang="en">A Legal Entity Identifier (LEI) is a globally unique 20-character alphanumeric code that identifies legally distinct entities participating in financial transactions, as defined by ISO 17442.
 
 A 20‑character code used globally for financial and regulatory reporting.
