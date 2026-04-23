@@ -21,6 +21,7 @@
         <owl:imports rdf:resource="https://purl.org/eudpp/MAT"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/IDENT"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/LCA"/>
+        <owl:imports rdf:resource="https://purl.org/eudpp/EVENT"/>
         <dcterms:contributor xml:lang="en">Hele-Mai Haav</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Riina Maigre</dcterms:contributor>
         <dcterms:created xml:lang="en">2025-02-27</dcterms:created>
