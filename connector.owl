@@ -251,6 +251,20 @@ MaterialOfComposition is modelled in the EU DPP CO MAT module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#hasMaterialIdentifier -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasMaterialIdentifier">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#MaterialOfComposition"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
+        <rdfs:comment xml:lang="en">Realisation of thematerial indetifier as &quot;Product parameters: identification of  ... materials [ESPR Annex I c)]&quot;
+
+MaterialOfComposition is modelled in the EU DPP CO MAT module.
+MaterialIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has material identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasUniqueProductIdentifier -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueProductIdentifier">
@@ -400,6 +414,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#Facility">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/ACTOR"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#MaterialIdentifier -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#MaterialIdentifier">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/IDENT</rdfs:isDefinedBy>
     </owl:Class>
     
 
