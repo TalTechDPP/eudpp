@@ -460,7 +460,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <dcterms:references xml:lang="en">ESPR Art 2 (43)</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
         <rdfs:comment xml:lang="en">A specific assignment representing the written mandate between a manufacturer and an authorised representative; [ESPR Art 2 (43)]</rdfs:comment>
-        <rdfs:label xml:lang="en">Authorised representative assignment</rdfs:label>
+        <rdfs:label xml:lang="en">Authorised representative role assignment</rdfs:label>
     </owl:Class>
     
 
