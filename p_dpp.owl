@@ -483,9 +483,9 @@ It is formatted as a URI/URL .</rdfs:comment>
         </rdfs:range>
         <dcterms:references xml:lang="en">ESPR Art 9 (2) d</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
-        <rdfs:comment xml:lang="en">The product passport should be defined at the level of item, batch or product model, depending on specific needs and complexity of the value chain, the size, nature or impacts of the products considered. (Standardisation Request 5423 7)
+        <rdfs:comment xml:lang="en">ESPR Art 9 (2) d  declares that the digital product passport is to be established at model, batch or item level, and the definition of such levels (is determined by delegated acts (DA));
 
-The level of granularity of the ProductID as per ESPR.</rdfs:comment>
+The product passport should be defined at the level of item, batch or product model, depending on specific needs and complexity of the value chain, the size, nature or impacts of the products considered. (Standardisation Request 5423 7)</rdfs:comment>
         <rdfs:label xml:lang="en">Granularity</rdfs:label>
     </owl:DatatypeProperty>
     
