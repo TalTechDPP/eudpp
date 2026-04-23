@@ -181,6 +181,20 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#hasDigitalProductPassportId -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasDigitalProductPassportId">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#DPPIdentifier"/>
+        <rdfs:comment>Realisation for the Unique identifier of an instance of the digital product passport.
+
+DPP is modelled in the EU DPP CO P_DPP module.
+DPPIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has digital product passport id</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasEconomicOperator -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEconomicOperator">
@@ -233,6 +247,20 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 Product is modelled in the EU DPP CO P_DPP module.
 MaterialOfComposition is modelled in the EU DPP CO MAT module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has material</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasUniqueProductIdentifier -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueProductIdentifier">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
+        <rdfs:comment xml:lang="en">Realisation of the uniqueProductIdentifier.
+
+Product is modelled in the EU DPP CO P_DPP module.
+ProductIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has unique product identifier</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -305,34 +333,6 @@ Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 AuthorisedRepresentationAssignment is modelled in the EU DPP CO ACTOR module.
 Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
         <rdfs:label xml:lang="en">Represents manufacturer for product</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/eudpp#hasDigitalProductPassportId -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/eudpp#hasDigitalProductPassportId">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#DPPIdentifier"/>
-        <rdfs:comment>Realisation for the Unique identifier of an instance of the digital product passport.
-
-DPP is modelled in the EU DPP CO P_DPP module.
-DPPIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has digital product passport id</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/eudpp#hasUniqueProductIdentifier -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/eudpp#hasUniqueProductIdentifier">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
-        <rdfs:comment xml:lang="en">Realisation of the uniqueProductIdentifier.
-
-Product is modelled in the EU DPP CO P_DPP module.
-ProductIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has unique product identifier</rdfs:label>
     </owl:ObjectProperty>
     
 

@@ -173,6 +173,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#IdentifierGranularity"/>
         <rdfs:comment xml:lang="en">Defines the granularity of an identifier, if exists.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has granularity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -183,6 +184,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Identifier"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <rdfs:comment>The scheme/standard the Identifier follows</rdfs:comment>
+        <rdfs:label xml:lang="en">Has scheme</rdfs:label>
     </owl:ObjectProperty>
     
 

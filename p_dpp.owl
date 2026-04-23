@@ -234,7 +234,7 @@ functional properties, and are similar in terms of consumer perception (ESPR Art
 group or groups covered are given by delegated acts. (ESPR Art 8 (a))
 
 This will be probably a classification code from some product classification scheme .</rdfs:comment>
-        <rdfs:label xml:lang="en">Has Product group</rdfs:label>
+        <rdfs:label xml:lang="en">Has product group</rdfs:label>
     </owl:ObjectProperty>
     
 
