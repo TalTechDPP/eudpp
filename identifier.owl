@@ -642,6 +642,7 @@ Used by regulators, banks, customs, and some trade systems.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#batch">
         <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
+        <rdfs:comment xml:lang="en">According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -650,6 +651,7 @@ Used by regulators, banks, customs, and some trade systems.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#item">
         <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
+        <rdfs:comment xml:lang="en">According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -658,6 +660,7 @@ Used by regulators, banks, customs, and some trade systems.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#model">
         <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
+        <rdfs:comment xml:lang="en">According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;</rdfs:comment>
     </owl:NamedIndividual>
 </rdf:RDF>
 
