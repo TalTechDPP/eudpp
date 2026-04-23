@@ -29,12 +29,15 @@ CHANGES FEB 2026
 2. Modelled several Actor properties using schema.org properties, such as address, email, telephone, url, geo.
 3. Changed Role class hierarchy.
 
+CHANGES APRIL 2026
+1. Moved identifier logic to connector.
+2. Fixed AutorisedRepresentativeRoleAssignment name (previously AutorisedRepresentationAssignment).
         </dcterms:description>
         <dcterms:issued>2025-03-14</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
-        <dcterms:modified>2026-02-27</dcterms:modified>
+        <dcterms:modified>2026-04-23</dcterms:modified>
         <dcterms:title xml:lang="en">Actors and roles module for an EU DPP core ontology proposed by CIRPASS-2 European project.</dcterms:title>
         <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Actor module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
@@ -119,7 +122,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
     
-
+    
 
     <!-- https://purl.org/eudpp:references -->
 
@@ -166,7 +169,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasRepresentativeMandate">
         <owl:inverseOf rdf:resource="https://purl.org/eudpp#representsManufacturer"/>
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#AuthorisedRepresentationAssignment"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#AuthorisedRepresentativeRoleAssignment"/>
         <rdfs:comment xml:lang="en">Relates a manufacturer to the mandate (assignment) that authorises an actor to act on the manufacturer&apos;s behalf.</rdfs:comment>
         <rdfs:label xml:lang="en">Has representative mandate</rdfs:label>
     </owl:ObjectProperty>
@@ -233,7 +236,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <!-- https://purl.org/eudpp#representsManufacturer -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#representsManufacturer">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#AuthorisedRepresentationAssignment"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#AuthorisedRepresentativeRoleAssignment"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
         <rdfs:comment xml:lang="en">Used when the role is authorisedRepresentativeRole to indicate the manufacturer being represented.</rdfs:comment>
         <rdfs:label xml:lang="en">Represents manufacturer</rdfs:label>
@@ -334,52 +337,6 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A trademark officially registered and owned by an actor.</rdfs:comment>
         <rdfs:label xml:lang="en">Registered trademark</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#uniqueFacilityIdentifier -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#uniqueFacilityIdentifier">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dcterms:references xml:lang="en">ESPR Art 2 (33)</dcterms:references>
-        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
-        <rdfs:comment xml:lang="en">Unique facility identifier means a unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain; [ESPR Art 2 (33)] </rdfs:comment>
-        <rdfs:label xml:lang="en">Unique facility identifier</rdfs:label>
-    </owl:DatatypeProperty>
-
-        <!-- https://w3id.org/eudpp#uniqueFacilityIdentifierScheme -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/eudpp#uniqueFacilityIdentifierScheme">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The coding scheme used for the uniqueFacilityIdentifier. 
-Specific scheme specified by ESPR delegated acts, or similar, for sectorial usage</rdfs:comment>
-        <rdfs:label xml:lang="en">Unique facility identifier scheme</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#uniqueOperatorIdentifier -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#uniqueOperatorIdentifier">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dcterms:references xml:lang="en">ESPR Art 2 (31)</dcterms:references>
-        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
-        <rdfs:comment xml:lang="en">Unique operator identifier means a unique string of characters for the identification of an actor involved in a product’s value chain; [ESPR Art. 2 (31)]</rdfs:comment>
-        <rdfs:label xml:lang="en">Unique operator ID</rdfs:label>
-    </owl:DatatypeProperty>
-
-        <!-- https://w3id.org/eudpp#uniqueOperatorIdentifierScheme -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/eudpp#uniqueOperatorIdentifierScheme">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The coding scheme used for the uniqueOperatorIdentifier. 
-Specific scheme specified by ESPR delegated acts, or similar, for sectorial usage</rdfs:comment>
-        <rdfs:label xml:lang="en">Unique operator identifier scheme</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -490,9 +447,9 @@ Specific scheme specified by ESPR delegated acts, or similar, for sectorial usag
     
 
 
-    <!-- https://purl.org/eudpp#AuthorisedRepresentationAssignment -->
+    <!-- https://purl.org/eudpp#AuthorisedRepresentativeRoleAssignment -->
 
-    <owl:Class rdf:about="https://purl.org/eudpp#AuthorisedRepresentationAssignment">
+    <owl:Class rdf:about="https://purl.org/eudpp#AuthorisedRepresentativeRoleAssignment">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
         <rdfs:subClassOf>
             <owl:Restriction>
