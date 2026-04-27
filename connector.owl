@@ -256,7 +256,9 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdCommissioner">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">EPDStudy is modelled in the EU DPP CO LCA module.
+        <rdfs:comment xml:lang="en">Links an EPD study to the Actor that commissioned and financed the underlying LCA data collection and modelling work. Corresponds to ILCD+EPD element commissionerAndGoal/referenceToCommissioner. Typically, this is the manufacturer or an industry association.
+
+EPDStudy is modelled in the EU DPP CO LCA module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has EPD commissioner</rdfs:label>
     </owl:ObjectProperty>
@@ -268,7 +270,9 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdDataGenerator">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">EPDStudy is modelled in the EU DPP CO LCA module.
+        <rdfs:comment xml:lang="en">Links an EPD study to the Actor (person or organisation) that compiled, calculated and modelled the LCA dataset. Corresponds to ILCD+EPD element dataGenerator/referenceToPersonOrEntityGeneratingTheDataSet. Typically, this is the LCA practitioner or consultancy.
+
+EPDStudy is modelled in the EU DPP CO LCA module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has EPD data generator</rdfs:label>
     </owl:ObjectProperty>
@@ -280,7 +284,9 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdRegistrationAuthority">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">EPDStudy is modelled in the EU DPP CO LCA module.
+        <rdfs:comment xml:lang="en">Links an EPD study to the Actor that issued, registered and published it under its programme. Corresponds to ILCD+EPD element publicationAndOwnership/referenceToRegistrationAuthority. Typically, this is the EPD programme operator (e.g. EPD International, Institut Bauen und Umwelt, INIES). 
+
+EPDStudy is modelled in the EU DPP CO LCA module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has EPD registration authority</rdfs:label>
     </owl:ObjectProperty>
@@ -292,7 +298,9 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdReviewer">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Review"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">Review is modelled in the EU DPP CO LCA module.
+        <rdfs:comment xml:lang="en">Links a critical review record to the Actor (individual or institution) that conducted the verification or critical review of the EPD study. Corresponds to ILCD+EPD element review/referenceToNameOfReviewerAndInstitution. The type of review (independent external, accredited third party, etc.) is carried on the Review instance via eudpp:typeOfReview.
+
+Review is modelled in the EU DPP CO LCA module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has EPD reviewer</rdfs:label>
     </owl:ObjectProperty>
@@ -304,7 +312,9 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdStudyOwner">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">EPDStudy is modelled in the EU DPP CO LCA module.
+        <rdfs:comment xml:lang="en">Links an EPD study to the Actor that holds ownership of the dataset (which may differ from the registration authority or the commissioner). Corresponds to ILCD+EPD element publicationAndOwnership/referenceToOwnershipOfDataSet. 
+
+EPDStudy is modelled in the EU DPP CO LCA module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has EPD study owner</rdfs:label>
     </owl:ObjectProperty>
@@ -358,7 +368,9 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasManufacturingSite">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#ManufacturerRecord"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
-        <rdfs:comment xml:lang="en">ManufacturerRecord is modelled in the EU DPP CO LCA module.
+        <rdfs:comment xml:lang="en">Links a ManufacturerRecord to one or more production Facilities (1..n) operated by the manufacturer identified in that record. Corresponds to ILCD+EPD element epd24:manufacturer/epd24:sites/epd24:site. Allows a DPP consumer to navigate from an EPD or LCA study to the specific production site(s) whose data underpins it. 
+
+ManufacturerRecord is modelled in the EU DPP CO LCA module.
 Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has manufacturing site</rdfs:label>
     </owl:ObjectProperty>
@@ -442,7 +454,9 @@ ProductIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#identifiesManufacturer">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#ManufacturerRecord"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">ManufacturerRecord is modelled in the EU DPP CO LCA module.
+        <rdfs:comment xml:lang="en">Links a ManufacturerRecord to the Actor that is the legal manufacturer who contributed primary data to the LCA or EPD study. A study may have several ManufacturerRecords (one per contributing manufacturer), each linking to its Actor via this property. Distinct from eudpp:hasManufacturer (Product --&gt; Actor), which identifies the manufacturer of a specific DPP-bearing product instance rather than a contributor to an LCA study. 
+
+ManufacturerRecord is modelled in the EU DPP CO LCA module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Identifies manufacturer</rdfs:label>
     </owl:ObjectProperty>
