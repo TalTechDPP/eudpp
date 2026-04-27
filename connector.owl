@@ -176,7 +176,7 @@ ProductEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsLcaResult">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#LCAStudy"/>
         <rdfs:comment xml:lang="en">A DPP contains a LCA Result -- a measurable outcome of a life cycle assessment, representing the quantified effect of a product.
 
 DPP is modelled in the EU DPP CO P_DPP module.
@@ -251,6 +251,66 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#hasEpdCommissioner -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdCommissioner">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">EPDStudy is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has EPD commissioner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasEpdDataGenerator -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdDataGenerator">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">EPDStudy is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has EPD data generator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasEpdRegistrationAuthority -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdRegistrationAuthority">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">EPDStudy is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has EPD registration authority</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasEpdReviewer -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdReviewer">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Review"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">Review is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has EPD reviewer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasEpdStudyOwner -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEpdStudyOwner">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">EPDStudy is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has EPD study owner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasIssuer -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasIssuer">
@@ -265,16 +325,16 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
-    <!-- https://purl.org/eudpp#hasLcaResult -->
+    <!-- https://purl.org/eudpp#hasLCAStudy -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasLcaResult">
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasLCAStudy">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#LcaResult"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#LCAStudy"/>
         <rdfs:comment xml:lang="en">A product has a LCA Result -- a measurable outcome of a life cycle assessment, representing the quantified effect of a product.
 
 Product is modelled in the EU DPP CO P_DPP module.
 LcaResult is modelled in the EU DPP CO LCA module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has LCA result</rdfs:label>
+        <rdfs:label xml:lang="en">Has LCA study</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -289,6 +349,18 @@ LcaResult is modelled in the EU DPP CO LCA module.</rdfs:comment>
 Product is modelled in the EU DPP CO P_DPP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has manufacturer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasManufacturingSite -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasManufacturingSite">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ManufacturerRecord"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
+        <rdfs:comment xml:lang="en">ManufacturerRecord is modelled in the EU DPP CO LCA module.
+Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has manufacturing site</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -361,6 +433,18 @@ ActorIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
 Product is modelled in the EU DPP CO P_DPP module.
 ProductIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has unique product identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#identifiesManufacturer -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#identifiesManufacturer">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ManufacturerRecord"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">ManufacturerRecord is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Identifies manufacturer</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -534,6 +618,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#EPDStudy -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EPDStudy">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/LCA</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#Event -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#Event">
@@ -558,9 +650,17 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
-    <!-- https://purl.org/eudpp#LcaResult -->
+    <!-- https://purl.org/eudpp#LCAStudy -->
 
-    <owl:Class rdf:about="https://purl.org/eudpp#LcaResult">
+    <owl:Class rdf:about="https://purl.org/eudpp#LCAStudy">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/LCA</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ManufacturerRecord -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ManufacturerRecord">
         <rdfs:isDefinedBy>https://purl.org/eudpp/LCA</rdfs:isDefinedBy>
     </owl:Class>
     
@@ -594,6 +694,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#ProductIdentifier">
         <rdfs:isDefinedBy>https://purl.org/eudpp/IDENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#Review -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#Review">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/LCA</rdfs:isDefinedBy>
     </owl:Class>
     
 
