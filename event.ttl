@@ -9,7 +9,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://purl.org/eudpp/EVENT> .
+@base <http://purl.org/eudpp/EVENT#> .
 
 <http://purl.org/eudpp/EVENT> rdf:type owl:Ontology ;
                                dcterms:bibliographicCitation "EU DPP Core Ontology Event Module. Draft version 0.1.0. DOI: https://doi.org/10.5281/zenodo.15270342/"@en ;
@@ -486,13 +486,13 @@ evt:hasUnitOfMeasure rdf:type owl:DatatypeProperty ;
                      rdfs:label "has unit of measure"@en .
 
 
-###  http://purl.org/eudpp#identifierValue
-evt:identifierValue rdf:type owl:DatatypeProperty ;
-                    rdfs:domain evt:InstanceIdentifier ;
-                    rdfs:range xsd:anyURI ;
-                    dcterms:source "Defined for the EU DPP Core Ontology Event module following EPCIS instance-level identification semantics."@en ;
-                    rdfs:comment "The identifier value used in the event context, such as an EPC, SGTIN, SSCC, GTIN, or similar identifier expressed as a URI."@en ;
-                    rdfs:label "identifier value"@en .
+###  http://purl.org/eudpp#instanceIdentifierValue
+evt:instanceIdentifierValue rdf:type owl:DatatypeProperty ;
+                            rdfs:domain evt:InstanceIdentifier ;
+                            rdfs:range xsd:anyURI ;
+                            dcterms:source "Defined for the EU DPP Core Ontology Event module following EPCIS instance-level identification semantics."@en ;
+                            rdfs:comment "The identifier value used in the event context, such as an EPC, SGTIN, SSCC, GTIN, or similar identifier expressed as a URI."@en ;
+                            rdfs:label "instance identifier value"@en .
 
 
 ###  http://purl.org/eudpp#recordedAt
@@ -807,7 +807,7 @@ evt:ESPREvent rdf:type owl:Class ;
 ###  http://purl.org/eudpp#InstanceIdentifier
 evt:InstanceIdentifier rdf:type owl:Class ;
                        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                         owl:onProperty evt:identifierValue ;
+                                         owl:onProperty evt:instanceIdentifierValue ;
                                          owl:cardinality "1"^^xsd:nonNegativeInteger
                                        ] ;
                        dcterms:source "Defined for the EU DPP Core Ontology Event module following EPCIS instance-level identification semantics."@en ;
