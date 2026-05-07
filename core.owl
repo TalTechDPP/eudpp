@@ -20,7 +20,7 @@
         <owl:imports rdf:resource="https://purl.org/eudpp/SOC"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/MAT"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/IDENT"/>
-        <owl:imports rdf:resource="https://purl.org/eudpp/LCA"/>
+        <!-- <owl:imports rdf:resource="https://purl.org/eudpp/LCA"/> -->
         <owl:imports rdf:resource="https://purl.org/eudpp/EVENT"/>
         <dcterms:contributor xml:lang="en">Hele-Mai Haav</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Riina Maigre</dcterms:contributor>
@@ -39,7 +39,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann1:preferredNamespacePrefix>eudpp</vann1:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The CORE of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CORE</rdfs:label>
-        <owl:versionInfo>1.9.2</owl:versionInfo>
+        <owl:versionInfo>2.0</owl:versionInfo>
     </owl:Ontology>
     
 
