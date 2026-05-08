@@ -16,12 +16,11 @@
     <owl:Ontology rdf:about="https://purl.org/eudpp/">
         <owl:imports rdf:resource="https://purl.org/eudpp/ACTOR"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/CON"/>
+        <owl:imports rdf:resource="https://purl.org/eudpp/EVENT"/>
+        <owl:imports rdf:resource="https://purl.org/eudpp/IDENT"/>
+        <owl:imports rdf:resource="https://purl.org/eudpp/MAT"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/P_DPP"/>
         <owl:imports rdf:resource="https://purl.org/eudpp/SOC"/>
-        <owl:imports rdf:resource="https://purl.org/eudpp/MAT"/>
-        <owl:imports rdf:resource="https://purl.org/eudpp/IDENT"/>
-        <!-- <owl:imports rdf:resource="https://purl.org/eudpp/LCA"/> -->
-        <owl:imports rdf:resource="https://purl.org/eudpp/EVENT"/>
         <dcterms:contributor xml:lang="en">Hele-Mai Haav</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Riina Maigre</dcterms:contributor>
         <dcterms:created xml:lang="en">2025-02-27</dcterms:created>
@@ -31,7 +30,7 @@
 --
 THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
 All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
-        <dcterms:issued xml:lang="en">2026-04-15</dcterms:issued>
+        <dcterms:issued xml:lang="en">2026-05-07</dcterms:issued>
         <dcterms:licence rdf:resource="http://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:licence xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:licence>
