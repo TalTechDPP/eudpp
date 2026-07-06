@@ -20,7 +20,7 @@
 --
 THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
 All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
-        <dcterms:issued xml:lang="en">2026-05-07</dcterms:issued>
+        <dcterms:issued xml:lang="en">2026-07-06</dcterms:issued>
         <dcterms:licence rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:licence xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:licence>
@@ -172,6 +172,22 @@ ProductEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#conformityAttestedBy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#conformityAttestedBy">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#UnionHarmonisationLegislation"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <dcterms:references>ESPR Annex V (7)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies the notified body that attest the product&apos;s conformity with Union harmonisation legislation. 
+
+UnionHarmonisationLegislation is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Conformity attested by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#containsSubstanceOfConcern -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#containsSubstanceOfConcern">
@@ -189,6 +205,31 @@ ProductEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
 Product is modelled in the EU DPP CO P_DPP module.
 Substance of concern is modelled in the EU DPP CO SOC module.</rdfs:comment>
         <rdfs:label xml:lang="en">Contains substance of concern</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasAuthorisedRepresentative -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasAuthorisedRepresentative">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EUDeclarationOfConformity"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <dcterms:references>Decision No 768/2008/EC Annex I Art R1 (4)</dcterms:references>
+        <dcterms:references>ESPR Annex V (2,9)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/dec/2008/768(1)/oj#anx_I</dcterms:source>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies the natural or legal person established within the Union who has received a written mandate from a manufacturer to act on his behalf in relation to the Declaration of Conformity.
+
+EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.
+
+Source: 
+Decision No 768/2008/EC Annex I Art R1 (4)
+https://eur-lex.europa.eu/eli/dec/2008/768(1)/oj#anx_I
+
+ESPR Annex V (2,9)
+https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</rdfs:comment>
+        <rdfs:label xml:lang="en">Has authorised representative</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -219,6 +260,24 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 DPP is modelled in the EU DPP CO P_DPP module.
 DPPIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has digital product passport id</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasEUDeclarationOfConformity -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEUDeclarationOfConformity">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#EUDeclarationOfConformity"/>
+        <dcterms:references>Decision No 768/2008/EC Annex I Art R10</dcterms:references>
+        <dcterms:references>ESPR Art 44</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/dec/2008/768(1)/oj#anx_I</dcterms:source>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#art_44</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies the EU declaration of conformity issued for the product.
+
+EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
+Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has EU Declaration of Conformity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -302,6 +361,43 @@ MaterialOfComposition is modelled in the EU DPP CO MAT module.</rdfs:comment>
 MaterialOfComposition is modelled in the EU DPP CO MAT module.
 MaterialIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has material identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasNotifiedBody -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasNotifiedBody">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EUDeclarationOfConformity"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <dcterms:references>Decision No 768/2008/EC Annex I Chapter R4</dcterms:references>
+        <dcterms:references>ESPR Chapter IX</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/dec/2008/768(1)/oj#anx_I</dcterms:source>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#cpt_IX</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies the conformity assessment body notified in accordance with ESPR Chapter IX	
+
+EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has notified body</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasResponsibleManufacturer -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasResponsibleManufacturer">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EUDeclarationOfConformity"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <dcterms:references>Decision No 768/2008/EC Annex I Art R1 (3)</dcterms:references>
+        <dcterms:references>ESPR Annex V (2,9)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/dec/2008/768(1)/oj#anx_I</dcterms:source>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
+        <rdfs:comment xml:lang="en">Defines the natural or legal person responsible for the EU declaration of conformity.
+
+
+EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has responsible manufacturer</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -394,6 +490,16 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#isConformWith -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isConformWith">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:comment xml:lang="en">Specifies Union Harminised Lagislation for which conformity of the product is stated.</rdfs:comment>
+        <rdfs:label xml:lang="en">Is conform with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#isConnectedTo -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isConnectedTo">
@@ -404,6 +510,92 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 DPP is modelled in the EU DPP CO P_DPP module.
 Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">Is connected to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#isIssuedBy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isIssuedBy">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EUDeclarationOfConformity"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <dcterms:references>ESPR Annex V (3)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies the natural or legal person issuing the Declaration of Conformity; ESPR Annex V, paragraph 3 requirement: &quot;This declaration of conformity is issued under the sole responsibility of the manufacturer:&quot;
+
+
+EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Issued by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#isNotifiedFor -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isNotifiedFor">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#UnionHarmonisationLegislation"/>
+        <dcterms:references>Decision No 768/2008/EC Annex I Art R23 (3)</dcterms:references>
+        <dcterms:references>ESPR Article 56 (3)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/dec/2008/768(1)/oj#anx_I</dcterms:source>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#art_56</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies the conformity assessment activities, the conformity assessment module or modules and product or products concerned and the relevant attestation of competence	
+
+UnionHarmonisationLegislation is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Is notified for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#isSignedBy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isSignedBy">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EUDeclarationOfConformity"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <dcterms:references>ESPR Annex V (9, 10)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies the natural or legal person signying the Declaration of Conformity.
+
+
+EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Is signed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#issuesCertificate -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#issuesCertificate">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ConformityCertificate"/>
+        <dcterms:references>ESPR Annex V (7)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies conformity assessment certificate issued for a certification.
+
+
+ConformityCertificate is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Issues certificate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#performedAssessmentAccordingTo -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#performedAssessmentAccordingTo">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ConformityAssessmentModule"/>
+        <dcterms:references>ESPR Annex V (7)</dcterms:references>
+        <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
+        <rdfs:comment xml:lang="en">Specifies conformity assess procedure/cerfication scheme performed by the notified body.
+
+
+ConformityAssessmentModule is modelled in the EU DPP CO COMP module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Performed assessment according to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -503,6 +695,22 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#ConformityAssessmentModule -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ConformityAssessmentModule">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/COMP</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ConformityCertificate -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ConformityCertificate">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/COMP</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#DPP -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#DPP">
@@ -515,6 +723,23 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#DPPIdentifier">
         <rdfs:isDefinedBy>https://purl.org/eudpp/IDENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#DocumentFormattedProperty -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#DocumentFormattedProperty">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/P_DPP"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#EUDeclarationOfConformity -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EUDeclarationOfConformity">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#DocumentFormattedProperty"/>
+        <rdfs:isDefinedBy>https://purl.org/eudpp/COMP</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -579,6 +804,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#SubstanceOfConcern">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/SOC"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#UnionHarmonisationLegislation -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#UnionHarmonisationLegislation">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/COMP</rdfs:isDefinedBy>
     </owl:Class>
 </rdf:RDF>
 
