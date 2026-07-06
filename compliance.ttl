@@ -10,7 +10,6 @@
 @base <https://purl.org/eudpp/COMP/> .
 
 <https://purl.org/eudpp/COMP> rdf:type owl:Ontology ;
-                               owl:versionIRI <https://purl.org/eudpp/COMP/1.0.0> ;
                                dcterms:bibliographicCitation <https://doi.org/10.5281/zenodo.15270342> ;
                                dcterms:contributor "Gisa Foyer"@en ,
                                                    "Jens Niederhausen"@en ;
