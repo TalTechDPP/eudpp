@@ -30,6 +30,10 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp; Danash, F. (2025). Ontolo
 
 =======================
 
+27 August 2026 - Release v.2.0.6
+ - Add data property manufacturingDate with open range;
+ - Fix data property granularity leading space issue for enumeration &quot;batch&quot;.
+
 30 April 2026 - Release v.2.0.0
 
 CHANGES APR 2026 (switch to IDENT module) (v.1.9.4)
@@ -442,7 +446,7 @@ It is formatted as a URI/URL .</rdfs:comment>
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first> batch</rdf:first>
+                        <rdf:first>batch</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -506,6 +510,18 @@ The boolean data type property indicates is a Product energy related or not?</rd
         <dcterms:references>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:references>
         <rdfs:comment xml:lang="en">Where a new digital product passport is created for a product that already has a digital product passport, the new digital product passport shall be linked to the original digital product passport or passports. (ESPR Art 11 (d))</rdfs:comment>
         <rdfs:label xml:lang="en">Link to previous DPP</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#manufacturingDate -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#manufacturingDate">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:comment xml:lang="en">Date of manufacture of the product. 
+
+The range of the data property is intentionally left open to be specified in accordance of sectorial needs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Manufacturing date</rdfs:label>
     </owl:DatatypeProperty>
     
 
