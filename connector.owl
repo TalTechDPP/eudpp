@@ -149,11 +149,11 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#concernsDPP">
         <rdfs:domain rdf:resource="http://purl.org/eudpp#DPPEvent"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#DPP"/>
-        <rdfs:comment xml:lang="en">Links a DPP event to the Digital Product Passport whose content, state, or accessibility is affected by the event. This property captures information-level changes and is not intended to represent physical or operational events on the product.
+        <rdfs:comment xml:lang="en">Links a DPP event to the Digital Product Passport whose content, state, or accessibility is affected by the event. This is a cross-module relation between EVENT and P_DPP and is therefore managed in the Connector/mapping layer.
 
 DPP is modelled in the EU DPP CO P_DPP module.
 DPPEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Concerns DPP</rdfs:label>
+        <rdfs:label xml:lang="en">concerns DPP</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -163,11 +163,11 @@ DPPEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#concernsProduct">
         <rdfs:domain rdf:resource="http://purl.org/eudpp#ProductEvent"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:comment xml:lang="en">Links a product event to the product whose state, condition, or lifecycle is affected by the event.
+        <rdfs:comment xml:lang="en">Links a product event to the product whose state, condition, or lifecycle is affected by the event. This is a cross-module relation between EVENT and P_DPP and is therefore managed in the Connector/mapping layer.
 
 Product is modelled in the EU DPP CO P_DPP module.
 ProductEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Concerns product</rdfs:label>
+        <rdfs:label xml:lang="en">concerns product</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -205,6 +205,21 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 Product is modelled in the EU DPP CO P_DPP module.
 Substance of concern is modelled in the EU DPP CO SOC module.</rdfs:comment>
         <rdfs:label xml:lang="en">Contains substance of concern</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasActorRoleAssignment -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasActorRoleAssignment">
+        <owl:inverseOf rdf:resource="https://purl.org/eudpp#isActorRoleAssignmentForEvent"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ESPREvent"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
+        <rdfs:comment xml:lang="en">Links an event to an actor-role assignment that is valid in the context of that event. This is a cross-module relation between EVENT and ACTOR and is therefore managed in the Connector/mapping layer.
+
+ESPREvent is modelled in the EU DPP CO EVENT module.
+ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has actor role assignment</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -314,10 +329,11 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasLCAStudy">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:comment xml:lang="en">A product has a LCA Result -- a measurable outcome of a life cycle assessment, representing the quantified effect of a product.
+        <rdfs:range rdf:resource="https://purl.org/eudpp#LCAStudy"/>
+        <rdfs:comment xml:lang="en">A product has a LCA Study -- a measurable outcome of a life cycle assessment, representing the quantified effect of a product.
 
 Product is modelled in the EU DPP CO P_DPP module.
-LcaResult is modelled in the EU DPP CO LCA module.</rdfs:comment>
+LCAStudy is modelled in the EU DPP CO LCA module.</rdfs:comment>
         <rdfs:label xml:lang="en">Has LCA study</rdfs:label>
     </owl:ObjectProperty>
     
@@ -446,21 +462,6 @@ ProductIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     
 
 
-    <!-- https://purl.org/eudpp#inContextOfActivity -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#inContextOfActivity">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Event"/>
-        <rdfs:comment xml:lang="en">Relates the actor role assignment to a specific lifecycle activity, such as a repair or recycling event (from the Event module).
-        
-ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.
-Event is modelled in the EU DPP CO EVENT module.
-        </rdfs:comment>
-        <rdfs:label xml:lang="en">In context of activity</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://purl.org/eudpp#inContextOfDPP -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#inContextOfDPP">
@@ -486,6 +487,20 @@ DPP is modelled in the EU DPP CO P_DPP module.
 ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.
 Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
         <rdfs:label xml:lang="en">In context of product</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#isActorRoleAssignmentForEvent -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isActorRoleAssignmentForEvent">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ESPREvent"/>
+        <rdfs:comment xml:lang="en">Links an actor-role assignment to the event context in which the role assignment applies. This is the inverse of evt:hasActorRoleAssignment and is managed in the Connector/mapping layer.
+
+ESPREvent is modelled in the EU DPP CO EVENT module.
+ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">is actor role assignment for event</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -600,16 +615,47 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#performedAt -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#performedAt">
+        <rdfs:domain rdf:resource="http://purl.org/eudpp#ProductEvent"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
+        <rdfs:comment xml:lang="en">Links a product event to the facility where the event was performed or operationally occurred. This is a cross-module relation between EVENT and ACTOR/Facility and is therefore managed in the Connector/mapping layer.
+
+ProductEvent is modelled in the EU DPP CO EVENT module.
+Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">performed at</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://ref.gs1.org/epcis/bizLocation"/>
+        <rdfs:seeAlso rdf:resource="https://ref.gs1.org/epcis/readPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#performedBy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#performedBy">
+        <rdfs:domain rdf:resource="http://purl.org/eudpp#ProductEvent"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">Links a product event to the actor that performed, carried out, or was operationally responsible for the event. This is a cross-module relation between EVENT and ACTOR and is therefore managed in the Connector/mapping layer.
+
+ProductEvent is modelled in the EU DPP CO EVENT module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">performed by</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://purl.org/eudpp#ActorRoleAssignment"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#recordedBy -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#recordedBy">
         <rdfs:domain rdf:resource="http://purl.org/eudpp#DPPEventRecord"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">Links a DPP event record to the actor that created the technical record of the logged DPP-side event.
+        <rdfs:comment xml:lang="en">Links a DPP event record to the actor that created the technical record of the logged DPP-side event. This is a cross-module relation between EVENT and ACTOR and is therefore managed in the Connector/mapping layer.
 
 DPPEventRecord is modelled in the EU DPP CO EVENT module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Recorded by</rdfs:label>
+        <rdfs:label xml:lang="en">recorded by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -735,19 +781,19 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#ESPREvent -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ESPREvent">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#EUDeclarationOfConformity -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#EUDeclarationOfConformity">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#DocumentFormattedProperty"/>
         <rdfs:isDefinedBy>https://purl.org/eudpp/COMP</rdfs:isDefinedBy>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#Event -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#Event">
-        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/EVENT"/>
     </owl:Class>
     
 
@@ -764,6 +810,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#FacilityIdentifier">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/IDENT"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#LCAStudy -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#LCAStudy">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/LCA"/>
     </owl:Class>
     
 
