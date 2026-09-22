@@ -15,6 +15,7 @@
     <owl:Ontology rdf:about="https://purl.org/eudpp/ACTOR">
         <dcterms:contributor xml:lang="en">Hele-Mai Haav</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Tarmo Robal</dcterms:contributor>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-03-14</dcterms:created>
         <dcterms:creator xml:lang="en">Riina Maigre</dcterms:creator>
         <dcterms:description xml:lang="en">Actor module of an EU DPP core ontology proposal of the CIRPASS-2 European project.
 
@@ -33,11 +34,11 @@ CHANGES APRIL 2026
 1. Moved identifier logic to connector.
 2. Fixed AutorisedRepresentativeRoleAssignment name (previously AutorisedRepresentationAssignment).
         </dcterms:description>
-        <dcterms:issued>2025-03-14</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-22</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
-        <dcterms:modified>2026-04-30</dcterms:modified>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-30</dcterms:modified>
         <dcterms:title xml:lang="en">Actors and roles module for an EU DPP core ontology proposed by CIRPASS-2 European project.</dcterms:title>
         <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Actor module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
@@ -61,6 +62,12 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <!-- http://purl.org/dc/terms/contributor -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
     
 
 
@@ -127,6 +134,23 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <!-- https://purl.org/eudpp:references -->
 
     <owl:AnnotationProperty rdf:about="https://purl.org/eudpp:references"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 

@@ -9,9 +9,10 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:eudpp="https://purl.org/eudpp#"
+     xmlns:vann1="http://purl.org/vocab/vann#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://purl.org/eudpp/CONNECTOR">
-        <dcterms:created xml:lang="en">2025-02-27</dcterms:created>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-27</dcterms:created>
         <dcterms:creator xml:lang="en">Riina Maigre</dcterms:creator>
         <dcterms:creator xml:lang="en">Tarmo Robal</dcterms:creator>
         <dcterms:description xml:lang="en">Connector (Bridge) module that only defines object properties between modules. The connector contains only object properties that have domain and range specified in different modules. 
@@ -19,7 +20,7 @@
 --
 THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
 All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
-        <dcterms:issued xml:lang="en">2026-07-06</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-22</dcterms:issued>
         <dcterms:licence rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:licence xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:licence>
@@ -27,7 +28,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>con</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The CONNECTOR module of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CORE CONNECTOR</rdfs:label>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</owl:versionInfo>
+        <owl:versionInfo>2.0.7</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -107,6 +108,11 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann#preferredNamespacePrefix"/>
     
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
     
 
 

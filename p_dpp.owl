@@ -17,7 +17,7 @@
         <dcterms:contributor xml:lang="en">Riina Maigre</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Tarmo Robal</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Theodor Chirvasuta</dcterms:contributor>
-        <dcterms:created>2025-01-29</dcterms:created>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-01-29</dcterms:created>
         <dcterms:creator xml:lang="en">Hele-Mai Haav (up until version 1.7.1 incl.), further maintained by contributors.</dcterms:creator>
         <dcterms:description xml:lang="en">The EU DPP core ontology proposed in CIRPASS-2 European project  is a shared formal specification of basic concepts and properties/relationships in the cross-sectorial DPP domain to facilitate knowledge sharing across sector-specific DPPs.
 
@@ -71,7 +71,7 @@ CHANGES FEB 2026 (v.1.9.1)
  #hasBackUpCopyHost
  #hasIssuer 
  #hasManufacturer</dcterms:description>
-        <dcterms:issued>2026-09-22</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-22</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
@@ -182,6 +182,23 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
