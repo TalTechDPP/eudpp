@@ -126,12 +126,6 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
-    <!-- https://purl.org/eudpp#isMandatory -->
-
-    <owl:AnnotationProperty rdf:about="https://purl.org/eudpp#isMandatory"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //

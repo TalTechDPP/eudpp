@@ -128,12 +128,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <!-- http://www.w3.org/2004/02/skos/core#definition -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
-    
 
-
-    <!-- https://purl.org/eudpp#isMandatory -->
-
-    <owl:AnnotationProperty rdf:about="https://purl.org/eudpp#isMandatory"/>
     
 
 

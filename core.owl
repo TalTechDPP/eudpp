@@ -116,12 +116,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
     
-
-
-    <!-- https://w3id.org/eudpp#isMandatory -->
-
-    <owl:AnnotationProperty rdf:about="https://w3id.org/eudpp#isMandatory"/>
-    
+   
 
 
     <!-- 
