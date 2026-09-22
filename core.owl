@@ -9,9 +9,6 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:eudpp="https://purl.org/eudpp#"
-     xmlns:vann1="http://purl.org/vocab/vann#"
-     xmlns:eudpp1="https://w3id.org/eudpp#"
-     xmlns:eudpp2="https://purl.org/eudpp:"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://purl.org/eudpp/">
         <owl:imports rdf:resource="https://purl.org/eudpp/ACTOR"/>
@@ -36,7 +33,7 @@ All liability for any damages arising from use or misuse of this vocabulary is w
         <dcterms:licence xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:licence>
         <dcterms:title xml:lang="en">CORE  of the EU DPP core ontology proposed by the CIRPASS-2 project.</dcterms:title>
-        <vann1:preferredNamespacePrefix>eudpp</vann1:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>eudpp</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The CORE of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CORE</rdfs:label>
         <owl:versionInfo>2.0.5</owl:versionInfo>
@@ -115,9 +112,9 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
-    <!-- http://purl.org/vocab/vann#preferredNamespacePrefix -->
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann#preferredNamespacePrefix"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
     
 
 
