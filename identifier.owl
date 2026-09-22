@@ -322,6 +322,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <rdfs:comment xml:lang="en">A type of identifier to identify Actors. A unique code assigned to Actor based on a scheme.</rdfs:comment>
         <rdfs:label xml:lang="en">Actor identifier</rdfs:label>
     </owl:Class>
     
@@ -333,6 +334,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifierScheme"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
+        <rdfs:comment xml:lang="en">A kind of identifier scheme. The scheme or standard used to identify Actors. e.g., GLN, LEI, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Actor identifier scheme</rdfs:label>
     </owl:Class>
     
@@ -353,6 +355,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <rdfs:comment xml:lang="en">A type of identifier to identify DPP. DPP Identifier.</rdfs:comment>
         <rdfs:label xml:lang="en">DPP identifier</rdfs:label>
     </owl:Class>
     
@@ -385,6 +388,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 Identifiers have value, and a scheme/standard they are based on.
 
 Cardinatlity restrictions added to each subclass to enforce inheritance of the data propertyy identifierValue.</rdfs:comment>
+        <rdfs:label>Identifier</rdfs:label>
     </owl:Class>
     
 
@@ -392,7 +396,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
     <!-- https://purl.org/eudpp#IdentifierGranularity -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#IdentifierGranularity">
-        <rdfs:comment xml:lang="en">The granularity of the identifier. For example, for Productys this could be model, batch, item.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The granularity of the identifier. For example, for Products this could be model, batch, item.</rdfs:comment>
         <rdfs:label xml:lang="en">Identifier granularity</rdfs:label>
     </owl:Class>
     
@@ -401,7 +405,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
     <!-- https://purl.org/eudpp#IdentifierScheme -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#IdentifierScheme">
-        <rdfs:comment xml:lang="en">The scheme or standard</rdfs:comment>
+        <rdfs:comment xml:lang="en">The scheme or standard used for Identifier.</rdfs:comment>
         <rdfs:label xml:lang="en">Identifier scheme</rdfs:label>
     </owl:Class>
     
@@ -426,6 +430,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <rdfs:comment xml:lang="en">A type of identifier to identify materials. A unique code assigned to Material based on a scheme.</rdfs:comment>
         <rdfs:label xml:lang="en">Material identifier</rdfs:label>
     </owl:Class>
     
@@ -436,6 +441,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
     <owl:Class rdf:about="https://purl.org/eudpp#MaterialIdentifierScheme">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
+        <rdfs:comment xml:lang="en">A kind of identifier scheme. The scheme or standard used to identify materials, e.g., CAS.</rdfs:comment>
         <rdfs:label xml:lang="en">Material identifier scheme</rdfs:label>
     </owl:Class>
     
@@ -466,6 +472,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <rdfs:comment xml:lang="en">A type of identifier to identify Products. A unique code assigned to identify a product. e.g., GTIN.</rdfs:comment>
         <rdfs:label xml:lang="en">Product identifier</rdfs:label>
     </owl:Class>
     
@@ -484,6 +491,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierGranularity"/>
+        <rdfs:comment xml:lang="en">The granularity level (batch, item, model) at which the product identifier represents the product.</rdfs:comment>
         <rdfs:label xml:lang="en">Product identifier granularity</rdfs:label>
     </owl:Class>
     
@@ -493,6 +501,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
 
     <owl:Class rdf:about="https://purl.org/eudpp#ProductIdentifierScheme">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
+        <rdfs:comment xml:lang="en">A kind of identifier scheme. The scheme or standard used to identify Products, e.g., GTIN, SKU, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Product identifier scheme</rdfs:label>
     </owl:Class>
     
@@ -509,6 +518,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A type of identifier to identify substances of concern.</rdfs:comment>
         <rdfs:label xml:lang="en">Substance of concern identifier</rdfs:label>
     </owl:Class>
     
@@ -637,6 +647,7 @@ Used by regulators, banks, customs, and some trade systems.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#batch">
         <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
         <rdfs:comment xml:lang="en">According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;</rdfs:comment>
+        <rdfs:label xml:lang="en">batch</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -646,6 +657,7 @@ Used by regulators, banks, customs, and some trade systems.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#item">
         <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
         <rdfs:comment xml:lang="en">According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;</rdfs:comment>
+        <rdfs:label xml:lang="en">item</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -655,6 +667,7 @@ Used by regulators, banks, customs, and some trade systems.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#model">
         <rdf:type rdf:resource="https://purl.org/eudpp#ProductIdentifierGranularity"/>
         <rdfs:comment xml:lang="en">According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;</rdfs:comment>
+        <rdfs:label xml:lang="en">model</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 

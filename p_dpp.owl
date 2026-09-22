@@ -1214,19 +1214,25 @@ si:MeasurementUnit class is reused</rdfs:comment>
 
     <!-- https://purl.org/eudpp#batch -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#batch"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#batch">
+        <rdfs:label xml:lang="en">batch</rdfs:label>
+    </owl:NamedIndividual>
     
 
 
     <!-- https://purl.org/eudpp#item -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#item"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#item">
+        <rdfs:label xml:lang="en">item</rdfs:label>
+    </owl:NamedIndividual>
     
 
 
     <!-- https://purl.org/eudpp#model -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#model"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#model">
+        <rdfs:label xml:lang="en">model</rdfs:label>
+    </owl:NamedIndividual>
     <rdf:Description>
         <rdfs:comment>The EU DPP core ontology</rdfs:comment>
     </rdf:Description>

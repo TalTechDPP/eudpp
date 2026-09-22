@@ -327,6 +327,7 @@ Potential types could be, on the example of textile sector: cotton, nylon, ...</
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#raw">
         <rdf:type rdf:resource="https://purl.org/eudpp#MaterialOrigin"/>
         <rdfs:comment>Raw material</rdfs:comment>
+        <rdfs:label xml:lang="en">raw material</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -336,6 +337,7 @@ Potential types could be, on the example of textile sector: cotton, nylon, ...</
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#recycled">
         <rdf:type rdf:resource="https://purl.org/eudpp#MaterialOrigin"/>
         <rdfs:comment>Recycled material</rdfs:comment>
+        <rdfs:label xml:lang="en">recycled material</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -345,6 +347,7 @@ Potential types could be, on the example of textile sector: cotton, nylon, ...</
     <owl:NamedIndividual rdf:about="https://purl.org/eudpp#renewable">
         <rdf:type rdf:resource="https://purl.org/eudpp#MaterialOrigin"/>
         <rdfs:comment>Renewable material</rdfs:comment>
+        <rdfs:label xml:lang="en">renewable material</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
