@@ -25,6 +25,10 @@ For more information, see
 Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). Ontology Requirements Specification for an EU DPP Core Ontology Proposal (1.1). CIRPASS-2 Consortium. https://doi.org/10.5281/zenodo.15270342
 
 =======================
+CHANGES
+22.09.2026
+Minor bug fixes. lower-casing property labels.
+
 CHANGES FEB 2026
 1. Applied CEON-inspired design principles.
 2. Modelled several Actor properties using schema.org properties, such as address, email, telephone, url, geo.
@@ -43,7 +47,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Actor module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CO ACTOR</rdfs:label>
-        <owl:versionInfo>2.0.0</owl:versionInfo>
+        <owl:versionInfo>2.0.1</owl:versionInfo>
     </owl:Ontology>
     
 
