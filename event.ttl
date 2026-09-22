@@ -1,10 +1,7 @@
 @prefix evt: <https://purl.org/eudpp#> .
-@prefix dpp: <https://purl.org/eudpp#> .
-@prefix act: <https://purl.org/eudpp#> .
 
 @prefix epcis: <https://ref.gs1.org/epcis/> .
 @prefix cbv:   <https://ref.gs1.org/cbv/> .
-@prefix gs1:   <https://gs1.org/voc/> .
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -14,7 +11,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 
 @prefix schema:   <http://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
 
@@ -437,8 +433,6 @@ epcis:readPoint  a        owl:ObjectProperty , rdf:Property ;
         schema:domainIncludes epcis:EPCISEvent ;
         rdfs:isDefinedBy  epcis: ;
         rdfs:label        "readPoint" ;
-        rdfs:range        gs1:Place ;
-        schema:rangeIncludes gs1:Place ;
         sw:term_status    "stable" .
 
 epcis:bizLocation  a      owl:ObjectProperty , rdf:Property ;
@@ -447,8 +441,6 @@ epcis:bizLocation  a      owl:ObjectProperty , rdf:Property ;
         schema:domainIncludes epcis:EPCISEvent ;
         rdfs:isDefinedBy  epcis: ;
         rdfs:label        "bizLocation" ;
-        rdfs:range        gs1:Place ;
-        schema:rangeIncludes gs1:Place ;
         sw:term_status    "stable" .
 
 epcis:SourceOrDestination
@@ -472,16 +464,11 @@ epcis:sourceList  a       owl:ObjectProperty , rdf:Property ;
 epcis:sourceOrDestination
     a owl:ObjectProperty , rdf:Property ;
     rdfs:comment """An identifier that denotes the specific source or destination of a business transfer.
-Its type (gs1:Organization or gs1:Place) must correlate with sourceOrDestinationType."""@en ;
+The semantic role of the identifier is indicated by sourceOrDestinationType. Resolution of that identifier to EU DPP Actor or Facility concepts, when applicable, is handled outside the EPCIS technical carrier layer."""@en ;
     rdfs:domain epcis:SourceOrDestination ;
     schema:domainIncludes epcis:SourceOrDestination ;
     rdfs:isDefinedBy epcis: ;
     rdfs:label "sourceOrDestination" ;
-    rdfs:range [
-        a owl:Class ;
-        owl:unionOf ( gs1:Organization gs1:Place )
-    ] ;
-    schema:rangeIncludes gs1:Organization , gs1:Place ;
     epcis:jsonldLabel "source" , "destination" ;
     sw:term_status "stable" .
 
@@ -497,8 +484,8 @@ epcis:destinationList
     sw:term_status "stable" .
 
 epcis:sourceOrDestinationType a owl:ObjectProperty , rdf:Property ;
-        rdfs:comment      """An identifier that indicates the role of SourceOrDestination in a transfer (Owning Party, Possessing Party; or Location).
-Must correlate with the type of sourceOrDestination: gs1:Organization for the first two; gs1:Place for the last one."""@en ;
+        rdfs:comment      """An identifier that indicates the role of SourceOrDestination in a transfer (Owning Party, Possessing Party, or Location).
+This role determines how the corresponding sourceOrDestination identifier is interpreted. Mapping to EU DPP Actor or Facility concepts, when applicable, is handled outside the EPCIS technical carrier layer."""@en ;
         rdfs:domain       epcis:SourceOrDestination;
         schema:domainIncludes epcis:SourceOrDestination;
         rdfs:isDefinedBy  epcis: ;
@@ -516,9 +503,6 @@ epcis:epcClass  a           owl:ObjectProperty , rdf:Property ;
      schema:domainIncludes epcis:QuantityElement ;
      rdfs:isDefinedBy  epcis: ;
      rdfs:label        "epcClass" ;
-     rdfs:range        [a owl:Class ;
-                        owl:unionOf (gs1:Product gs1:ProductBatch)] ;
-     schema:rangeIncludes gs1:Product, gs1:ProductBatch ;
      sw:term_status    "stable" .
 
 
@@ -564,8 +548,6 @@ epcis:epcList  a          owl:ObjectProperty , rdf:Property ;
         schema:domainIncludes epcis:ObjectEvent, epcis:TransactionEvent;
         rdfs:isDefinedBy  epcis: ;
         rdfs:label        "epcList" ;
-        rdfs:range        gs1:IndividualObject ;
-        schema:rangeIncludes gs1:IndividualObject ;
         sw:term_status    "stable" .
 
 epcis:quantityList  a     owl:ObjectProperty , rdf:Property ;
@@ -606,8 +588,6 @@ epcis:inputEPCList  a     owl:ObjectProperty , rdf:Property ;
         schema:domainIncludes epcis:TransformationEvent ;
         rdfs:isDefinedBy  epcis: ;
         rdfs:label        "inputEPCList" ;
-        rdfs:range        gs1:IndividualObject ;
-        schema:rangeIncludes gs1:IndividualObject ;
         sw:term_status    "stable" .
 
 epcis:inputQuantityList  a owl:ObjectProperty , rdf:Property ;
@@ -626,8 +606,6 @@ epcis:outputEPCList  a    owl:ObjectProperty , rdf:Property ;
         schema:domainIncludes epcis:TransformationEvent ;
         rdfs:isDefinedBy  epcis: ;
         rdfs:label        "outputEPCList" ;
-        rdfs:range        gs1:IndividualObject ;
-        schema:rangeIncludes gs1:IndividualObject ;
         sw:term_status    "stable" .
 
 epcis:outputQuantityList         a owl:ObjectProperty , rdf:Property ;
@@ -653,9 +631,6 @@ epcis:parentID  a         owl:ObjectProperty , rdf:Property ;
         schema:domainIncludes epcis:AggregationEvent, epcis:AssociationEvent, epcis:TransactionEvent;
         rdfs:isDefinedBy  epcis: ;
         rdfs:label        "parentID" ;
-        rdfs:range        [a owl:Class ;
-                           owl:unionOf (gs1:IndividualObject gs1:Place)];
-        schema:rangeIncludes gs1:IndividualObject, gs1:Place ;
         sw:term_status    "stable" .
 
 
@@ -666,8 +641,6 @@ epcis:childEPCs  a        owl:ObjectProperty , rdf:Property ;
         schema:domainIncludes epcis:AggregationEvent, epcis:AssociationEvent;
         rdfs:isDefinedBy  epcis: ;
         rdfs:label        "childEPCs" ;
-        rdfs:range        gs1:IndividualObject ;
-        schema:rangeIncludes gs1:IndividualObject ;
         sw:term_status    "stable" .
 
 epcis:childQuantityList  a owl:ObjectProperty , rdf:Property ;
@@ -774,35 +747,3 @@ epcis:action  a           owl:DatatypeProperty , rdf:Property ;
         rdfs:range        xsd:string ;
         schema:rangeIncludes xsd:string ;
         sw:term_status    "stable" .
-
-
-#################################################################
-# Contextual mappings from GS1 Web Vocabulary to EU DPP CO terms
-#
-# These mappings are annotation-level correspondences used by the
-# Event module to document the intended interpretation of GS1 Web
-# Vocabulary terms when they occur in EPCIS technical event data.
-# They deliberately avoid rdfs:subClassOf, owl:equivalentClass, and
-# owl:equivalentProperty axioms, so that GS1 product/location/actor
-# semantics are not logically propagated into the EU DPP Core Ontology.
-#################################################################
-
-gs1:Product
-    skos:closeMatch dpp:Product ;
-    rdfs:comment "Contextual mapping used in the EU DPP Event module: gs1:Product may correspond to dpp:Product when EPCIS technical event data refers to a product-level object. This is an annotation-level mapping only and does not assert class subsumption or equivalence."@en .
-
-gs1:ProductBatch
-    skos:narrowMatch dpp:Product ;
-    rdfs:comment "Contextual mapping used in the EU DPP Event module: gs1:ProductBatch may correspond to a batch-level product reference covered by dpp:Product. The mapping is intentionally weaker than subclassing; batch granularity is expected to be carried by identifiers or by the identification layer, not by asserting a GS1 class as a subclass of dpp:Product."@en .
-
-gs1:IndividualObject
-    skos:narrowMatch dpp:Product ;
-    rdfs:comment "Contextual mapping used in the EU DPP Event module: gs1:IndividualObject may correspond to an item-level product reference covered by dpp:Product. The mapping is intentionally weaker than subclassing; item granularity is expected to be carried by identifiers or by the identification layer, not by asserting a GS1 class as a subclass of dpp:Product."@en .
-
-gs1:Place
-    skos:closeMatch act:Facility ;
-    rdfs:comment "Contextual mapping used in the EU DPP Event module: gs1:Place may correspond to an operational location or facility when used in EPCIS read point, business location, source, destination, or parent location fields. This is an annotation-level mapping only and does not imply that every gs1:Place is an act:Facility."@en .
-
-gs1:Organization
-    skos:closeMatch act:Actor ;
-    rdfs:comment "Contextual mapping used in the EU DPP Event module: gs1:Organization may correspond to an actor when used as a source or destination party in EPCIS event structures. This is an annotation-level mapping only and does not imply that every gs1:Organization is an act:Actor."@en .
