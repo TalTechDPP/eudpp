@@ -183,7 +183,7 @@ ProductEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
 
 UnionHarmonisationLegislation is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Conformity attested by</rdfs:label>
+        <rdfs:label xml:lang="en">conformity attested by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -204,7 +204,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 Product is modelled in the EU DPP CO P_DPP module.
 Substance of concern is modelled in the EU DPP CO SOC module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Contains substance of concern</rdfs:label>
+        <rdfs:label xml:lang="en">contains substance of concern</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -244,7 +244,7 @@ https://eur-lex.europa.eu/eli/dec/2008/768(1)/oj#anx_I
 
 ESPR Annex V (2,9)
 https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</rdfs:comment>
-        <rdfs:label xml:lang="en">Has authorised representative</rdfs:label>
+        <rdfs:label xml:lang="en">has authorised representative</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -260,7 +260,7 @@ https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</rdfs:comment>
 
 DPP is modelled in the EU DPP CO P_DPP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has back-up-copy host</rdfs:label>
+        <rdfs:label xml:lang="en">has back-up-copy host</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -274,7 +274,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 DPP is modelled in the EU DPP CO P_DPP module.
 DPPIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has digital product passport id</rdfs:label>
+        <rdfs:label xml:lang="en">has digital product passport id</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -292,7 +292,7 @@ DPPIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
 
 EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
 Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has EU Declaration of Conformity</rdfs:label>
+        <rdfs:label xml:lang="en">has EU Declaration of Conformity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -306,7 +306,7 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
 Product is modelled in the EU DPP CO P_DPP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has economic operator</rdfs:label>
+        <rdfs:label xml:lang="en">has economic operator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -320,7 +320,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 DPP is modelled in the EU DPP CO P_DPP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has issuer</rdfs:label>
+        <rdfs:label xml:lang="en">has issuer</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -334,7 +334,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 Product is modelled in the EU DPP CO P_DPP module.
 LCAStudy is modelled in the EU DPP CO LCA module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has LCA study</rdfs:label>
+        <rdfs:label xml:lang="en">has LCA study</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -348,7 +348,7 @@ LCAStudy is modelled in the EU DPP CO LCA module.</rdfs:comment>
 
 Product is modelled in the EU DPP CO P_DPP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has manufacturer</rdfs:label>
+        <rdfs:label xml:lang="en">has manufacturer</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -362,7 +362,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 Product is modelled in the EU DPP CO P_DPP module.
 MaterialOfComposition is modelled in the EU DPP CO MAT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has material</rdfs:label>
+        <rdfs:label xml:lang="en">has material</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -376,7 +376,7 @@ MaterialOfComposition is modelled in the EU DPP CO MAT module.</rdfs:comment>
 
 MaterialOfComposition is modelled in the EU DPP CO MAT module.
 MaterialIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has material identifier</rdfs:label>
+        <rdfs:label xml:lang="en">has material identifier</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -394,7 +394,7 @@ MaterialIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
 
 EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has notified body</rdfs:label>
+        <rdfs:label xml:lang="en">has notified body</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -413,7 +413,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has responsible manufacturer</rdfs:label>
+        <rdfs:label xml:lang="en">has responsible manufacturer</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -428,7 +428,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:comment xml:lang="en">Linking a Facility to its unique facility identifier.
 Facility is modelled in the EU DPP CO ACTOR module.
 FacilityIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has unique facility identifier</rdfs:label>
+        <rdfs:label xml:lang="en">has unique facility identifier</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -443,7 +443,7 @@ FacilityIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
         <rdfs:comment xml:lang="en">Linking an Actor to their unique operator identifier. 
 Actor is modelled in the EU DPP CO ACTOR module.
 ActorIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has unique operator identifier</rdfs:label>
+        <rdfs:label xml:lang="en">has unique operator identifier</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -457,7 +457,7 @@ ActorIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
 
 Product is modelled in the EU DPP CO P_DPP module.
 ProductIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Has unique product identifier</rdfs:label>
+        <rdfs:label xml:lang="en">has unique product identifier</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -472,7 +472,7 @@ ProductIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
 ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.
 DPP is modelled in the EU DPP CO P_DPP module.
         </rdfs:comment>
-        <rdfs:label xml:lang="en">In context of DPP</rdfs:label>
+        <rdfs:label xml:lang="en">in context of DPP</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -486,7 +486,7 @@ DPP is modelled in the EU DPP CO P_DPP module.
 
 ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.
 Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
-        <rdfs:label xml:lang="en">In context of product</rdfs:label>
+        <rdfs:label xml:lang="en">in context of product</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -510,7 +510,7 @@ ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isConformWith">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
         <rdfs:comment xml:lang="en">Specifies Union Harminised Lagislation for which conformity of the product is stated.</rdfs:comment>
-        <rdfs:label xml:lang="en">Is conform with</rdfs:label>
+        <rdfs:label xml:lang="en">is conform with</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -524,7 +524,7 @@ ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 DPP is modelled in the EU DPP CO P_DPP module.
 Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Is connected to</rdfs:label>
+        <rdfs:label xml:lang="en">is connected to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -541,7 +541,7 @@ Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Issued by</rdfs:label>
+        <rdfs:label xml:lang="en">issued by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -559,7 +559,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 UnionHarmonisationLegislation is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Is notified for</rdfs:label>
+        <rdfs:label xml:lang="en">is notified for</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -576,7 +576,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Is signed by</rdfs:label>
+        <rdfs:label xml:lang="en">is signed by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -593,7 +593,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 ConformityCertificate is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Issues certificate</rdfs:label>
+        <rdfs:label xml:lang="en">issues certificate</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -610,7 +610,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 ConformityAssessmentModule is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Performed assessment according to</rdfs:label>
+        <rdfs:label xml:lang="en">performed assessment according to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -669,7 +669,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
 AuthorisedRepresentativeRoleAssignment is modelled in the EU DPP CO ACTOR module.
 Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Represents manufacturer for product</rdfs:label>
+        <rdfs:label xml:lang="en">represents manufacturer for product</rdfs:label>
     </owl:ObjectProperty>
     
 
