@@ -80,9 +80,9 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
-    <!-- http://purl.org/dc/terms/licence -->
+    <!-- http://purl.org/dc/terms/license -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/licence"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
     
 
 
