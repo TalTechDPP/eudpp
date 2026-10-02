@@ -26,6 +26,10 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
 
 =======================
 CHANGES
+
+02.10.2026
+Removed data prop. registeredTradeMark as per decision for iss.#12.
+
 28.09.2026
 Added human-readable facility name property to Facility.
 
@@ -39,9 +43,8 @@ CHANGES FEB 2026
 
 CHANGES APRIL 2026
 1. Moved identifier logic to connector.
-2. Fixed AutorisedRepresentativeRoleAssignment name (previously AutorisedRepresentationAssignment).
-        </dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-28</dcterms:issued>
+2. Fixed AutorisedRepresentativeRoleAssignment name (previously AutorisedRepresentationAssignment).</dcterms:description>
+        <dcterms:issued>2026-10-02</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
@@ -49,7 +52,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Actor module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CO ACTOR</rdfs:label>
-        <owl:versionInfo>2.0.2</owl:versionInfo>
+        <owl:versionInfo>2.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -360,13 +363,13 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
-    <!-- https://purl.org/eudpp#registeredTrademark -->
+    <!-- https://purl.org/eudpp/facilityName -->
 
-    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp#registeredTrademark">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
+    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp/facilityName">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">A trademark officially registered and owned by an actor.</rdfs:comment>
-        <rdfs:label xml:lang="en">registered trademark</rdfs:label>
+        <rdfs:comment xml:lang="en">Optional human-readable name of the facility.</rdfs:comment>
+        <rdfs:label xml:lang="en">facility name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -422,17 +425,6 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">The official website or webpage of the actor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://schema.org/url"/>
         <rdfs:label xml:lang="en">URL</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://purl.org/eudpp/facilityName -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/eudpp/facilityName">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Optional human-readable name of the facility.</rdfs:comment>
-        <rdfs:label xml:lang="en">facility name</rdfs:label>
     </owl:DatatypeProperty>
     
 
