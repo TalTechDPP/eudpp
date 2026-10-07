@@ -43,7 +43,7 @@ CHANGES FEB 2026
 CHANGES APRIL 2026
 1. Moved identifier logic to connector.
 2. Fixed AutorisedRepresentativeRoleAssignment name (previously AutorisedRepresentationAssignment).</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-05</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-07</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
@@ -51,7 +51,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Actor module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CO ACTOR</rdfs:label>
-        <owl:versionInfo>2.1.1</owl:versionInfo>
+        <owl:versionInfo>2.1.2</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -439,17 +439,12 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     
 
 
-    <!-- http://purl.org/dc/terms#Location -->
-
-    <owl:Class rdf:about="http://purl.org/dc/terms#Location">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms#Location"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/dc/terms/Location -->
 
-    <owl:Class rdf:about="http://purl.org/dc/terms/Location"/>
+    <owl:Class rdf:about="http://purl.org/dc/terms/Location">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+    </owl:Class>
     
 
 
