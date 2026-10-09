@@ -11,6 +11,7 @@
      xmlns:eudpp="https://purl.org/eudpp#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://purl.org/eudpp/IDENT">
+        <dcterms:contributor xml:lang="en">Elio Hbeich</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Riina Maigre</dcterms:contributor>
         <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-13</dcterms:created>
         <dcterms:creator xml:lang="en">Tarmo Robal</dcterms:creator>
@@ -29,15 +30,15 @@ DEPENDENCIES: This module may have dependencies to all  EU DPP Core Ontology (CO
 
 THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
 All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-08</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-09</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
         <dcterms:title xml:lang="en">The Identifier (IDENT) module of the EU DPP core ontology proposed by the CIRPASS-2 European project.</dcterms:title>
         <vann:preferredNamespacePrefix>ident</vann:preferredNamespacePrefix>
-        <rdfs:comment xml:lang="en">First iteration of the Identifier module of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Identifier module (IDENT) of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP IDENT</rdfs:label>
-        <owl:versionInfo>1.1.0</owl:versionInfo>
+        <owl:versionInfo>1.2.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -349,6 +350,7 @@ Format: ISO 3166-1 alpha-2, i.e., two-letter country code, such as FR for France
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifier"/>
         <rdfs:comment xml:lang="en">A type of identifier to identify Actors. A unique code assigned to Actor based on a scheme.</rdfs:comment>
         <rdfs:label xml:lang="en">Actor identifier</rdfs:label>
     </owl:Class>
@@ -362,6 +364,7 @@ Format: ISO 3166-1 alpha-2, i.e., two-letter country code, such as FR for France
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#FacilityIdentifierScheme"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifierScheme"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifierScheme"/>
         <rdfs:comment xml:lang="en">A kind of identifier scheme. The scheme or standard used to identify Actors. e.g., GLN, LEI, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Actor identifier scheme</rdfs:label>
     </owl:Class>
@@ -383,6 +386,7 @@ Format: ISO 3166-1 alpha-2, i.e., two-letter country code, such as FR for France
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifier"/>
         <rdfs:comment xml:lang="en">A type of identifier to identify DPP. DPP Identifier.</rdfs:comment>
         <rdfs:label xml:lang="en">DPP identifier</rdfs:label>
     </owl:Class>
@@ -403,6 +407,7 @@ Format: ISO 3166-1 alpha-2, i.e., two-letter country code, such as FR for France
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifier"/>
         <rdfs:comment xml:lang="en">A unique code assigned to a physical site (factory, warehouse, plant, school, hospital, etc.), i.e., identifies a location.</rdfs:comment>
         <rdfs:label xml:lang="en">Facility identifier</rdfs:label>
     </owl:Class>
@@ -415,6 +420,7 @@ Format: ISO 3166-1 alpha-2, i.e., two-letter country code, such as FR for France
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#MaterialIdentifierScheme"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifierScheme"/>
         <rdfs:comment xml:lang="en">A kind of identifier scheme. The scheme or standard used to identify Facilities.</rdfs:comment>
         <rdfs:label xml:lang="en">Facility identifier scheme</rdfs:label>
     </owl:Class>
@@ -424,13 +430,6 @@ Format: ISO 3166-1 alpha-2, i.e., two-letter country code, such as FR for France
     <!-- https://purl.org/eudpp#Identifier -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#Identifier">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasScheme"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Identifier. A general class to hold different kinds of identifiers described and used for EU DPP CO. Each sub-class of this class describes a different kind of identifier. Intentionally modelled as sub-classes. 
 Identifiers have value, and a scheme/standard they are based on.
 
@@ -477,6 +476,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifier"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifier"/>
         <rdfs:comment xml:lang="en">A type of identifier to identify materials. A unique code assigned to Material based on a scheme.</rdfs:comment>
         <rdfs:label xml:lang="en">Material identifier</rdfs:label>
     </owl:Class>
@@ -488,6 +488,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
     <owl:Class rdf:about="https://purl.org/eudpp#MaterialIdentifierScheme">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#ProductIdentifierScheme"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifierScheme"/>
         <rdfs:comment xml:lang="en">A kind of identifier scheme. The scheme or standard used to identify materials, e.g., CAS.</rdfs:comment>
         <rdfs:label xml:lang="en">Material identifier scheme</rdfs:label>
     </owl:Class>
@@ -519,6 +520,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://purl.org/eudpp#SoCIdentifier"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifier"/>
         <rdfs:comment xml:lang="en">A type of identifier to identify Products. A unique code assigned to identify a product. e.g., GTIN.</rdfs:comment>
         <rdfs:label xml:lang="en">Product identifier</rdfs:label>
     </owl:Class>
@@ -548,6 +550,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
 
     <owl:Class rdf:about="https://purl.org/eudpp#ProductIdentifierScheme">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
+        <owl:disjointWith rdf:resource="https://purl.org/eudpp#SubstanceIdentifierScheme"/>
         <rdfs:comment xml:lang="en">A kind of identifier scheme. The scheme or standard used to identify Products, e.g., GTIN, SKU, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Product identifier scheme</rdfs:label>
     </owl:Class>
@@ -558,6 +561,7 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
 
     <owl:Class rdf:about="https://purl.org/eudpp#SoCIdentifier">
         <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#SubstanceIdentifier"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://purl.org/eudpp#identifierValue"/>
@@ -567,6 +571,37 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A type of identifier to identify substances of concern.</rdfs:comment>
         <rdfs:label xml:lang="en">Substance of concern identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#SubstanceIdentifier -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#SubstanceIdentifier">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#Identifier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#hasScheme"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/eudpp#SubstanceIdentifierScheme"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/eudpp#identifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A type of identifier to identify substances. A unique code assigned to substance based on a scheme.</rdfs:comment>
+        <rdfs:label xml:lang="en">substance identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#SubstanceIdentifierScheme -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#SubstanceIdentifierScheme">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#IdentifierScheme"/>
     </owl:Class>
     
 
@@ -590,9 +625,38 @@ Cardinatlity restrictions added to each subclass to enforce inheritance of the d
         <eudpp:identifierMaxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</eudpp:identifierMaxLength>
         <eudpp:identifierMinLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</eudpp:identifierMinLength>
         <rdfs:comment xml:lang="en">CAS Number (Chemical Abstracts Service)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Governance note: CAS is currently a MaterialIdentifierScheme. IDENT/MAT governance must determine whether a substance-identifier use requires reassignment, a shared scheme model, or another compatible pattern.</rdfs:comment>
         <rdfs:label xml:lang="en">CAS</rdfs:label>
         <rdfs:seeAlso>https://www.cas.org/support/documentation/chemical-substances/faqs</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">Chemical Abstracts Service Registry Number</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#EC -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#EC">
+        <rdf:type rdf:resource="https://purl.org/eudpp#SubstanceIdentifierScheme"/>
+        <eudpp:identifierExampleValue>200-578-6</eudpp:identifierExampleValue>
+        <eudpp:identifierMaxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</eudpp:identifierMaxLength>
+        <eudpp:identifierPattern>^[2-5]\d{2}-\d{3}-\d$</eudpp:identifierPattern>
+        <rdfs:comment xml:lang="en">EC number is a unique identification number assigned to a chemical substance in the European Union. It is used to identify substances in regulatory databases, safety data sheets (SDSs), and chemical legislation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The EC number is a seven-digit identifier typically written in the format XXX-XXX-X and used to identify chemical substances in European regulatory inventories.
+
+Example:
+Substance: Ethanol
+EC number: 200-578-6</rdfs:comment>
+        <rdfs:label xml:lang="en">EC</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#ECHA -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#ECHA">
+        <rdf:type rdf:resource="https://purl.org/eudpp#SubstanceIdentifierScheme"/>
+        <rdfs:comment xml:lang="en">ECHA substance identification scheme refers to the approach used by the European Chemicals Agency (ECHA) to identify and distinguish chemical substances for regulatory purposes under EU chemicals legislation, particularly REACH.</rdfs:comment>
+        <rdfs:label xml:lang="en">ECHA</rdfs:label>
     </owl:NamedIndividual>
     
 
