@@ -11,6 +11,7 @@
      xmlns:eudpp="https://purl.org/eudpp#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://purl.org/eudpp/CON">
+        <dcterms:contributor xml:lang="en">Elio Hbeich</dcterms:contributor>
         <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-27</dcterms:created>
         <dcterms:creator xml:lang="en">Riina Maigre</dcterms:creator>
         <dcterms:creator xml:lang="en">Tarmo Robal</dcterms:creator>
@@ -19,7 +20,7 @@
 --
 THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
 All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-28</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-09</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
@@ -27,7 +28,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>con</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The CON module of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CORE CON</rdfs:label>
-        <owl:versionInfo>2.0.8</owl:versionInfo>
+        <owl:versionInfo>2.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -101,6 +102,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
+
 
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
 
@@ -303,6 +305,20 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#hasFacility -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasFacility">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
+        <rdfs:comment xml:lang="en">Links a product to a facility.
+
+Product is modelled in the EU DPP CO P_DPP module.
+Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has facility</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasIssuer -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasIssuer">
@@ -387,6 +403,22 @@ MaterialIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
 EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">has notified body</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasProductStatus -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasProductStatus">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ProductStatus"/>
+        <rdfs:comment xml:lang="en">Links a Product to its current lifecycle status, as declared in its DPP.
+It gives the current status only; the history of changes is represented with the events. 
+Product status is distinct from DPP status (#dppStatus), i.e., the status of the passport.
+
+Product is modelled in the EU DPP CO P_DPP module.
+ProductStatus is modelled in the EU DPP CO EVENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has product status</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -517,19 +549,6 @@ ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 DPP is modelled in the EU DPP CO P_DPP module.
 Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">is connected to</rdfs:label>
-    </owl:ObjectProperty>
-
-
-    <!-- https://purl.org/eudpp#hasFacility -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasFacility">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
-        <rdfs:comment xml:lang="en">Links a product to a facility.
-
-Product is modelled in the EU DPP CO P_DPP module.
-Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">has facility</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -855,6 +874,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#ProductIdentifier">
         <rdfs:isDefinedBy>https://purl.org/eudpp/IDENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#ProductStatus -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ProductStatus">
+        <rdfs:isDefinedBy>http://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
     </owl:Class>
     
 
