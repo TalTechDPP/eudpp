@@ -28,7 +28,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>con</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The CON module of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CORE CON</rdfs:label>
-        <owl:versionInfo>2.1.0</owl:versionInfo>
+        <owl:versionInfo>2.2.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -259,6 +259,24 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#hasConcentration -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasConcentration">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#SubstancePresence"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#ConcentrationOfSubstanceOfConcern"/>
+        <rdfs:comment xml:lang="en">Links a substance presence to concentration information. A concentration is contextual to the structural location identified by the associated SubstancePresence. 
+
+Different product, component, or spare-part locations requiring different concentrations should normally use distinct SubstancePresence records. 
+
+Exact, maximum, and range representations remain distinguished by the existing P_DPP/SOC concentration model.
+
+ConcentrationOfSubstanceOfConcern is modelled in the EU DPP CO P_DPP module.
+SubstancePresence is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has concentration</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasDigitalProductPassportId -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasDigitalProductPassportId">
@@ -442,6 +460,35 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#hasSubstanceIdentifier -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasSubstanceIdentifier">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Substance"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#SubstanceIdentifier"/>
+        <rdfs:comment xml:lang="en">Substance to an IDENT-owned SubstanceIdentifier link.
+
+Substance is modelled in the EU DPP CO SOC module.
+SubstanceIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has substance identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasSubstancePresence -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasSubstancePresence">
+        <owl:inverseOf rdf:resource="https://purl.org/eudpp#isSubstancePresenceOf"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#SubstancePresence"/>
+        <rdfs:comment xml:lang="en">Relation from Product to contextual SubstancePresence.
+
+Product is modelled in the EU DPP CO P_DPP module.
+SubstancePresence is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has substance presence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasUniqueFacilityIdentifier -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueFacilityIdentifier">
@@ -570,6 +617,20 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#isLocatedInProduct -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isLocatedInProduct">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#SubstancePresence"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:comment xml:lang="en">Location of a substance presence in a product, component or spare part, connection between substance presence and product.
+
+Product is modelled in the EU DPP CO P_DPP module.
+SubstancePresence is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">is located in product</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#isNotifiedFor -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isNotifiedFor">
@@ -601,6 +662,20 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:label xml:lang="en">is signed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#isSubstancePresenceOf -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isSubstancePresenceOf">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#SubstancePresence"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Product"/>
+        <rdfs:comment xml:lang="en">Inverse relation from SubstancePresence to Product.
+
+Product is modelled in the EU DPP CO P_DPP module.
+SubstancePresence is modelled in the EU DPP CO IDENT module.</rdfs:comment>
+        <rdfs:label xml:lang="en">is substance presence of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -765,6 +840,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#ConcentrationOfSubstanceOfConcern -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ConcentrationOfSubstanceOfConcern">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/P_DPP"/>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#ConformityAssessmentModule -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#ConformityAssessmentModule">
@@ -793,6 +876,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#DPPIdentifier">
         <rdfs:isDefinedBy>https://purl.org/eudpp/IDENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#DigitalInstruction -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#DigitalInstruction">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/P_DPP"/>
     </owl:Class>
     
 
@@ -886,10 +977,43 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#Substance -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#Substance">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/SOC</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#SubstanceIdentifier -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#SubstanceIdentifier">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/IDENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#SubstanceManagementInstruction -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#SubstanceManagementInstruction">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#DigitalInstruction"/>
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/SOC"/>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#SubstanceOfConcern -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#SubstanceOfConcern">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/SOC"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#SubstancePresence -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#SubstancePresence">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/SOC</rdfs:isDefinedBy>
     </owl:Class>
     
 
