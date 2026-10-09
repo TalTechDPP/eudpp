@@ -141,7 +141,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
     <!-- https://purl.org/eudpp#concernsDPP -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#concernsDPP">
-        <rdfs:domain rdf:resource="http://purl.org/eudpp#DPPEvent"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPPEvent"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#DPP"/>
         <rdfs:comment xml:lang="en">Links a DPP event to the Digital Product Passport whose content, state, or accessibility is affected by the event. This is a cross-module relation between EVENT and P_DPP and is therefore managed in the Connector/mapping layer.
 
@@ -155,7 +155,7 @@ DPPEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
     <!-- https://purl.org/eudpp#concernsProduct -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#concernsProduct">
-        <rdfs:domain rdf:resource="http://purl.org/eudpp#ProductEvent"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ProductEvent"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Product"/>
         <rdfs:comment xml:lang="en">Links a product event to the product whose state, condition, or lifecycle is affected by the event. This is a cross-module relation between EVENT and P_DPP and is therefore managed in the Connector/mapping layer.
 
@@ -717,7 +717,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <!-- https://purl.org/eudpp#performedAt -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#performedAt">
-        <rdfs:domain rdf:resource="http://purl.org/eudpp#ProductEvent"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ProductEvent"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
         <rdfs:comment xml:lang="en">Links a product event to the facility where the event was performed or operationally occurred. This is a cross-module relation between EVENT and ACTOR/Facility and is therefore managed in the Connector/mapping layer.
 
@@ -733,7 +733,7 @@ Facility is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <!-- https://purl.org/eudpp#performedBy -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#performedBy">
-        <rdfs:domain rdf:resource="http://purl.org/eudpp#ProductEvent"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ProductEvent"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
         <rdfs:comment xml:lang="en">Links a product event to the actor that performed, carried out, or was operationally responsible for the event. This is a cross-module relation between EVENT and ACTOR and is therefore managed in the Connector/mapping layer.
 
@@ -748,7 +748,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
     <!-- https://purl.org/eudpp#recordedBy -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#recordedBy">
-        <rdfs:domain rdf:resource="http://purl.org/eudpp#DPPEventRecord"/>
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#DPPEventRecord"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
         <rdfs:comment xml:lang="en">Links a DPP event record to the actor that created the technical record of the logged DPP-side event. This is a cross-module relation between EVENT and ACTOR and is therefore managed in the Connector/mapping layer.
 
@@ -784,26 +784,26 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
-    <!-- http://purl.org/eudpp#DPPEvent -->
+    <!-- https://purl.org/eudpp#DPPEvent -->
 
-    <owl:Class rdf:about="http://purl.org/eudpp#DPPEvent">
-        <rdfs:isDefinedBy>http://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    <owl:Class rdf:about="https://purl.org/eudpp#DPPEvent">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/eudpp#DPPEventRecord -->
+    <!-- https://purl.org/eudpp#DPPEventRecord -->
 
-    <owl:Class rdf:about="http://purl.org/eudpp#DPPEventRecord">
-        <rdfs:isDefinedBy>http://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    <owl:Class rdf:about="https://purl.org/eudpp#DPPEventRecord">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/eudpp#ProductEvent -->
+    <!-- https://purl.org/eudpp#ProductEvent -->
 
-    <owl:Class rdf:about="http://purl.org/eudpp#ProductEvent">
-        <rdfs:isDefinedBy>http://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    <owl:Class rdf:about="https://purl.org/eudpp#ProductEvent">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -972,7 +972,7 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     <!-- https://purl.org/eudpp#ProductStatus -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#ProductStatus">
-        <rdfs:isDefinedBy>http://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
     </owl:Class>
     
 
