@@ -20,7 +20,7 @@
 --
 THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
 All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-09</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-16</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
@@ -28,7 +28,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>con</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The CON module of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CORE CON</rdfs:label>
-        <owl:versionInfo>2.2.0</owl:versionInfo>
+        <owl:versionInfo>2.3.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -291,6 +291,22 @@ DPPIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#hasEPDVerifier -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEPDVerifier">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">Links an EPD study to an actor-role assignment identifying the independent third-party verifier of the declaration, as required by EN 15804.
+
+The Actor role assignment is expected to carry hasRole value eudpp:epdVerifier. This is a cross-module relation between the LCA module and the ACTOR module and is therefore managed in the Connector/mapping layer.
+
+EPDStudy is modelled in the EU DPP CO LCA module. 
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has EPD verifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/eudpp#hasEUDeclarationOfConformity -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEUDeclarationOfConformity">
@@ -437,6 +453,38 @@ Product status is distinct from DPP status (#dppStatus), i.e., the status of the
 Product is modelled in the EU DPP CO P_DPP module.
 ProductStatus is modelled in the EU DPP CO EVENT module.</rdfs:comment>
         <rdfs:label xml:lang="en">has product status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasProgrammeOperator -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasProgrammeOperator">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">Links an EPD study to an actor-role assignment identifying the body administering the EPD scheme under which the declaration is issued, as defined by ISO 14025 and EN 15804 specifically for Type III environmental declarations.
+
+The Actor role assignment is expected to carry hasRole value eudpp:programmeOperator. This is a cross-module relation between the LCA module and the ACTOR module and is therefore managed in the Connector/mapping layer.
+
+EPDStudy is modelled in the EU DPP CO LCA module. 
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has programme operator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/eudpp#hasReferenceManufacturer -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasReferenceManufacturer">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#LCAStudy"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">Links an LCA study to an actor-role assignment identifying the manufacturer whose product or process is assessed.
+
+The Actort is expected to carry hasRole value eudpp:manufacturer. This is a cross-module relation between the LCA module and the ACTOR module and is therefore managed in the Connector/mapping layer.
+
+LCAStudy is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
+        <rdfs:label xml:lang="en">has reference manufacturer</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -784,30 +832,6 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
-    <!-- https://purl.org/eudpp#DPPEvent -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#DPPEvent">
-        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#DPPEventRecord -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#DPPEventRecord">
-        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/eudpp#ProductEvent -->
-
-    <owl:Class rdf:about="https://purl.org/eudpp#ProductEvent">
-        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
-    </owl:Class>
-    
-
-
     <!-- https://purl.org/eudpp#Actor -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#Actor">
@@ -872,6 +896,22 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#DPPEvent -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#DPPEvent">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#DPPEventRecord -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#DPPEventRecord">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#DPPIdentifier -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#DPPIdentifier">
@@ -892,6 +932,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#DocumentFormattedProperty">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/P_DPP"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#EPDStudy -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#EPDStudy">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/LCA"/>
     </owl:Class>
     
 
@@ -929,6 +977,24 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#LCAModuleValue -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#LCAModuleValue">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#QuantitativeProperty"/>
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/LCA"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#LCAResult -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#LCAResult">
+        <rdfs:subClassOf rdf:resource="https://purl.org/eudpp#QuantitativeProperty"/>
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/LCA"/>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#LCAStudy -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#LCAStudy">
@@ -961,6 +1027,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     
 
 
+    <!-- https://purl.org/eudpp#ProductEvent -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ProductEvent">
+        <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/eudpp#ProductIdentifier -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#ProductIdentifier">
@@ -973,6 +1047,14 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
 
     <owl:Class rdf:about="https://purl.org/eudpp#ProductStatus">
         <rdfs:isDefinedBy>https://purl.org/eudpp/EVENT</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/eudpp#QuantitativeProperty -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#QuantitativeProperty">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/P_DPP"/>
     </owl:Class>
     
 
