@@ -45,7 +45,7 @@ CHANGES FEB 2026
 
 CHANGES APRIL 2026
 1. Moved identifier logic to connector.
-2. Fixed AutorisedRepresentativeRoleAssignment name (previously AutorisedRepresentationAssignment).</dcterms:description>
+2. Fixed AuthorisedRepresentativeRoleAssignment name (previously AuthorisedRepresentationAssignment).</dcterms:description>
         <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-20</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
@@ -846,7 +846,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdf:type rdf:resource="https://purl.org/eudpp#Role"/>
         <dcterms:references xml:lang="en">ESPR Art 12 (4a)</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
-        <rdfs:comment xml:lang="en">Issuing agency is a legal persons that provide unique identifiers and data carriers Art 12 (4a). Under specific conditions, economic operators may perform the functions associated with an Issuing Agency; [ESPR Art 12 (4b)]</rdfs:comment>
+        <rdfs:comment xml:lang="en">Issuing agency is a legal person that provides unique identifiers and data carriers Art 12 (4a). Under specific conditions, economic operators may perform the functions associated with an Issuing Agency; [ESPR Art 12 (4b)]</rdfs:comment>
         <rdfs:label xml:lang="en">Issuing Agency</rdfs:label>
     </owl:NamedIndividual>
     
@@ -882,7 +882,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <rdf:type rdf:resource="https://purl.org/eudpp#ConformityAssessmentRole"/>
         <dcterms:references xml:lang="en">ESPR Art 2 (53)</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
-        <rdfs:comment xml:lang="en">Notified body means a conformity assessment body notified in accordance with Chapter IX.; [ESPR Art 2 (53)]</rdfs:comment>
+        <rdfs:comment xml:lang="en">Notified body means a conformity assessment body notified in accordance with Chapter IX; [ESPR Art 2 (53)]</rdfs:comment>
         <rdfs:label xml:lang="en">Notified Body</rdfs:label>
     </owl:NamedIndividual>
     
