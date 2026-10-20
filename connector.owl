@@ -20,7 +20,7 @@
 --
 THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
 All liability for any damages arising from use or misuse of this vocabulary is with the user.</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-16</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-20</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
@@ -28,7 +28,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>con</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The CON module of the EU DPP core ontology proposal of the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CORE CON</rdfs:label>
-        <owl:versionInfo>2.3.0</owl:versionInfo>
+        <owl:versionInfo>2.4.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -282,7 +282,7 @@ SubstancePresence is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasDigitalProductPassportId">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#DPP"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#DPPIdentifier"/>
-        <rdfs:comment>Realisation for the Unique identifier of an instance of the digital product passport.
+        <rdfs:comment xml:lang="en">Realisation for the Unique identifier of an instance of the digital product passport.
 
 DPP is modelled in the EU DPP CO P_DPP module.
 DPPIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
@@ -291,21 +291,60 @@ DPPIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     
 
 
-    <!-- https://purl.org/eudpp#hasEPDVerifier -->
+    <!-- https://purl.org/eudpp#hasLCAVerifier -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasEPDVerifier">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasLCAVerifier">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#Review"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">Links an EPD study to an actor-role assignment identifying the independent third-party verifier of the declaration, as required by EN 15804.
+        <dcterms:references>ISO 14025:2026, 9 and 10.4; ISO 14025:2006, 3.8 and 3.9; ISO 14044:2006, 6; EN 15804:2012+A2:2019, 7.1, Table 2</dcterms:references>
+        <dcterms:source>https://www.iso.org/standard/87610.html</dcterms:source>
+        <rdfs:comment xml:lang="en">Links a review to the independent, third-party actor responsible for validating the Life Cycle Assessment (LCA) or Environmental Product Declaration (EPD).
 
-The Actor role assignment is expected to carry hasRole value eudpp:epdVerifier. This is a cross-module relation between the LCA module and the ACTOR module and is therefore managed in the Connector/mapping layer.
+Verifier means a person or organisation that carries out the independent verification of an EPD or LCA study, i.e. confirms through objective evidence that the specified requirements are fulfilled, e.g. the PCR and EN 15804+A2. It also covers the critical reviewer of an LCA study and the verifier of a PEF study. Independent verification may be internal or external; EPDs for business-to-consumer communication require third-party verification, also comparative assertions under ISO 14040 and any comparisons under the European Commission’s ILCD Handbook. The type of verification is recorded on the Review (TypeOfReview). ILCD: reviewer (1-3-20-87); [ISO 14025:2006, 3.8, adapted]
 
-EPDStudy is modelled in the EU DPP CO LCA module. 
+Review is modelled in the EU DPP CO LCA module. 
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">has EPD verifier</rdfs:label>
+        <rdfs:label xml:lang="en">has LCA verifier</rdfs:label>
     </owl:ObjectProperty>
-    
 
+    <!-- https://purl.org/eudpp#identifiesManufacturer -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#identifiesManufacturer">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ManufacturerRecord"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">Identifies the specific economic operator or manufacturing company whose production process and product are represented by this manufacturer record.
+
+ManufacturerRecord is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">identifies manufacturer</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- https://purl.org/eudpp#hasManufacturingSite -->
+    
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasManufacturingSite">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ManufacturerRecord"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Facility"/>
+        <rdfs:comment xml:lang="en">Links a manufacturer record to the facility it applies to, e.g., a production site covered by an LCA study or EPD. ILCD+EPD v1.3: manufacturer/sites/site.
+
+ManufacturerRecord is modelled in the EU DPP CO LCA module.
+Facility is modelled in the EU DPP CO ACTOR module.
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">has manufacturing site</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- https://purl.org/eudpp#identifiesDataProvider -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#identifiesDataProvider">
+        <rdfs:domain rdf:resource="https://purl.org/eudpp#ManufacturerRecord"/>
+        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
+        <rdfs:comment xml:lang="en">Identifies the entity that supplied or submitted the inventory data for this record, which may be different from the manufacturer (e.g., an industry association, a consultant, or a consortium lead for an average EPD).
+
+ManufacturerRecord is modelled in the EU DPP CO LCA module.
+Actor is modelled in the EU DPP CO ACTOR module.
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">identifies data provider</rdfs:label>
+    </owl:ObjectProperty>
 
     <!-- https://purl.org/eudpp#hasEUDeclarationOfConformity -->
 
@@ -454,39 +493,6 @@ Product is modelled in the EU DPP CO P_DPP module.
 ProductStatus is modelled in the EU DPP CO EVENT module.</rdfs:comment>
         <rdfs:label xml:lang="en">has product status</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#hasProgrammeOperator -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasProgrammeOperator">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#EPDStudy"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">Links an EPD study to an actor-role assignment identifying the body administering the EPD scheme under which the declaration is issued, as defined by ISO 14025 and EN 15804 specifically for Type III environmental declarations.
-
-The Actor role assignment is expected to carry hasRole value eudpp:programmeOperator. This is a cross-module relation between the LCA module and the ACTOR module and is therefore managed in the Connector/mapping layer.
-
-EPDStudy is modelled in the EU DPP CO LCA module. 
-Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">has programme operator</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/eudpp#hasReferenceManufacturer -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasReferenceManufacturer">
-        <rdfs:domain rdf:resource="https://purl.org/eudpp#LCAStudy"/>
-        <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
-        <rdfs:comment xml:lang="en">Links an LCA study to an actor-role assignment identifying the manufacturer whose product or process is assessed.
-
-The Actort is expected to carry hasRole value eudpp:manufacturer. This is a cross-module relation between the LCA module and the ACTOR module and is therefore managed in the Connector/mapping layer.
-
-LCAStudy is modelled in the EU DPP CO LCA module.
-Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
-        <rdfs:label xml:lang="en">has reference manufacturer</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
     <!-- https://purl.org/eudpp#hasResponsibleManufacturer -->
@@ -542,7 +548,7 @@ SubstancePresence is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueFacilityIdentifier">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Facility"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#FacilityIdentifier"/>
-        <dcterms:references xml:lang="en">ESPR Art 2 (33)</dcterms:references>
+        <dcterms:references>ESPR Art 2 (33)</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
         <rdfs:comment xml:lang="en">Linking a Facility to its unique facility identifier.
 Facility is modelled in the EU DPP CO ACTOR module.
@@ -557,7 +563,7 @@ FacilityIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasUniqueOperatorIdentifier">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Actor"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#ActorIdentifier"/>
-        <dcterms:references xml:lang="en">ESPR Art 2 (31)</dcterms:references>
+        <dcterms:references>ESPR Art 2 (31)</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
         <rdfs:comment xml:lang="en">Linking an Actor to their unique operator identifier. 
 Actor is modelled in the EU DPP CO ACTOR module.
@@ -998,6 +1004,18 @@ Product is modelled in the EU DPP CO P_DPP module.</rdfs:comment>
     <!-- https://purl.org/eudpp#LCAStudy -->
 
     <owl:Class rdf:about="https://purl.org/eudpp#LCAStudy">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/LCA"/>
+    </owl:Class>
+
+    <!-- https://purl.org/eudpp#Review -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#Review">
+        <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/LCA"/>
+    </owl:Class>
+
+    <!-- https://purl.org/eudpp#ManufacturerRecord -->
+
+    <owl:Class rdf:about="https://purl.org/eudpp#ManufacturerRecord">
         <rdfs:isDefinedBy rdf:resource="https://purl.org/eudpp/LCA"/>
     </owl:Class>
     
