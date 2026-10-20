@@ -26,6 +26,9 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
 =======================
 CHANGES
 
+20.10.2026
+Added lcaVerifier role.
+
 02.10.2026
 Removed data prop. registeredTradeMark as per decision for iss.#12.
 
@@ -43,7 +46,7 @@ CHANGES FEB 2026
 CHANGES APRIL 2026
 1. Moved identifier logic to connector.
 2. Fixed AutorisedRepresentativeRoleAssignment name (previously AutorisedRepresentationAssignment).</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-12</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-20</dcterms:issued>
         <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
         <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
 In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
@@ -51,7 +54,7 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Actor module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CO ACTOR</rdfs:label>
-        <owl:versionInfo>2.1.3</owl:versionInfo>
+        <owl:versionInfo>2.2.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -137,8 +140,6 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
     
-
-
 
 
     <!-- 
@@ -934,6 +935,18 @@ In case of dispute over Apache 2.0 applicability, or in case considering the ont
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj</dcterms:source>
         <rdfs:comment xml:lang="en">An actor performing remanufacturing, which means &quot;actions through which a new product is produced from objects that are waste, products or components and through which at least one change is made that substantially affects the safety, performance, purpose or type of the product&quot;; [ESPR Art 2 (16)]</rdfs:comment>
         <rdfs:label xml:lang="en">Remanufacturer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/eudpp#lcaVerifier -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/eudpp#lcaVerifier">
+        <rdf:type rdf:resource="https://purl.org/eudpp#Role"/>
+        <dcterms:references xml:lang="en">ISO 14025:2026, 9 and 10.4; ISO 14025:2006, 3.8 and 3.9; ISO 14044:2006, 6; EN 15804:2012+A2:2019, 7.1, Table 2</dcterms:references>
+        <dcterms:source>https://www.iso.org/standard/87610.html</dcterms:source>
+        <rdfs:comment xml:lang="en">Verifier means a person or organisation that carries out the independent verification of an EPD or LCA study, i.e. confirms through objective evidence that the specified requirements are fulfilled, e.g. the PCR and EN 15804+A2. It also covers the critical reviewer of an LCA study and the verifier of a PEF study. Independent verification may be internal or external; EPDs for business-to-consumer communication require third-party verification, also comparative assertions under ISO 14040 and any comparisons under the European Commission’s ILCD Handbook. The type of verification is recorded on the Review (TypeOfReview). ILCD: reviewer (1-3-20-87); [ISO 14025:2006, 3.8, adapted]</rdfs:comment>
+        <rdfs:label xml:lang="en">LCA or EPD verifier</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
