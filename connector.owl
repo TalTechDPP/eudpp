@@ -173,7 +173,7 @@ ProductEvent is modelled in the EU DPP CO EVENT module.</rdfs:comment>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
         <dcterms:references>ESPR Annex V (7)</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
-        <rdfs:comment xml:lang="en">Specifies the notified body that attest the product&apos;s conformity with Union harmonisation legislation. 
+        <rdfs:comment xml:lang="en">Specifies the notified body that attests the product&apos;s conformity with Union harmonisation legislation. 
 
 UnionHarmonisationLegislation is modelled in the EU DPP CO COMP module.
 Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
@@ -453,7 +453,7 @@ MaterialOfComposition is modelled in the EU DPP CO MAT module.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#hasMaterialIdentifier">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#MaterialOfComposition"/>
         <rdfs:range rdf:resource="https://purl.org/eudpp#MaterialIdentifier"/>
-        <rdfs:comment xml:lang="en">Realisation of thematerial indetifier as &quot;Product parameters: identification of  ... materials [ESPR Annex I c)]&quot;
+        <rdfs:comment xml:lang="en">Realisation of the material identifier as &quot;Product parameters: identification of  ... materials [ESPR Annex I c)]&quot;
 
 MaterialOfComposition is modelled in the EU DPP CO MAT module.
 MaterialIdentifier is modelled in the EU DPP CO IDENT module.</rdfs:comment>
@@ -634,7 +634,7 @@ ActorRoleAssignment is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://purl.org/eudpp#isConformWith">
         <rdfs:domain rdf:resource="https://purl.org/eudpp#Product"/>
-        <rdfs:comment xml:lang="en">Specifies Union Harminised Lagislation for which conformity of the product is stated.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Specifies Union Harmonised Legislation for which conformity of the product is stated.</rdfs:comment>
         <rdfs:label xml:lang="en">is conform with</rdfs:label>
     </owl:ObjectProperty>
     
@@ -710,7 +710,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:range rdf:resource="https://purl.org/eudpp#Actor"/>
         <dcterms:references>ESPR Annex V (9, 10)</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
-        <rdfs:comment xml:lang="en">Specifies the natural or legal person signying the Declaration of Conformity.
+        <rdfs:comment xml:lang="en">Specifies the natural or legal person signing the Declaration of Conformity.
 
 
 EUDeclarationOfConformity is modelled in the EU DPP CO COMP module.
@@ -758,7 +758,7 @@ Actor is modelled in the EU DPP CO ACTOR module.</rdfs:comment>
         <rdfs:range rdf:resource="https://purl.org/eudpp#ConformityAssessmentModule"/>
         <dcterms:references>ESPR Annex V (7)</dcterms:references>
         <dcterms:source>https://eur-lex.europa.eu/eli/reg/2024/1781/oj/#anx_%C2%A0V</dcterms:source>
-        <rdfs:comment xml:lang="en">Specifies conformity assess procedure/cerfication scheme performed by the notified body.
+        <rdfs:comment xml:lang="en">Specifies conformity assessment procedure/certification scheme performed by the notified body.
 
 
 ConformityAssessmentModule is modelled in the EU DPP CO COMP module.
