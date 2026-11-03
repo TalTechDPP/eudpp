@@ -25,6 +25,8 @@ Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., &amp;amp; Danash, F. (2025). On
 
 =======================
 CHANGES
+30.10.2026 (03112026)
+Changing licencing info
 
 20.10.2026
 Added lcaVerifier role.
@@ -45,16 +47,17 @@ CHANGES FEB 2026
 
 CHANGES APRIL 2026
 1. Moved identifier logic to connector.
-2. Fixed AuthorisedRepresentativeRoleAssignment name (previously AuthorisedRepresentationAssignment).</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-20</dcterms:issued>
-        <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
-        <dcterms:license xml:lang="en">This ontology is licensed under the Apache License, Version 2.0. 
-In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</dcterms:license>
+2. Fixed AuthorisedRepresentativeRoleAssignment name (previously AuthorisedRepresentationAssignment).
+Note on the license: This ontology is licensed under the under the Creative Commons Attribution 4.0 International (CC BY 4.0). In case of dispute over CC BY 4.0 applicability, or in case considering the ontology as a software or part of it, this ontology is to be considered licensed under the Apache License, Version 2.0.
+
+</dcterms:description>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-30</dcterms:issued>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:title xml:lang="en">Actors and roles module for an EU DPP core ontology proposed by CIRPASS-2 European project.</dcterms:title>
         <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Actor module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CO ACTOR</rdfs:label>
-        <owl:versionInfo>2.2.0</owl:versionInfo>
+        <owl:versionInfo>2.3.0</owl:versionInfo>
     </owl:Ontology>
     
 
