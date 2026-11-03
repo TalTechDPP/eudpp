@@ -19,6 +19,9 @@
         <dcterms:contributor xml:lang="en">Fatima Danash</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Marc-Andree Wolf</dcterms:contributor>
         <dcterms:contributor xml:lang="en">Daniel Hutzschenreuter</dcterms:contributor>
+        <dcterms:bibliographicCitation xml:lang="en">
+        Maigre, R., Robal, T., Haav, H.M., 2026. Modular ontology design approach for an ESPR compliant digital product passport core ontology,in: Joint Proceedings of Baltic DB&amp;IS Conference Forum and Doctoral Consortium 2026 co-located with 17th International Baltic Conference on Digital Business and Intelligent Systems (Baltic DB&amp;IS 2026), CEUR-WS.org, Tartu, Estonia. pp. 115–126. URL: https://ceur-ws.org/Vol-4211/paper11.pdf. 
+        </dcterms:bibliographicCitation>
         <dcterms:description xml:lang="en">Connector (Bridge) module that only defines object properties between modules. The connector contains only object properties that have domain and range specified in different modules. 
 
 --
