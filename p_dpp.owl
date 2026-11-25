@@ -40,6 +40,9 @@ Note on the license: This ontology is licensed under the under the Creative Comm
 ---
 
 =======================
+25 November 2026
+ - added data property contentSpecificationIds 
+
 16 October 2026
  - removing EnvironmentalFootprint and ResourceConsumption class (and its subclasses LandUse, SustainableRenewalMaterialsUse, REcycledMaterialsUse, WaterConsumption, and EnergyConsumption) as they are now represented in the LCA v3 module.
 
@@ -96,7 +99,7 @@ CHANGES FEB 2026 (v.1.9.1)
         <vann:preferredNamespacePrefix>dpp</vann:preferredNamespacePrefix>
         <rdfs:comment xml:lang="en">The Product and DPP module of an EU DPP core ontology proposed by the CIRPASS-2 European project.</rdfs:comment>
         <rdfs:label xml:lang="en">EU DPP CO P_DPP</rdfs:label>
-        <owl:versionInfo>2.3.0</owl:versionInfo>
+        <owl:versionInfo>2.4.0</owl:versionInfo>
     </owl:Ontology>
     
 
